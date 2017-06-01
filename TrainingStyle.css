@@ -1,0 +1,64 @@
+body {
+  background: #EEE;
+  margin: 0;
+  padding-left: 20px;
+}
+
+#banner_image {
+    opacity: 0.3;
+	border-radius: 10%
+}
+
+.content_text {
+	max-width: 950px;
+}
+
+li.content_text {
+	padding-bottom: 15px;
+}
+
+.content_media{
+	display: block;
+	padding-top: 7.5px;
+}
+
+li.sub-list_test{
+	padding-bottom: 10px;
+	max-width: 950px;
+}
+
+.equation_image {
+	max-height: 50px;
+	display: block;
+	padding: 5px 0px 5px 20px;
+}
+
+.terms {
+	display: block;
+	padding-left: 20px;
+	font-style: italic;
+}
+
+img, video {
+	max-width: 950px;
+}
+
+.sub-script {
+	font-size: 50%;
+	font-style: bold;
+}
+
+.step_title {
+	font-family: Garmond;
+	font-style: bold;
+}
+
+.red_txt {
+	color: #F84545;
+	font-style: bold;
+}
+
+.green_txt {
+	color: #3B862B;
+	font-style: bold;
+}

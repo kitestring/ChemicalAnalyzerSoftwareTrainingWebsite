@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="LECO Banner.PNG"/>
+	<h1>Reference Methods</h1>
+	<h3>Overview</h3>
+	<p class="content_text">A reference method is a tool within ChromaTOF software to compare 
+		differences and similarities between two or more samples. Reference methods can also 
+		serve as a means of determining a relative concentration through the use of a single 
+		point calibration. This document outlines the procedures of creating and utilizing 
+		reference methods. Furthermore, it is written under the assumption the user already has 
+		a basic understanding of <a target="_blank" href="DataProcessingIntro.html">data processing</a> and 
+		<a target="_blank" href="DataReview.html">data review</a>.</p>
+	<h3>Procedure</h3>
+	<ol>
+		<li class="content_text"><strong>Select Reference Standard</strong>
+			<p>Select a sample to be utilized as the reference standard. The 
+			reference standard will the sample that other unknown samples will be compared against. 
+			The mass spectra of the analytes from the reference standard will be used as the reference 
+			spectra for peak identification in unknown samples. The relative concentration of the 
+			analytes in unknown samples is calculated based on area of the reference analytes using a 
+			one point calibration.
+			</p>
+		</li>
+			
+		<li class="content_text"><strong>Process Reference Standard</strong>
+			<p>Create a data processing method to process the reference standard; 
+			both <a target="_blank" href="PeakFinding.html">Peak Finding</a> or <a target="_blank" href="TAF.html">Target 
+			Analtye Finding</a> data processing methods can be used. This data processing method will be 
+			propageted to unknown samples which are processed using the reference method. 
+			Next, process the reference standard. In this example a peak finding data 
+			processing is used.
+			</p>
+		</li>
+			
+		<li class="content_text"><strong>Review Reference Standard</strong>
+			<p><a target="_blank" href="DataReview.html">Evaluate</a> the results of the data 
+			processed sample. Confirm the quality of the desired peaks and verify that they have 
+			been named properly. Within the peak table of the reference standard be sure the <a target="_blank"
+			href="PeakFiltering_Group.html">group column</a> is visible and add the Group field. 
+			For each target analyte add a label in 
+			the group column. The group labels will be propigated to samples that are processed using
+			the reference method created from this reference standard. This will streamline searching, 
+			sorting, and filtering the analytes of interest in future steps.  
+			<a class="content_media"><video src="PeakTable_AddingGroupLabels_CT5.01.04.mp4" controls></a>
+			</p>
+		</li>
+			
+		<li class="content_text"><strong>Create a New Reference Method</strong>
+			<p>Create a new reference method by right clicking within the reference panel 
+			and select “New File”. A reference file will appear named “New”.  The file can be renamed by 
+			right clicking the file and choosing “Rename”.
+			</p>
+		</li> 
+			
+		<li class="content_text"><strong>Import the Reference Standard</strong>
+			<p>Add the processed and reviewed reference standard to the Reference Table. 
+			Right click inside the Reference Table and select “Add Standard”. A window will pop up allowing 
+			the user to browse through Acquired Samples to select the reference standard. When the sample 
+			is found, click “Select”. All analytes within the selected sample will appear in the Reference 
+			Table.
+			<a class="content_media"><video src="NewMethod_AddStd_CT5.01.04.mp4" controls></a>
+			</p>
+		</li>
+			
+		<li class="content_text"><strong>Remove Non-Targeted Peaks</strong> (Optional)
+			<p>If the reference method is intended to compare all the peaks in the 
+			reference against other samples (non-targeted comparison) then advance to then next step. 
+			If this reference method will compare a specific subset of target peaks from the reference 
+			standard against other samples (targeted comparison), then continue with this step. Once 
+			the reference standard has been imported into the reference table, all of the peaks from 
+			the sample will be populated in the reference table. Ensure the group column is visible in 
+			the reference table.  This is done the same way as in the peak table. 
+			Next, right click the header to the Group column and select “Sort”. This will sort all the 
+			peaks alphabetically on the basis of group label. In this example all of the ungrouped analytes
+			will be removed from the refernece table, because they are primarily siloxanes and impurities not
+			relevant to the analysis. Highlight all the peaks that were not assigned labels in the group 
+			column, right click, and select “Delete Selected Analytes”.  This will delete all of the selected 
+			peaks from the reference table, leaving only the target peaks.
+			<a class="content_media"><video src="DeleteAnalytesFromStdTable_CT5.01.04.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Define Reference Table Parameters</strong>
+			<p>Define each of the necessary <a target="_blank" href="QuantAndRefTableParameters.html">Reference Table parameters</a>
+			for your application. Below is an example of reference table with populated Reference Table parameters.
+			<img id="content_media" src="Reference_Table_GreenText_CT5.01.04.png"/>
+			The retention time window, S/N threshold, and match threshold are the three peak qualifiers used during 
+			the peak finding portion of data processing.  The reference table above provides an example of populated
+			reference table with peak qualifying parameters. The analyte names & group labels defined in the reference method table above 
+			will be assigned to any peaks from an unknown sample which meet all the qualification criteria. Additionally,
+			the ion(s) entered in the masses column, define the quant mass(es) for a given analyte.  Lastly, a concentration value 
+			is calculated based on the area of the reference analyte.
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Peak Qualification & Quantitation Example</strong>
+			<p>The paragraphs below narrate a scenario on peak finding, name & group assignment, area/height calculation, and relative 
+				concentration determination. Using the parameters shown in the reference table above, a description of the qualification 
+				and relative quantification of peak #9, Hexadecane will be outlined. Going forward, the Hexadecane peak from the reference 
+				standard will be referred to as Hexadecane<span class="sub-script">Ref</span>. The R.T. window has a range from 952.632 
+				seconds to 956.636 seconds. If ChromaTOF locates a peak in this window within an unknown sample that satisfies the S/N threshold of
+				10, it will spectrally compare the unknown peak to the peak true spectrum of Hexadecane<span class="sub-script">Ref</span>.
+			</p>
+			
+			<p>If a peak in an unknown sample meets the R.T., S/N, and match threshold criteria, ChromaTOF will assign this peak the same 
+				name & group label as the reference peak, in the case Hexadecane and n-Alkane respectively. The Hexadecane in the unknown sample will be referred
+				to as Hexadecane<span class="sub-script">Unk</span>. The software will then determine the area of Hexadecane<span class="sub-script">Unk</span>
+				using the same quant mass as was utilized to integrate Hexadecane<span class="sub-script">Ref</span>. This mass is defined in the reference 
+				table, in this example that mass is 57.04 ± 0.3 Da. Next, the relative concentration of Hexadecane<span class="sub-script">Unk</span>
+				is calculated based upon the area of Hexadecane<span class="sub-script">Ref</span>. Essentially, a one point calibration is used 
+				to calculate the relative concentration of Hexadecane<span class="sub-script">Unk</span>.
+			</p>
+			
+			<p>There are two techniques that can be used to calculate concentration using a reference method; with or without an internal standard. 
+				Without the use of an internal standard, the areas from Hexadecane<span class="sub-script">Ref</span>, Hexadecane<span class="sub-script">Unk</span> 
+				and the concentration of Hexadecane<span class="sub-script">Ref</span> are parsed into the equation below to determine the concentration of 
+				Hexadecane<span class="sub-script">Unk</span>.
+				<img class="equation_image" src="RefMethods_ConcentrationEquation_NoIS.png"/>
+				The reference table below shows a data set where an internal standard was not used.  In this example, the concentration of 
+				Hexadecane<span class="sub-script">Ref</span> was not known and therefore the default concentration value of 100 was used. The 
+				resulting concentration calculated for <span class="sub-script">Unk</span> will be expressed as a percentage relative to the area of 
+				Hexadecane<span class="sub-script">Ref</span>. For example, assume the area of Hexadecane<span class="sub-script">Unk</span>
+				is 85% as area as the area of Hexadecane<span class="sub-script">Ref</span>, then, the resulting concentration of <span class="sub-script">Unk</span> would be 85.
+				<img id="content_media" src="Reference_Table_GreenText_Conc_No_IS_CT5.01.04.png"/>
+				Alternatively, if internal standards are spiked into both the reference standard and the unknown sample more 
+				accurae relative concentrations can be determined. In this case the equation below is used to calculate the concentration
+				of unknown analytes.
+				<img class="equation_image" src="RefMethods_ConcentrationEquation_YesIS.png"/>
+				The reference table directly below shows an example of the use of an internal standard and when exact concentrations are known. 
+				<img id="content_media" src="Reference_Table_GreenText_Conc_Yes_IS_CT5.01.04.png"/>
+				For a more detailed description of the concentration equations review the <a target="_blank" href="QuantAndRefTableParameters.html">Reference Table parameters</a>.
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Finalize Reference Method</strong>
+			<p>After all of the reference method parameters have been defined, the reference method must be finalized. 
+			To accomplish this, right click in the reference table and select “Calculate Standard”. Prior to executing this command, the 
+			text in the reference table will be <span class="green_txt">green</span>. While the standards are being calculated, the reference table information will be 
+			<span class="red_txt">red</span> which indicates that the operation is in progress. Once it has completed, the text will become black. This will require
+			a similar amount of time as the reference standard took to initially data process.
+			<a class="content_media"><video src="CalculateStandard_CT5.01.04.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Edit Finalized Reference Method</strong>
+			<p>If one of the reference method parameters is edited after calculating the standards, the text corresponding to that analyte will revert 
+			back to <span class="green_txt">green</span>. As a result, that analyte will require recalculation. You can save processing time by using "Calculate Analytes(s)" which will
+			only recalculate the selected analyte(s) rather then the entire standard when “Calculate Standard” is used. To highlight specific analyte rows,
+			right click on the corresponding row number while holding the Control key on your keyboard.
+			<a class="content_media"><video src="Edit_CalculateAnalyte_CT5.01.04.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Create Data Processing Method with Imbedded Reference Method</strong>
+			<p>Now that the reference method has been successfully created, the next step involves incorporating 
+			it into a data processing method. Begin by creating and renaming a new data processing method. Next, 
+			select the “Quantitate Reference” tab, then enable and add the desired reference method.
+			<a class="content_media"><video src="CreateApplyReferenceDPMethod_CT5.01.04.mp4" controls></a>
+			</p>
+			
+			<p>After imbeding the refernece method into the data processing method, the data processing technique used to locate peaks in the reference sample 
+			(<a target="_blank" href="PeakFinding.html">Peak Finding</a> or <a target="_blank" href="TAF.html">Target Analtye Finding</a>) will
+			automatically be populated into the corresponding data processing method. This ensures that peaks in the unknown
+			sample are found using the same technique as the reference sample.
+			</p>
+			
+			<p>If the reference standard was initially processed using a <a target="_blank" href="PeakFinding.html">Peak Finding</a> DP method, it is likely
+			that peaks will be found in your unknown sample that are not in your Reference method. Since your Reference method has no instructions on 
+			how to identify these peaks they will be named as "Peak n" in the peak table, an example of this is shown in the video and image below. If you would like these 
+			peaks to be identified you must enable library searching within your data processing method. All found peaks that are not identified using the Reference 
+			method will be identified via library searching.
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Apply Reference Method</strong>
+			<p>To apply the Reference Method to an unknown sample simply process the sample with the data processing
+			method that is imbedded with the desired Reference method.
+			<a class="content_media"><video src="ApplyReferenceMethod_CT5.01.04.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Data Review</strong>
+			<p>When reviewing an unknown sample that has been processed using a reference method be sure both the concentration and type 
+			<a target="_blank" href="DataReview.html">columns are displayed</a> in the resulting peak table. The concentration column will 
+			report the calculated relative concentration. The type column provides the user with information relevant to the qualification 
+			of each analyte. Below is an example of a peak table from unknown sample after being processed with a Reference method. The following 
+			provides a list of some of the type fields and their definition.
+			</p>
+			<ul>
+				<li class="sub-list_test"><strong><em>Match</em></strong> - An analyte is present in the unknown sample as well as in the reference sample, and it is within tolerance %.
+				</li>
+				
+				<li class="sub-list_test"><strong><em>Not Found</em></strong> - The analyte is in the reference standard, but based upon the reference table peak qualifiers was not
+					found in the unknown sample.
+				</li>
+				<li class="sub-list_test"><strong><em>Unknown</em></strong> - The analyte was found in the unknown sample but is not listed in the Reference method.
+				</li>
+				
+				<li class="sub-list_test"><strong><em>Out of Tolerance</em></strong> - The analyte is present in both the reference and unknown samples but the area is outside the user 
+					defined area % difference (Tolerance %).
+				</li>
+			</ul>
+			<img id="content_media" src="PeakTable_AppliedRefMethod_CT5.01.04.png"/>
+		</li>
+		
+		<li class="content_text"><strong>Peak Table Filtration</strong>
+			<p>To assist in managing large quantities of information, ChromaTOF allows the user to <a target="_blank" href="PeakTableFiltration.html">filter</a> 
+			the peaks in the peak table. Reference methods automates catigorizing peaks thorough both the type field as well as the assignment of 
+			group labels.  Filtering by the type field streamlines the process of identifing the similarities and differences between the reference sample and 
+			unknown samples. Finding targeted analytes is more efficent by filtering using group labels.
+			</p>
+		</li>
+	</ol>
+
+</body> 
+</html>

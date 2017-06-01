@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="LECO Banner.PNG"/>
+	<h1>Quantitation Methods</h1>
+	<h3>Overview</h3>
+	<p class="content_text">Quantitation methods within ChromaTOF were uniquely designed to 
+		meet the needs of today’s analytical laboratory.  Quantitation methods can be generated using 
+		<a target="_blank" href="PeakFinding.html">Peak Finding</a> or <a target="_blank" href="TAF.html">Target 
+			Analtye Finding</a> (TAF) Data Processing methods.  The purpose of this tutorial is to provide 
+			a detailed stepwise process of generating a quantitation method as well as explaining some the 
+			different software features within a Quantitation method.  The following procedure assumes 
+			that the user has a basic working knowledge of <a target="_blank" href="DataProcessingIntro.html">data processing</a> and 
+		<a target="_blank" href="DataReview.html">data review</a>.</p>
+	<h3>Procedure</h3>
+	<ol>
+		<li class="content_text"><strong>Select the Primary Quantitation Standard</strong>
+			<p>Begin by determining which standard to use as the Primary Quantitation Standard (PQS).  
+				The mass spectrum and retention times (R.T.) obtained from this sample will be used 
+				to qualify and identify analytes in subsequent standards used to generate the quantitation 
+				curve and in unknown samples.  This is done through a comparison of the R.T. and peak 
+				true of the selected analytes within the PQS, to the peaks found within a given 
+				standard or unknown sample.  For standard samples, analytes that match those in the 
+				PQS will be added as data points on the quantitation curve.  Alternatively, for 
+				unknown samples which contain matching peaks, those will be quantitated on the 
+				corresponding quantitation curve.  For this reason, careful consideration should be 
+				taken in selecting a standard sample to use as the PQS.  Selecting standards at the 
+				upper and lower extremes of the concentration range should be avoided.  Standards at 
+				the high end might contain masses at the saturation point of the detector 
+				which could skew mass ratios.  Standards with low or trace concentrations might be 
+				approaching the minimum detectable concentration and therefore may be difficult to 
+				obtain a clean mass spectrum. It is therefore recommend to use a standard near the 
+				medium of your concentration range.
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Data Process the PQS</strong>
+			<p>Create a basic Data Processing method using either a <a target="_blank" href="PeakFinding.html">Peak Finding</a> or 
+			a <a target="_blank" href="TAF.html">TAF</a> Data Processing method to process the PQS.  In
+			this narrative, we will be using a <a target="_blank" href="TAF.html">TAF</a> data processing method.  An
+			example of this TAF DP method is shown below.
+			<img class="content_media" src="Quant_PQS_TAF_CT5.02.00.png"/>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Review the PQS</strong>
+			<p>After processing the PQS, <a target="_blank" href="DataReview.html">Evaluate</a> the results and verify that all the analytes to be 
+			included in the quantitation method are acceptable.  Acceptance criteria include the 
+			following: appropriate retention time, spectral quality, and correct name assignment.  
+			It is imperative, as explained before, that the mass spectra for the analytes obtained 
+			from this sample are of the highest possible quality.  Within the peak table of the PQS 
+			be sure the <a target="_blank" href="PeakFiltering_Group.html">group column</a> is visible.  
+			For each analyte to be quantitated add a label in the group column.  This will streamline 
+			searching, sorting, and filtering the analytes of interest in future steps.
+			<a class="content_media"><video src="PeakTable_AddingGroupLabels_Quant_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Create a New Quantitation Method</strong>
+			<p>Select the Quantitation section of the Navigation Pane. In the List View 
+			(the white space directly above the Navigation Pane) right-click and choose New.  
+			The method can be renamed via the right click menu.
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Import the PQS</strong>
+			<p>Add the processed and reviewed PQS to the Quantitation Table. 
+			Right click inside the Quantitation Table and select “Add Standard”. A window will pop up allowing 
+			you to browse through Acquired Samples, find and select the PQS. All analytes within the 
+			selected sample will appear in the Quantitation Table.
+			<a class="content_media"><video src="NewQuantMethod_AddStd_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Remove Superfluous Analytes from the Quantitation Table</strong>
+			<p>Only the peaks necessary to generate quantitation curves should be in the Quantitation 
+			Table, any superfluous analytes should be removed.  
+			Sorting the table using the group column makes this step easier.  Highlight all analytes 
+			that were not grouped, right click within the Quantitation table and select 
+			Delete Selected Analytes.
+			<a class="content_media"><video src="DeleteSelectedAnalytes_QuantTbl_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Set Internal Standard(s) (optional)</strong>
+			<p>If your application utilizes a/an internal standard(s), then define which 
+			analytes are internal standards and which analyte(s) correspond to each internal standard.
+			<a class="content_media"><video src="SetIntStd_QuantTbl_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Enter the PQS Analyte Theoretical Concentrations</strong>
+			<p>For each of the analytes and internal standards in the PQS enter the theoretical concentration.  
+			The column where concentrations should be entered is in the far right of the Quantitation table, 
+			and the header matches the name of the sample. Note, you can copy (Ctrl + c) and paste (Ctrl + v)
+			from a spread sheet application to increase the efficiency of this step.
+			<a class="content_media"><video src="EnterPQSConc_QuantTbl_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Define the Required Quantitation Table Parameters</strong>
+			<p>Define each of the necessary <a target="_blank" href="QuantAndRefTableParameters.html">Quantitation Table parameters</a>
+			for your application. Below is an example of a Quantitation table with populated parameters.
+			<img class="content_media" src="Quantitation_Table_GreenText_CT5.02.00.png"/>
+			The retention time window, S/N threshold, and match threshold are the three peak qualifiers used during 
+			the peak finding portion of data processing.  The Quantitation table above provides an example of a populated
+			Quantitation table with peak qualifying parameters. The analyte names & group labels defined in the Quantitation method table above 
+			will be assigned to any peaks from an unknown sample which meet all the qualification criteria. Additionally,
+			the ion(s) entered in the masses column, define the quant mass(es) and mass tolerance for a given analyte.
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Peak Qualification & Quantitation Example</strong>
+			<p>The paragraphs below narrate a scenario on peak finding, name & group assignment, area/height determination, and 
+				concentration calculation utilizing a quantitation curve. Using the parameters shown in the Quantitation table above, a description of the qualification 
+				and quantitation of peak #4, Acenaphthene will be outlined. Going forward, the Acenaphthene peak from the PQS 
+				will be referred to as Acenaphthene<span class="sub-script">PQS</span>. The R.T. window has a range from 883.353 
+				seconds to 885.353 seconds. If ChromaTOF locates a peak in this window within an unknown sample that satisfies the S/N threshold 
+				of 15, it will spectrally compare the unknown peak to the peak true spectrum of Acenaphthene<span class="sub-script">PQS</span>.
+			</p>
+			
+			<p>If a peak in an unknown sample satisfies the R.T., S/N Threshold, and Match Threshold criteria, ChromaTOF will assign this peak the same 
+				name & group label as the the corresponding analyte in the PQS, in this example the name is Acenaphthene and the group label is PAH. 
+				The Acenaphthene in the unknown sample will be referred
+				to as Acenaphthene<span class="sub-script">Unk</span>. The software will then determine the area of Acenaphthene<span class="sub-script">Unk</span>
+				using the same quant mass as was utilized to integrate Acenaphthene<span class="sub-script">PQS</span>. This mass is defined in the Masses
+				column of the Quantitation table, for this example the mass is 153.07 ± 0.3 Da. Next, the concentration of 
+				Acenaphthene<span class="sub-script">Unk</span> is calculated using the corresponding quantitation curve.
+			</p>
+			
+			<p>If an internal standard is not used, then the quantitation curve is generated by plotting the the area of a given standard (y-axis) 
+			versus theoretical concentration (x-axis).  An example of such a curve is shown directly below.
+			<img class="content_media" src="QuantitationCurve_NoIS_CT5.02.00.png"/>
+			For this scenario chemically labeled PAHs were used as internal standards.  When an internal
+			standard is utilized, the quantitation curve is the result of plotting the ratio (y-axis) versus the 
+			theoretical concentration (x-axis).  The ratio is equal to the area of the standard divided by the area of the 
+			corresponding internal standard from the same sample.  See below for an example. The accuracy of the 
+			resutling quantitation curve, and subsequent calculated concentrations, are vastly improved when using an internal standard.
+			<img class="content_media" src="QuantitationCurve_WithIS_CT5.02.00.png"/>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Calculate Standards for PQS</strong>
+			<p>After the Quantitation Table parameters have been defined, highlight all the samples
+			in the Quantitation table then, select Calculate Standards from the right click menu.  
+			This command applies the parameters to PQS.  Any additional standards to be imported into the 
+			Quantitation Table will be processed based upon matching analytes in the PQS
+			as defined by the required Quantitation table parameters.  During this operation 
+			the text in the Standard table will change from <span class="green_txt">green</span>
+			(calculation required) to <span class="red_txt">red</span> (calculating) to black (finished).
+			The processing time will be similar to the duration the PQS initailly took to process.  In
+			the video below the full processing time has been edited out for training purposes.
+			<a class="content_media"><video src="CalculateStandards_PQS_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Import Additional Standard Samples</strong>
+			<p>Import all additional standards into the quantitation method.  Right click 
+			within the Quantitation Table and select Add Standard.  Browse through Acquired 
+			Samples to find the remaining samples to be added to the quantitation method.  
+			Multiple samples can be added at the same time by selecting the standards and 
+			simultaneously holding the Shift key.  After doing so you'll notice new headers in the 
+			Quantitation and Standard tables corresponding to each sample added.  Be careful 
+			not to inadvertently add the PQS a second time.
+			<a class="content_media"><video src="AllAdditionalStds_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Enter Theoretical Concentrations for Each Standard</strong>
+			<p>Next, enter the theoretical concentrations of each analyte in each standard.  There are
+			several methods which can be used to do so.  The first is not recommended, and that is
+			to individually type each conentration value.  Not only is this very time consuming, but 
+			it leads to transcription errors.  The next method is via copy (Ctrl + c) and pasting
+			(Ctrl + v).  You can copy and paste from a spreadsheet application, or from 
+			within ChromaTOF.  The last method is to use the fill method which has the capability of 
+			applying a multiplier relative to the theoretical concentration of the corresponding analyte in the PQS.  The fill method
+			will not apply to internal standards, because it is assumed that the internal standards 
+			are spiked into each sample at the same concentration.
+			</p>
+			
+			<p/>In our PAH Quantitation Example we are building 4 seperate quantitation curves.  Each PAH curve 
+			is composed of 13 standard samples acquired in triplicate.  The standards range 4 orders 
+			of magnitude from 0.2 pg – 2000 pg.  In each sample, chemically labeled PAHs were spiked at 
+			50 pg.  Manually, typing all of these concentrations would require entering 312 separate 
+			values which is not a feasible task.  To expedite this procedure the Quantitation table is 
+			first sorted by the Type column to list the analytes and internal standards seperately.  The 
+			50 pg internal standard concentration values are propagated by copy and pasting across all 
+			156 entries.  The PAH concentrations are entered using the fill command with the multiplier 
+			optional feature.  The video below demonstrates this procedure.
+			<a class="content_media"><video src="EnterAllConc_QuantTbl_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Define Optional Quantitation Table Parameters</strong>
+			<p>There are several optional functions available within a Quantitation method which will
+			not be discussed here.  Some of them include: applying <a target="_blank" href="Quantitation_IonRatios.html">ion ratios</a>
+			as additional peak qualifiers, imposing a <a target="_blank" href="Quantitation_ValidConcRange.html">valid concentration range</a>,
+			and utilizing a <a target="_blank" href="Quant-Ref_RIProbe.html">retention index probe</a>.
+			If you intend to utilize any of these optional tools enter the appropriate parameter values.
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Finalize the Quantitation Method</strong>
+			<p>After all of the Quantitation method parameters have been defined, and the theoretical 
+			concentrations entered the Quantitation method must be finalized before it can be used. 
+			To accomplish this, select all rows in the Quantitation table, then 
+			right click, and select Calculate Standards. 
+			Prior to executing this command, the theoretical concentrations in the Quantitation table 
+			and the  text in the standard table will initially be <span class="green_txt">green</span>. 
+			While the standards are being calculated, this text will be shift to  
+			<span class="red_txt">red</span> indicating that the operation is in progress. 
+			Once it has completed, the text will become black. This will require
+			a similar amount of time as the PQS initailly took to data process,
+			times then number of standard samples added to the Quantitation method.  The 
+			<a target="_blank" href="DataProcessing_MonitorQueue.html">data processing progress</a> 
+			can be monitored using both the Data Processing Monitor and Data Processing Queue
+			windows.
+			</p>
+			
+			<p>During this process ChromaTOF is applying the data processing method initially used to 
+			process the PQS to find all the peaks.  Next, it is identifying and integrating those peaks
+			based upon the parameters set in the Quantitation table.  Finally, ChromaTOF is adding the 
+			appropriate data to generate each quantitation curve. This is carried out for each 
+			standard sample.
+			<a class="content_media"><video src="CalcStd_Quant_AllStds_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Reviewing a Finalized Quantitation Method</strong>
+			<p>After calculating the standards, the quantitation curves will be generated and 
+			the Quantitation method will be reviewable.  By clicking on a given analyte in the Quantitation table, the corresponding
+			data for each standard will be populated in the Standard table as well as the resulting 
+			Quantitation curve.  If an individual standard is selected from within
+			the Standard table that peak will be displayed in the chromatogram, the red cursor will
+			point to the corresponding point on the Quantitation curve, and its peak true
+			will be shown in the spectral window.  The integration markers can be 
+			<a target="_blank" href="Quant_ManuallyAdjustIntegrationMarkers.html">manually	changed</a>
+			to adjust calculated areas of standards.
+			<a class="content_media"><video src="Review_Quant_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Editing Finalized Quantitation Tables Parameters</strong>
+			<p>If one of the required Quantitation method parameters is edited after calculating the standards, the text corresponding to that analyte will revert 
+			back to <span class="green_txt">green</span>. Therefore, that analyte will require recalculation. You can save processing time by using "Calculate Analytes(s)" which will
+			only recalculate the selected analyte(s) rather then the entire standard when Calculate Standards is used. To highlight specific analyte rows,
+			right click on the corresponding row number while holding the Control key on your keyboard.
+			<a class="content_media"><video src="EditQuantTable_CalculateAnalyte_Quant_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Removing Standard Samples</strong>
+			<p>Entire standard samples can be removed from the Quantitation method via the Quantitation table right click menu.
+			This will remove all data from the selected sample from the Quantitation method including all analytes and internal
+			internal standards.
+			<a class="content_media"><video src="Quant_RemoveStdSample_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Removing Individual Standard Analytes</strong>
+			<p>Alternatively, individual standard analytes can be removed from the Quantitation method via the Standard table right click menu.  
+			This will only remove the specifically selected analyte or internal standard from the Quantitation method.
+			<a class="content_media"><video src="Quant_RemoveIndividualStdAnalyte_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Applying a Quantitation Method</strong>
+			<p>Now, that the Quantitation method has been successfully created, the next step involves incorporating 
+			this method into a data processing method.  Begin by creating and renaming a new data processing method.  
+			Next, from the list of data processing tasks, select the Quantitate Reference tab.  Then, add the desired quantitation method(s).  
+			You will notice that the data processing method origianally used to process the PQS has been populated into this method.  In this
+			example the Target Analyte Finding parameters.  To quantitate an unknown sample, process using this
+			Data Procesing method.
+			<a class="content_media"><video src="Quant_CreateDPMethod_CT5.02.00.mp4" controls></a>
+			</p>
+		</li>
+		
+		<li class="content_text"><strong>Reviewing Quantitated Data Samples</strong>
+			<p>In order to effectively review the results, the Analyte Type, Concentration, Match, and Type columns should be displayed in 
+			the peak table.
+			</p>
+			
+			<ul>
+				
+				<li class="sub-list_test"><strong><em>Analyte Type</em></strong> - Reports the type value defined in the Quantitation table, the two 
+					most common examples include Analyte and Internal Standard.
+				</li>
+			
+				<li class="sub-list_test"><strong><em>Concentration</em></strong> - Displays the concentration calculated using the quantitation curve in the 
+					Quantitation method.
+				</li>
+				
+				<li class="sub-list_test"><strong><em>Match</em></strong> - Quantifies the spectral similarity between
+					the standard analyte in the PQS and the matching peak in the unknown sample.  This is similar to a similarity
+					score, where a perfect score is 1000.
+				</li>
+				
+				<li class="sub-list_test"><strong><em>Type</em></strong> - Provides the user with information relevant to each analyte.  The following list provides 
+					some of the quantitation related type fields and their definition.
+					<ul>
+					
+						<li class="sub-list_test"><strong><em>Quantitated</em></strong> - The peak has been qualified based upon the user specified 
+							Quantitation table parameters and therefore has been quantitated using the corresponding quantitation curve.
+						</li>
+						
+						<li class="sub-list_test"><strong><em>Not Found</em></strong> - The peak exists in the Quantitation method, but was not 
+							found in the unknown sample, based upon the user defined quantitation parameters.  It is possible that the analyte 
+							in question is in the unknown sample, but the peak qualification parameters in the Quantitation method are too strict.
+							ChromaTOF will place a place holder for these analytes in the peak table.
+						</li>
+						
+					</ul>
+					
+				</li>
+				
+			</ul>
+			
+			<p>Depending on the Filter settings for your Peak Table you may see two entries for each of your analytes.  One entry for the 
+			peak found via target analyte search and a duplicate entry for the peak once the quantitation method is applied.  If you 
+			choose you can filter by type using the <a target="_blank" href="PeakTableFiltration.html">Peak Table filters</a>.  Below are the 
+			data processing results from an unknown sample that was processed using the Apply Quantitation DP method created in the video above.  In
+			the peak table below peaks of the type Target have been filtered out of view.
+			<img class="content_media" src="Quant_ProcessedPAHUnknown_CT5.02.00.png"/>
+			</p>
+			
+			<p>Notice that three of the four PAHs (Naphthalene, Acenaphthene, and Chrysene) from the Quantitation method were found in the unknown sample.  
+			Therefore, each of these analytes were quantitated, assigned the corresponding name & group label from the Quantitation method, defined as Type = Quantitated, and the 
+			calculated Match score is listed.  Alternatively, Phenanthrene could not be found in the sample and therefore it was given a placeholder in the peak table with 
+			the name value set to Phenanthrene/PAH Quant Example (Analyte Name / Quantitation method).  Furthermore, the peak table shows the expected R.T. (this values comes from 
+			the Absolute R.T. of the corresponding standard analyte within the PQS) and sets Type = Not Found.  Obviously, the Concentration, Area, and Height columns are empty.  
+			The Match value that is reported in the peak table is the Match Threshold value defined in the Quantitation method.
+			Lastly, the internal standards were also found, and their concentrations are listed.  However, since no Quantitation curve was generated for these peaks, ChromaTOF
+			reports the theoretical concentration value defined in the Quantitation method.
+			</p>
+			
+		</li>
+		
+	</ol>
+	
+
+</body> 
+</html>
