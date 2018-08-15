@@ -1,6 +1,4 @@
-# ChemicalAnalyzerSoftwareTrainingWebsite_03-12-2017
-
-Date Written: 03/12/2017
+# ChemicalAnalyzerSoftwareTrainingWebsite
 
 Industry: Time of Flight Mass Spectrometer Developer & Manufacturer
 
