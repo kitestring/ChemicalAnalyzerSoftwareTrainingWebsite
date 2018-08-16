@@ -5,11 +5,146 @@
   <title>LECO Pegasus BT Self Guided Training</title>
 </head>
 <body>
-	<img id="banner_image" src="LECO Banner.PNG"/>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Data Processing Overview</h1>
 	<h3>Introduction</h3>
-	<p>Under Construction</p>
+	<p class="content_text">ChromaTOF-BT provides its users a powerful set of tools 
+	for both qualitative and quantitative data analysis.  This section provides a 
+	basic description of each of the data processing tools, elaborates the work follow 
+	of a data processing method, illustrates the various ways to process as sample, 
+	and demonstrates how to monitor the status of a data processing job.  Below is a 
+	list of each of the data processing tasks available in the ChromaTOF-BT software 
+	platform with a brief description of each.</p>
 	
-
+	<h3>Data Processing Tasks</h3>
+	<ol>
+		<li class="sub-list_test">Mass Calibration: Re-mass calibrates the sample 
+		replacing the mass calibration constants.
+		</li>
+		
+		<li class="sub-list_test"><a target="_blank" href="PeakFinding.html">Peak Finding</a>: 
+		Finds all peaks in a sample that satisfy the user defined parameters.  This is used primarily for discovery analytics.
+		</li>
+		
+		<li class="sub-list_test"><a target="_blank" href="TAF.html">Target Analtye Finding</a>: 
+		Finds specific peaks in a sample defined by the user.  This mode of peak discovery is used for routine or targeted analysis.
+		</li>
+		
+		<li class="sub-list_test">Classification: Provides a way to process data more efficiently by grouping compounds of similar chemical functionality.  This technique is only available with GCxGC samples.
+		</li>
+		
+		<li class="sub-list_test">Retention Index: A means of calculating a Kovats Retention Index value based upon the retention times of a series of Retention Index marker analytes.  This is typically used to provide further confidence for the identification of a given analyte.
+		</li>
+		
+		<li class="sub-list_test">Quantitate / Reference
+		<ol>
+			<li><a target="_blank" href="QuantitationMethods.html">Quantitations</a>: 
+			A tool for determining the concentration of analytes utilizing a calibration 
+			equation generated from a set of standard samples.
+			</li>
+			
+			<li><a target="_blank" href="ReferenceMethods.html">References</a>: A method 
+			for automating sample to sample comparisons.  In doing so, it ensure that 
+			common analytes across multiple samples are assigned the same name, group label, 
+			and integrated with identical quant mass(es).  Lastly, this tool can be used to 
+			calculate relative concentrations as compared to a single reference analyte.
+			</li>
+			
+			<li>Semi-Quantitations
+			</li>
+		</ol>
+		</li>
+		
+		<li class="sub-list_test">Library Search Options
+		<ol>
+			<li>Spectral Similarity: Identifies analytes through spectral comparison of library hits and the deconvoluted mass spectrum of an unknown analyte.
+			</li>
+			
+			<li>Formula
+			</li>
+			
+			<li>Reverse Target
+			</li>
+		</ol>
+		</li>
+		
+		<li class="sub-list_test">Data Export Options: Sample files can be exported out of ChromaTOF and converted into a variety of formats.
+		</li>
+		
+		<li class="sub-list_test">Peak Data ASCII Export Options: User specified Peak table, library hit, and spectral information can be exported into ASCII formatted text files which are compatible with most spread sheet applications.
+		</li>
+		
+	</ol>
+	
+	<h3>Workflow</h3>
+	<p class="content_text">Below is an example of a data processing method with Peak Finding, 
+	Quantitate/Reference (an embedded Quantitation Method) and Library Searching tasks enabled.</p>
+	
+	<img id="content_media" src="DataProcessing_Media/Overview/ExampleDPMethod_ProcessFlow_CT5.31.16.png">
+	
+	<p class="content_text">When processing samples ChromaTOF will always execute data processing tasks 
+	from the top down in the sequence listed in the Data Processing method tab on the left side of the 
+	method.  In the example Data Processing method shown above first the Peak Finding task will find and 
+	deconvolute all the peaks in the sample that meet the user defined criteria.  Next, the analytes that 
+	satisfy the peak matching criteria in the embedded Quantitation Method will be assigned the ID, group 
+	label, and integrated as defined in the Quant method; then quantitated using the corresponding 
+	calibration equation.  Finally, any remaining analytes not handled by the Quantitation Method will 
+	be identified during the Library Search task. </p>
+	
+	<p class="content_text">As the list above indicates, there are two modes of peak discovery either 
+	Peak Finding or Target Analyte Finding.  Each is intended for a specific purpose and has 
+	<a target="_blank" href="PF_vs_TAF.html">advantages as well as disadvantages</a>.</p>
+	
+	<h3>Processing: Acquisition Queue</h3>
+	<p class="content_text">The user can elect to include a data processing job to a given sample 
+	immediately after acquisition.  This is done by including the desired data processing method within 
+	the corresponding line of the <a target="_blank" href="AcquisitionQueueUtilization.html">Acquisition Queue</a>.</p>
+	
+	<a class="content_media"><video src="DataProcessing_Media/Overview/ProcessSingleSampleViaAcquisitionQueue_CT5.31.16.mp4" controls></a>
+	
+	<p class="content_text">To save time multiple sample acquisitions can be assigned to a single DP method 
+	using a single operation.  This is done through the use of the Fill command.  Highlight and right click 
+	all cells which will be processed with the same data processing method then select the
+	desired data processing method.</p>
+	
+	<a class="content_media"><video src="DataProcessing_Media/Overview/ProcessMultiSamplesViaAcquisitionQueue_CT5.31.16.mp4" controls></a>
+	
+	<h3>Processing: Acquired Samples</h3>
+	<p class="content_text">Additionally, samples can be processed from Acquired Samples 
+	view by right clicking on the sample to be processed then select “Process Data…”.  
+	Next, select the sample or samples to be included in the data processing job.  To 
+	select a range of samples hold the Shift Key while selecting the first and last 
+	sample, alternatively hold the Ctrl Key to select multiple nonconsecutive samples.  
+	Finally, select the Data Processing method.  While a sample is being processed it 
+	will have a gear overlaid on its icon and it cannot be reviewed until processing is completed.</p>
+	
+	<a class="content_media"><video src="DataProcessing_Media/Overview/ProcessFromAcquiredSamples_CT5.31.16.mp4" controls></a>
+	
+	<h3>Monitoring Data Processing Jobs</h3>
+	<p class="content_text">The status of a series of data processing jobs can be monitored and edited 
+	by means of the <a target="_blank" href="DPJobStatus.html">Data Processing Queue & Monitor</a> windows.  
+	The Data Processing Queue and Monitor windows can be access by the top ribbon under the “Views” tab.</p>
+	
+	<a class="content_media"><video src="DataProcessing_Media/Overview/DPQueueMonitor_CT5.31.16.mp4" controls></a>
+	
+	<h3>View a Samples Processing History</h3>
+	<p class="content_text">If a sample is data processed multiple times, the earlier data processing iterations 
+	are not lost or overwritten.  Each data processing iteration, and the corresponding data processing method 
+	are saved and can be retrieved.  Even if the data processing method has been deleted or changed, its state 
+	when the sample was processed is retained.  To retrieve a historical data processing iteration or method right 
+	click on the desired sample file name and select “Select DP Result…”.  In the resulting prompt, the name of 
+	each data processing method used to process the sample will be listed.  By selecting a given data processing 
+	method from the list and clicking ok, the data processing results will revert back to the corresponding state 
+	from that data processing iteration.  This includes all manual changes for example, analyte ID changes, defining 
+	a group label, or altering the Quant mass.</p>
+	
+	<a class="content_media"><video src="DataProcessing_Media/Overview/SelectDPResult_DPIteration_CT5.31.16.mp4" controls></a>
+	
+	<p class="content_text">To save a historical copy of a data processing method, right click within the desired 
+	DP method and select “Save As”.  You will then be prompted to define the name and location of the selected 
+	DP method.</p>
+		
+	<a class="content_media"><video src="DataProcessing_Media/Overview/SelectDPResult_SaveMethod_CT5.31.16.mp4" controls></a>
+	
 </body> 
 </html>

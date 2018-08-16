@@ -5,11 +5,53 @@
   <title>LECO Pegasus BT Self Guided Training</title>
 </head>
 <body>
-	<img id="banner_image" src="LECO Banner.PNG"/>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Peak Finding vs Target Analyte Finding</h1>
-	<h3>Introduction</h3>
-	<p>Under Construction</p>
 	
-
+	<h3>Introduction</h3>
+	<p class="content_text"><a target="_blank" href="TAF.html">Target Analtye Finding</a> (TAF) and 
+		<a target="_blank" href="PeakFinding.html">Peak Finding</a> (PF) are the two data processing 
+		modes within ChromaTOF.  TAF is a data processing tool utilized for routine analysis when the 
+		analytes in a given sample and their approximate retention times are known.  PF is primarily used 
+		for discovery work.  TAF is a data processing technique which enables users to search for a predefined 
+		set of specific analytes in a sample.  The following lists a comparison of the two data processing 
+		techniques.</p>
+	
+	<h3>Distinguishing Characteristics</h3>
+	<ul>
+		<li class="sub-list_test"><strong>Speed</strong> – TAF requires substantially less processing time 
+		than PF.
+		</li>
+		
+		<li class="sub-list_test"><strong>Sensitivity</strong> – TAF is able to find peaks at a lower 
+		concentrations than with PF.
+		</li>
+		
+		<li class="sub-list_test"><strong>Peaks Found</strong> – TAF looks for a predefined set of 
+		analytes.  PF finds all the analytes in a given sample.
+		</li>
+		
+		<li class="sub-list_test"><strong>Mass Spectra</strong> – PF provides more spectral information 
+		for a found analyte as compared to TAF.  TAF searches for a predefined set of ions; those found 
+		constitute the peak true for a given analyte.  PF generates a peak true spectrum from all the 
+		deconvoluted masses detected that are assigned to a given analyte.
+		</li>
+		
+	</ul>
+	
+	<h3>Spectral Differences</h3>
+	<p class="content_text">Different quantities of spectral data is generated for TAF as compared to a 
+	PF data processing method.  The mass spectra below provides a direct comparison for Trifluralin (CAS# 
+	1582-09-8) using both data processing techniques.  The table directly below lists the user defined 
+	TAF input masses for Trifluralin used to generate the TAF mass spectrum.</p>
+	
+	<img id="content_media" src="DataProcessing_Media/PFvsTAF/Trifluralin_TAF_Ions.png"/>
+	
+	<p class="content_text">The PF mass spectrum contains all the deconvoluted masses detected that are 
+	assigned to Trifluralin.  The TAF mass spectrum is comprised of only the user defined ions listed 
+	in the table that was found in the sample. </p>
+	
+	<img id="content_media" src="DataProcessing_Media/PFvsTAF/Trifluralin_PF_TAF_Spectra.png"/>
+	
 </body> 
 </html>
