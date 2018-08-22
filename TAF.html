@@ -7,8 +7,217 @@
 <body>
 	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Target Analyte Finding</h1>
-	<h3>Overview</h3>
-	<p class="content_text">Under Construction</p>
+	<h3>Introduction</h3>
+	<p class="content_text">Target Analyte Finding (TAF) is one of two data processing tools 
+	that has the capability of finding analytes within a sample.  TAF is a data processing 
+	technique which searches for a predefined set of analytes in a sample.  The other method 
+	for finding peaks in a sample is Peak Finding which is used primarily for discovery work.  
+	Each technique has a specific purpose, and associated <a target="_blank" href="PF_vs_TAF.html">
+	advantages and disadvantages</a>.</p>
+	
+	<p class="content_text">Because TAF is a targeted method of finding peaks in a sample the 
+	user must know the elution time and spectral properties of the targeted analytes.  The 
+	following set of instructions describes the steps of creating and utilizing a TAF data 
+	processing method for both 1D & GCxGC samples.</p>
+	
+	<h3>Procedure</h3>
+	<ol>
+		<li class="content_text"><strong>Create New TAF DP Method</strong>
+			<p><video src="DataProcessing_Media/TAF/1D_CreateDPMethod_CT5.31.16.mp4" controls></a></p>
+			<i>Creating a 1D TAF Data Processing Method</i>
+			
+			<p><video src="DataProcessing_Media/TAF/GCxGC_CreateDPMethod_CT5.31.16.mp4" controls></a></p>
+			<i>Creating a GCxGC TAF Data Processing Method</i>
+		</li>
+		
+		<li class="content_text"><strong>Add Targeted Analytes to TAF DP Method</strong>
+		<p></p>
+			<ul>
+				<li class="content_text"><strong>Manual Analyte Addition</strong>
+					<p>To manually create the list of analytes to be targeted, begin by clicking the Add button 
+					which will create a new analyte row.  Then, in the analyte column provide a name for the 
+					analyte.  Next, define the retention time window the analyte is expected to be found in by 
+					providing a Start and End time.  Then, define the Isotopes which will be used to find each 
+					analyte within a given retention time window.  Click the advanced button which will prompt the 
+					window to input Isotopes.  Within this window click the Add button, and provide the chemical 
+					formula for the Isotopes you would like the software to target for a given analyte.  Upon 
+					adding a chemical formula for a given fragment the software will automatically add the most 
+					abundant isotopes and calculate their neutral masses.  Formula entry is case sensitive.</p>
+					
+					<p><video src="DataProcessing_Media/TAF/1D_ManuallyBuildTAF_CT5.31.16.mp4" controls></a></p>
+					<i>Manually adding 1D analytes to a TAF DP Method.</i>
+					
+					<p><video src="DataProcessing_Media/TAF/GCxGC_ManuallyBuildTAF_CT5.31.16.mp4" controls></a></p>
+					<i>Manually adding GCxGC analytes to a TAF DP Method.</i>
+				</li>
+				
+				<li class="content_text"><strong>Adding Targeted Analytes from a Processed Sample</strong>
+					<p>A more efficient method to add targeted analytes to a DP method is by automatically adding 
+					analytes from a sample that has already been processed.  This is accomplished by selecting 
+					the targeted analytes from the peak table, right clicking, and selecting Add Selected Peaks 
+					to/TAF Method… When using this technique the retention time range will be created around the 
+					absolute R.T. of the selected analyte based upon the user defined full width at half height 
+					multiplier.  Targeted ions will be selected from the peak true, based upon the relative 
+					abundance threshold defined by the user.</p>
+					
+					<img class="content_media" src="DataProcessing_Media/TAF/AddPeaksFromProcessedSample_Thresholds_CT5.31.16.png"/>
+					<i>R.T. & Fragment Abundance Thresholds for Analytes Added to a TAF method from a processed sample.</i>
+					
+					<p><video src="DataProcessing_Media/TAF/1D_AddPeaksFromProcessedSample_CT5.31.16.mp4" controls></a></p>
+					<i>Adding 1D analytes from a processed sample to a TAF DP Method.</i>
+					
+					<p><video src="DataProcessing_Media/TAF/GCxGC_AddPeaksFromProcessedSample_CT5.31.16.mp4" controls></a></p>
+					<i>Adding GCxGC analytes from a processed sample to a TAF DP Method.</i>
+				</li>
+				
+				<li class="content_text"><strong>Adding Targeted Analytes from a Library</strong>
+					<p>Another efficient way to add targeted analytes to a data processing method, is by 
+					selecting them from a library.  The user can select analytes previously added to a 
+					<a target="_blank" href="Libraries_UserCreated.html">User Created Library</a> or from 
+					the <a target="_blank" href="Libraries_TargetSearch.html">TargetSearch</a> library.  
+					Please note, this will not work using a commercially available library such as the NIST.  
+					From the TAF tab within the DP method select the library button, define which library, 
+					and then select the targeted analytes.  The retention time range and ions within the 
+					library for the selected analyte will automatically added to the list of targeted analytes.</p>
+					
+					<p><video src="DataProcessing_Media/TAF/1D_AddAnalyteFromLibrary_CT5.31.16.mp4" controls></a></p>
+					<i>Adding 1D analytes from a library to a TAF DP Method.</i>
+					
+					<p><video src="DataProcessing_Media/TAF/GCxGC_AddAnalyteFromLibrary_CT5.31.16.mp4" controls></a></p>
+					<i>Adding GCxGC analytes from a library to a TAF DP Method.</i>
+				</li>
+			</ul>
+			</p>
+			
+		</li>
+		
+		<li class="content_text"><strong>The TAF Parameters</strong>
+		
+		<img class="content_media" src="DataProcessing_Media/TAF/1D_TAFParameters_CT5.31.16.png"/>
+		<i>1D TAF Parameters</i>
+		
+		<img class="content_media" src="DataProcessing_Media/TAF/GCxGC_TAFParameters_CT5.31.16.png"/>
+		<i>GCxGC TAF Parameters</i>
+		<p></p>
+					
+			<ul>
+				<li class="content_text"><strong>Enable E-TAF: Merge NTD peak data with matching Target Analyte peaks</strong>
+				<p>Combines the nearest normal Non Targeted (NTD) peak with a Target Analyte Find peak. This 
+				option is available within the TAF tab of a Data Processing method. Peak requirements are as 
+				follows:</p>
+				<ul>
+					<li>The NTD peak must be within a quarter peak width of the TAF apex to be matched.</li>
+					<li>All required masses of the TAF peak must be contained in the NTD peak.</li>
+					<li>TAF Peak True spectrum will be updated with the additional massed from the NTD peak</li>
+					<li>NTD peak will be removed and TAF peak will become E-TAF</li>
+					
+				</ul>
+				</li>
+				
+				<li class="content_text"><strong>Smooth windows size (points)</strong>
+				<p>Select the desired number of points to use for smoothing from the Smooth window size dropdown.</p>
+				</li>
+				
+				<li class="content_text"><strong>Peak FWHH (seconds)</strong>
+				<p>Defines the expected full width at half height for the peaks within a given sample.  For a peak to 
+				be found its FWHH must be within half to four times the provided value.</p>
+				</li>
+				
+				<li class="content_text"><strong>Analyte</strong>
+				<p>The name a given analyte is assigned that satisfies all the user defined Target Analyte Finding parameters.</p>
+				</li>
+				
+				<li class="content_text"><strong>Formula</strong>
+				<p>The formula for a given ion or isotope a given analyte must have to be found. Note, if multiple formulas 
+				are entered both the Formula & Most Abundant fields will be empty.</p>
+				</li>
+				
+				<li class="content_text"><strong>Most Abundant</strong>
+				<p>Reports the most abundant isotope that is calculated from the formula provided.  This mass will be used 
+				to calculate the area and height.</p>
+				</li>
+				
+				<li class="content_text"><strong>Tolerance & Units</strong>
+				<p>Defines the mass tolerance.</p>
+				</li>
+				
+				<li class="content_text"><strong>Start & End Time</strong>
+				<p>Sets the expected elution time range for a given an analyte.</p>
+				</li>
+				
+				<li class="content_text"><strong>Start & End 2nd Dim Time (GCxGC Samples Only)</strong>
+				<p>Sets the expected second dimension elution time range for a given an analyte.</p>
+				</li>
+				
+				<li class="content_text"><strong>Minimum Peak Height/Area</strong>
+				<p>The peak height/area that defines the threshold to discriminate between false positives and real peaks.  
+				Values that are too low risk multiple false positives resulting in multiple peaks with the same analyte 
+				name in the resulting peak table.  Conversely, values that are too high may prevent real peaks from being 
+				found.  Some trial and error may be necessary may be necessary to determine the optimal values for a 
+				given sample and analyte.</p>
+				</li>
+				
+				<li class="content_text"><strong>Signal Mode</strong>
+				<ul>
+					<li>Centroid
+					<p>A signal mode that uses centroid mass spectral data to generate the chromatographic trace
+					used for Target Analyte Peak Finding. This may be appropriate for more abundant targets, 
+					where target masses may contain mild to negligible spectral interference.</p>
+					</li>
+					
+					<li>Profile
+					<p>signal mode that uses profile mass spectral data to generate the chromatographic trace 
+					used for Target Analyte Peak Finding. This may be appropriate for less abundant targets, 
+					where spectral interference may prevent accurate centroiding of the target masses.</p>
+					</li>
+				</ul>
+				</li>
+				
+			</ul>
+		
+		<p>When the Advanced button is clicked the window to input Masses for Target Analyte Finding prompts.  
+		The peak true for a targeted analyte is <u>exclusively</u> comprised of the ions defined in the table 
+		that are found in the sample.</p>
+		<img class="content_media" src="DataProcessing_Media/TAF/TAF_InputMasses_CT5.31.16.png"/>
+		<i>Input Masses for Target Analyte Finding</i>
+		<p></p>		
+			
+			<ul>
+				<li class="content_text"><strong>Formula</strong>
+				<p>The formula for an isotope, once entered multiple isotopes will be automatically appended to the list.</p>
+				</li>
+				
+				<li class="content_text"><strong>Tolerance & Units</strong>
+				<p>Defines the mass tolerance for the corresponding ion.</p>
+				</li>
+				
+				<li class="content_text"><strong>Required</strong>
+				<p>All ions marked as Required must apex together in the retention time window and meet the 
+				area and height thresholds in order for the corresponding analyte to be found.</p>
+				<ul>
+					<li class="content_text">All required ions are also used for the calculation of area and height.</li>
+					<li class="content_text">It is recommended to define only the most abundant ions as required.  
+					Selecting ions of low relative abundance as required increases the likelihood a targeted analyte 
+					will not be	found in the sample.</li>
+				</ul>
+				</li>
+				
+			</ul>
+		</li>
+		
+		<li class="content_text"><strong>Processing a Sample with a TAF DP Method</strong>
+			<p><video src="DataProcessing_Media/TAF/1D_TAF_DataProcessing_CT5.31.16.mp4" controls></a></p>
+			<i>Processing a 1D Sample with a TAF DP Method</i>
+			
+			<p><video src="DataProcessing_Media/TAF/GCxGC_TAF_DataProcessing_CT5.31.16.mp4" controls></a></p>
+			<i>Processing a 1D Sample with a TAF DP Method</i>
+		</li>
+		
+		<li class="content_text"><strong>Handling Analytes that are Not Found</strong>
+			<p>Do it better you dumb fuck.</p>
+		</li>
+		
+	</ol>
 	
 
 </body> 
