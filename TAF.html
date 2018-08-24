@@ -101,10 +101,10 @@
 		<p></p>
 					
 			<ul>
-				<li class="content_text"><strong>Enable E-TAF: Merge NTD peak data with matching Target Analyte peaks</strong>
-				<p>Combines the nearest normal Non Targeted (NTD) peak with a Target Analyte Find peak. This 
+				<li class="content_text"><strong>Enable E-TAF: Merge NTD peak data with matching Target Analyte peaks</strong>: 
+				Combines the nearest normal Non Targeted (NTD) peak with a Target Analyte Find peak. This 
 				option is available within the TAF tab of a Data Processing method. Peak requirements are as 
-				follows:</p>
+				follows:
 				<ul>
 					<li>The NTD peak must be within a quarter peak width of the TAF apex to be matched.</li>
 					<li>All required masses of the TAF peak must be contained in the NTD peak.</li>
@@ -114,62 +114,51 @@
 				</ul>
 				</li>
 				
-				<li class="content_text"><strong>Smooth windows size (points)</strong>
-				<p>Select the desired number of points to use for smoothing from the Smooth window size dropdown.</p>
-				</li>
+				<li class="content_text"><strong>Smooth windows size (points)</strong>: Select the 
+				desired number of points to use for smoothing from the Smooth window size dropdown.</li>
 				
-				<li class="content_text"><strong>Peak FWHH (seconds)</strong>
-				<p>Defines the expected full width at half height for the peaks within a given sample.  For a peak to 
-				be found its FWHH must be within half to four times the provided value.</p>
-				</li>
+				<li class="content_text"><strong>Peak FWHH (seconds)</strong>: Defines the expected full 
+				width at half height for the peaks within a given sample.  For a peak to be found its 
+				FWHH must be within half to four times the provided value.</li>
 				
-				<li class="content_text"><strong>Analyte</strong>
-				<p>The name a given analyte is assigned that satisfies all the user defined Target Analyte Finding parameters.</p>
-				</li>
+				<li class="content_text"><strong>Analyte</strong>: The name a given analyte is assigned 
+				that satisfies all the user defined Target Analyte Finding parameters.</li>
 				
-				<li class="content_text"><strong>Formula</strong>
-				<p>The formula for a given ion or isotope a given analyte must have to be found. Note, if multiple formulas 
-				are entered both the Formula & Most Abundant fields will be empty.</p>
-				</li>
+				<li class="content_text"><strong>Formula</strong>: The formula for a given ion or isotope a 
+				given analyte must have to be found. Note, if multiple formulas are entered both the Formula 
+				& Most Abundant fields will be empty.</li>
 				
-				<li class="content_text"><strong>Most Abundant</strong>
-				<p>Reports the most abundant isotope that is calculated from the formula provided.  This mass will be used 
-				to calculate the area and height.</p>
-				</li>
+				<li class="content_text"><strong>Most Abundant</strong>: Reports the most abundant isotope 
+				that is calculated from the formula provided.  This mass will be used to calculate the 
+				area and height.</li>
 				
-				<li class="content_text"><strong>Tolerance & Units</strong>
-				<p>Defines the mass tolerance.</p>
-				</li>
+				<li class="content_text"><strong>Tolerance & Units</strong>: Defines the mass tolerance 
+				for all ions within the corresponding analyte.</li>
 				
-				<li class="content_text"><strong>Start & End Time</strong>
-				<p>Sets the expected elution time range for a given an analyte.</p>
-				</li>
+				<li class="content_text"><strong>Start & End Time</strong>: Sets the expected elution 
+				time range for a given an analyte.</li>
 				
-				<li class="content_text"><strong>Start & End 2nd Dim Time (GCxGC Samples Only)</strong>
-				<p>Sets the expected second dimension elution time range for a given an analyte.</p>
-				</li>
+				<li class="content_text"><strong>Start & End 2nd Dim Time (GCxGC Samples Only)</strong>: 
+				Sets the expected second dimension elution time range for a given an analyte.</li>
 				
-				<li class="content_text"><strong>Minimum Peak Height/Area</strong>
-				<p>The peak height/area that defines the threshold to discriminate between false positives and real peaks.  
-				Values that are too low risk multiple false positives resulting in multiple peaks with the same analyte 
-				name in the resulting peak table.  Conversely, values that are too high may prevent real peaks from being 
-				found.  Some trial and error may be necessary may be necessary to determine the optimal values for a 
-				given sample and analyte.</p>
-				</li>
+				<li class="content_text"><strong>Minimum Peak Height/Area</strong>: The peak height/area 
+				that defines the threshold to discriminate between false positives and real peaks.  Values 
+				that are too low risk multiple false positives resulting in multiple peaks with the same 
+				analyte name in the resulting peak table.  Conversely, values that are too high may prevent 
+				real peaks from being found.  Some trial and error may be necessary may be necessary to 
+				determine the optimal values for a given sample and analyte.</li>
 				
 				<li class="content_text"><strong>Signal Mode</strong>
 				<ul>
-					<li>Centroid
-					<p>A signal mode that uses centroid mass spectral data to generate the chromatographic trace
-					used for Target Analyte Peak Finding. This may be appropriate for more abundant targets, 
-					where target masses may contain mild to negligible spectral interference.</p>
-					</li>
+					<li><strong>Centroid</strong>: A signal mode that uses centroid mass spectral data to 
+					generate the chromatographic trace used for Target Analyte Peak Finding. This may be 
+					appropriate for more abundant targets, where target masses may contain mild to 
+					negligible spectral interference.</li>
 					
-					<li>Profile
-					<p>signal mode that uses profile mass spectral data to generate the chromatographic trace 
-					used for Target Analyte Peak Finding. This may be appropriate for less abundant targets, 
-					where spectral interference may prevent accurate centroiding of the target masses.</p>
-					</li>
+					<li><strong>Profile</strong>: Signal mode that uses profile mass spectral data to generate 
+					the chromatographic trace used for Target Analyte Peak Finding. This may be appropriate for 
+					less abundant targets, where spectral interference may prevent accurate centroiding of the 
+					target masses.</li>
 				</ul>
 				</li>
 				
@@ -183,17 +172,14 @@
 		<p></p>		
 			
 			<ul>
-				<li class="content_text"><strong>Formula</strong>
-				<p>The formula for an isotope, once entered multiple isotopes will be automatically appended to the list.</p>
-				</li>
+				<li class="content_text"><strong>Formula</strong>: The formula for an isotope, once entered multiple 
+				isotopes will be automatically appended to the list.</li>
 				
-				<li class="content_text"><strong>Tolerance & Units</strong>
-				<p>Defines the mass tolerance for the corresponding ion.</p>
-				</li>
+				<li class="content_text"><strong>Tolerance & Units</strong>: Defines the mass tolerance for the corresponding ion.</li>
 				
-				<li class="content_text"><strong>Required</strong>
-				<p>All ions marked as Required must apex together in the retention time window and meet the 
-				area and height thresholds in order for the corresponding analyte to be found.</p>
+				<li class="content_text"><strong>Required</strong>: All ions marked as Required must apex together in the 
+				retention time window and meet the area and height thresholds in order for the corresponding analyte to 
+				be found.
 				<ul>
 					<li class="content_text">All required ions are also used for the calculation of area and height.</li>
 					<li class="content_text">It is recommended to define only the most abundant ions as required.  
@@ -213,8 +199,101 @@
 			<i>Processing a 1D Sample with a TAF DP Method</i>
 		</li>
 		
+		<li class="content_text"><strong>Reviewing Samples Processed with a TAF DP Method</strong>
+			<p>When reviewing a sample processed using a TAF DP Method be sure the type column is visible and 
+			the peak table view options is set to show not found peaks.  For a detailed description of how to 
+			display these features see the <a target="_blank" href="DataReview.html">Data Review</a> section.  
+			The type column provides information relative to the qualification of a given analyte.  There are 
+			two analyte types represented in the samples processed in the videos above:</p>
+			
+			<ul>
+				<li class="content_text"><strong>Target</strong>: When a targeted analyte is found in a sample 
+				the analyte’s type is set to Target.  For this to occur the required isotope or isotopes must 
+				meet or exceed the area and height thresholds and are found within the defined retention time 
+				range.  Therefore the unknown peak is assigned the corresponding analyte name specified in the 
+				TAF data processing method, and the required isotopes are used to calculate the area and height.  
+				The deconvoluted peak true consists of all of the listed isotopes (both required and not required) 
+				that are found in the R.T. window and that share the same apex.  It is recommended to confirm 
+				these results, as false positive values are quite common if the TAF parameters are not strict 
+				enough.</li>
+				
+				<li class="content_text"><strong>Not Found: Target</strong>: An analyte’s type value is set to 
+				Not Found: Target when it cannot be found in a sample using the instructions defined in the TAF 
+				data processing method.  It is recommended to verify this fact by looking at the appropriate R.T. 
+				range.  It is possible that the analyte is in the sample, but the conditions in the TAF data 
+				processing method are too strict and the peak was discarded.  The following lists several of the 
+				more common reasons TAF might fail to find a given peak.
+				<ul>
+					<li class="content_text">Setting less intense isotope(s) as required; often these ions are 
+					not detected when the analyte is in trace concentrations.</li>
+					<li class="content_text">The mass tolerance of a required ions is set too high. Often in 
+					cases of low concentration the mass accuracy suffers.</li>
+					<li class="content_text">The peak’s R.T. is not in the defined time window.</li>
+					<li class="content_text">The area and height thresholds are too high.</li>
+				</ul>
+				</li>
+				
+			</ul>
+			
+		</li>
+		
 		<li class="content_text"><strong>Handling Analytes that are Not Found</strong>
-			<p>Do it better you dumb fuck.</p>
+			<p>When a targeted analyte is not found by the TAF DP method it is recommend to visually verify this fact.  
+			ChromaTOF makes this easy by double left clicking on the Not Found peak in the peak table.  This will cause 
+			the chromatogram to zoom the expected R.T. as defined in the TAF DP method and switch to the defined ions 
+			specified in the chromatogram selected peaks parameters.  If there is a peak near this location investigate 
+			using the caliper spectrum to verify if it matches the expected spectral pattern, see the <a target="_blank" 
+			href="DataReview.html">Data Review</a> section for more detail on this procedure.  If the visual inspection 
+			proves the peak to be in the sample then systematically adjust the following peak finding criteria and reprocess 
+			until ChromaTOF is able to detect the peak:</p>
+			
+			<ul>
+				<li class="content_text">Verify that all required ions are detected.</li>
+				<li class="content_text">Ensure the peak is within the defined R.T. range.</li>
+				<li class="content_text">Adjust the area or height thresholds.</li>
+				<li class="content_text">Relax the mass threshold for the required ions.</li>
+			</ul>
+			
+			<p>In the sample processed in the video above, Phosalone is not found.  By double clicking on the analyte in 
+			the peak table and doing the visual inspection described above.  The peak is determined to be present, but not
+			in the defined R.T. window.  The videos below show this inspection process as well as the correction being 
+			implemented.</p>
+			
+			<p><video src="DataProcessing_Media/TAF/1D_CorrectNotFound_CT5.31.16.mp4" controls></a></p>
+			<i>Visual inspection and correction of a peak not found in a 1D sample using a TAF DP method.</i>
+			
+			<p><video src="DataProcessing_Media/TAF/GCxGC_CorrectNotFound_CT5.31.16.mp4" controls></a></p>
+			<i>Visual inspection and correction of a peak not found in a GCxGC sample using a TAF DP method.</i>
+			
+		</li>
+		
+		<li class="content_text"><strong>Handling False Positive Analytes</strong>
+			<p>When applying a TAF DP method it is not uncommon for the resulting peak table to have false positive 
+			analytes.  This is typically the result of the peak finding criteria not being strict enough.  False 
+			positives are easy to identify; they have suspiciously low S/N values (>10), and upon visual inspection 
+			it is obvious that the peak in question is not real.  When a peak is double left clicked upon in either 
+			the peak table or from the chromatogram ChromaTOF will zoom in on that peak and switch to the defined masses, 
+			see the <a target="_blank" href="DataReview.html">Data Review</a> section.  After inspecting the chromatogram 
+			it is usually obvious if the peak is real or false.  If the peak is false there are several corrective 
+			actions that can be taken:</p>
+			
+			<ul>
+				<li class="content_text">Manually delete the peaks from the peak table.</li>
+				<li class="content_text"><a target="_blank" href="PeakTableFiltration.html">Filter</a> the peak table to 
+				based upon the peaks' properties.</li>
+				<li class="content_text">Alter the peak finding threshold to prevent such false peaks as being identified as real.</li>
+			</ul>
+			
+			<p>The video below demonstrates how to visually confirm if the peak is real or not.  A filter is utilized 
+			to hide the false peaks from view, rather than making the peak finding thresholds tighter. This is done to prevent 
+			the possibility of real peaks from being discarded; it is easier dealing with false positives than peaks not found.</p>
+			
+			<p><video src="DataProcessing_Media/TAF/1D_FilteringFalsePositives_CT5.31.16.mp4" controls></a></p>
+			<i>Inspection and peak table filtration of false positive peaks in a 1D sample processed with a TAF DP method.</i>
+			
+			<p><video src="DataProcessing_Media/TAF/GCxGC_FilteringFalsePositives_CT5.31.16.mp4" controls></a></p>
+			<i>Inspection and peak table filtration of false positive peaks in a GCxGC sample processed with a TAF DP method.</i>
+			
 		</li>
 		
 	</ol>
