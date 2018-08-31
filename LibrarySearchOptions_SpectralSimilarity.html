@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Library Searching: Spectral Similarity</h1>
+	<h3>Introduction</h3>
+	<p class="content_text">Spectral Similarity Search attempts to associate a sample peak to a library entry 
+	by comparing their spectra.</p>
+	
+	<h3>Procedure</h3>
+	<ol>
+		<li class="content_text"><strong>Enable Spectral Similarity Search</strong>
+			<p><video src="DataProcessing_Media/LibrarySearchOptions/SpectralSimilarity/EnableSpectralSimilaritySearch_CT5.31.16.mp4" controls></a></p>
+			<i>Enabling Spectral Similarity Searching</i>
+		</li>
+		
+		<li class="content_text"><strong>Spectral Similarity Search Parameters</strong>
+		<img class="content_media" src="DataProcessing_Media/LibrarySearchOptions/SpectralSimilarity/SpectralSimilarity_LibrarySearcing_CT5.31.16.png"/>
+		<i>Spectral Similarity Searching Parameters for 1D & GCxGC Samples</i>
+		<p></p>
+		
+		<ul>
+			<li class="content_text"><strong>Maximum Results</strong>: Defines the maximum number of library hits ChromaTOF will 
+			generate for each analyte found and added to the peak table.</li>
+			
+			<li class="content_text"><strong>Minimum & Maximum mass to library search</strong>: Establishes the m/z range ChromaTOF 
+			will include in the spectral comparison of an unknown specturm to a library specturm.</li>
+			
+			<li class="content_text"><strong>Minimum & Maximum molecular weight allowed</strong>: Filters the pool of 
+			library hits based upon the defined AMU range.</li>
+			
+			<li class="content_text"><strong>Relative abundance threshold (0-998)</strong>: Clears all spectral data
+			below the defined relative abundance threshold.  This is threshold is applied to the peak true for the purpose
+			of reducing noise.
+</li>
+			
+			<li class="content_text"><strong>Minimum similarity for matches (0-999)</strong>: The lowest similarity 
+			value that an unknown mass spectrum relative to a library hit must have for that library hit to be 
+			included in the hit table.</li>
+			
+			<li class="content_text"><strong>Minimum similarity before hit is assigned (0-999)</strong>: The lowest similarity value 
+			that an unknown mass spectrum relative to the best library hit must have for an automatic library ID to be assigned to the
+			the peak table.</li>
+			
+			<li class="content_text"><strong>Add the libraries to use for searching below</strong>: Lists the libraries ChromaTOF 
+			will search through when generating a list of library hits for a given analyte.</li>
+			
+			<li class="content_text"><strong>Retention Index Filtering</strong>: This filter compares the 
+			retention index of the chromatographic peak to that of the library hit. If the difference in 
+			retention indexes is greater than the Tolerance value, the hit is filtered out. In order to apply 
+			this filter, retention indexes need to be calculated for the sample peaks. If this filter is 
+			enabled and the peak does not have a retention index, or there is not a comparable library hit 
+			retention index, the hit is retained (not filtered out) because a comparison could not be made.</li>
+			<ul>
+				<li class="content_text"><strong>Filter by Retention Index (check box)</strong>: Enables or disables 
+				the retention index filter.</li>
+				<li class="content_text"><strong>Tolerance</strong>: Enter a value greater than zero for the 
+				retention index Tolerance.</li>
+				<li class="content_text"><strong>Default RI Type</strong>: The RI type, also called the column 
+				class, categorizes GC columns broadly by polarity. Retention indexes are more comparable if they 
+				were obtained from columns of the same type. During filtering the peak’s retention index is 
+				compared to a hit retention index of the same RI type or a similar type when permitted. The 
+				software will attempt to determine the peak’s RI type from the stationary phase of the column in 
+				the sample’s chromatographic (GC) method. If it cannot be determined, then this default RI type 
+				determines which RI value from the hit to compare to the peak’s RI value.</li>
+				<li class="content_text"><strong>Allow estimated RI substitution for non-polar types</strong>: If enabled, 
+				it will use the library hit's estimated value if the sample RI type is std. non-polar or semi-std. non-polar, 
+				and the library hit does not have data of the same type but does have an estimated RI.</li>
+				<li class="content_text"><strong>Use other non-polar column type data if 
+				selected non-ploar type data is absent</strong>: If selected and non-polar type data is absent, 
+				to allow std. non-polar and semi-std. non-polar RIs to be compared to each other. For example 
+				if the sample peak has a semi-std. non-polar RI but the hit only has a std. non-polar RI, 
+				the filter compares those RIs.</li>
+			</ul>
+			</li>
+			
+		</ul>
+		</li>
+		
+		<li class="content_text"><strong>Processing a Sample with Spectral Similarity Searching Enabled</strong>
+		
+		<p><video src="DataProcessing_Media/LibrarySearchOptions/SpectralSimilarity/1D_PF_SpectralSimilarity_CT5.31.16.mp4" controls></a></p>
+		<i>Processing a 1D Sample with Spectral Similarity Searching Enabled</i>
+		
+		<p><video src="DataProcessing_Media/LibrarySearchOptions/SpectralSimilarity/GCxGC_PF_SpectralSimilarity_CT5.31.16.mp4" controls></a></p>
+		<i>Processing a 1D Sample with Spectral Similarity Searching Enabled</i>
+		</li>
+		
+	</ol>
+
+</body> 
+</html>
