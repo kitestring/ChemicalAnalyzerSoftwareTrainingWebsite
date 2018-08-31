@@ -8,7 +8,156 @@
 	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Peak Finding</h1>
 	<h3>Introduction</h3>
-	<p class="content_text">Under Construction</p>
+	<p class="content_text">Peak Finding (PF) is one of two data processing tools that has the 
+	capability of finding analytes within a sample.  PF is a tool used primarily for discovery 
+	work.  It is a qualitative technique to automatically find, create deconvoluted mass spectra, 
+	and integrate all the compounds in a sample that satisfy the user’s peak filtering criteria.  
+	The other method for finding peaks in a sample is Target Analyte Finding which is a data 
+	processing method that searches for a predefined set of analytes in a sample.  Each technique 
+	has a specific purpose, and associated <a target="_blank" href="PF_vs_TAF.html">
+	pros and cons</a>.</p>
+	
+	<h3>Procedure</h3>
+	<ol>
+		<li class="content_text"><strong>Create New PF DP Method</strong>
+			<p>In the videos below a PF DP method is created which utilizes a filter which 
+			discards all peaks outside a retention time range of 825 – 1625 seconds.  This 
+			is defined because analytes outside this range are not analytically significant 
+			in this analysis.  All analytes that are found will be deconvoluted and 
+			their base mass &#xB1 500 ppm will be used for the computation of area, height, 
+			and other peak metrics.  In the GCxGC video, the spectral match required to combine 
+			subpeaks is set to 500.</p>
+			
+			<p><video src="DataProcessing_Media/PeakFinding/1D_CreatePFMethod_CT5.31.16.mp4" controls></a></p>
+			<i>Creating a 1D PF Data Processing Method</i>
+			
+			<p><video src="DataProcessing_Media/PeakFinding/GCxGC_CreatePFMethod_CT5.31.16.mp4" controls></a></p>
+			<i>Creating a GCxGC PF Data Processing Method</i>
+		</li>
+		
+		<li class="content_text"><strong>Peak Finding Parameters</strong>
+
+		<img class="content_media" src="DataProcessing_Media/PeakFinding/PeakFindingParameters_CT.5.31.16.png"/>
+		<i>Peak Finding Parameters for 1D & GCxGC Samples</i>
+		
+		<p></p>
+		
+		<ul>
+			<li class="content_text"><strong>Peak Filtering Table</strong>: The Peak Filtering Table in the Peak Finding 
+			page of the Data Processing method permits users to filter chromatographic peaks reported in the Peak Table. 
+			The filters can limit reporting and library searching of unidentifiable spectra. Spectra may be rendered 
+			unidentifiable by contamination with unrelated signals or by low signal-to-noise, or spectra may contain 
+			insufficient number of signals to identify with confidence.  Different Peak Filtering parameters can be used 
+			for different retention time segments. Retention time segments can be added to the table using the Add button, 
+			and deleted using the Remove button.
+			
+			<ul>
+				<li class="content_text"><strong>Start Time</strong>: The Start Time is the start of the retention time 
+				segment. The end of the segment is the start of the next segment, or the end of the acquisition.</li>
+				<li class="content_text"><strong>Report Peaks</strong>: Report Peaks turns peak reporting On or Off 
+				for the retention time segment.</li>
+				<li class="content_text"><strong>Minimum S/N</strong>: To be retained in the Peak Table, a deconvolved 
+				spectrum must contain at least one signal that meets the specified Minimum Signal-to-Noise threshold. 
+				The Minimum Signal-to-Noise threshold filters only at the level of the Peak Table; it does not affect 
+				which signals are reported within a deconvolved spectrum.</li>
+				<li class="content_text"><strong>Minimum Stick Count</strong>: To be retained in the Peak Table, a 
+				deconvolved spectrum must contain at least as many signals (or “sticks”, from the visual appearance 
+				of centroided spectra) as the Minimum Stick Count threshold. The Minimum Stick Count threshold filters 
+				only at the level of the Peak Table; it does not affect which signals are reported within a deconvolved 
+				spectrum.
+				<p>Spectra that contain only a few sticks are rarely sufficient for confident analyte identification. The 
+				Minimum Stick Count threshold can be used to reject such spectra before library search is performed, thus 
+				reducing data processing time and reducing unidentifiable entries in the peak table. Because the Pegasus BT 
+				records full profile spectra, and because the centroiding algorithm is designed for high sensitivity, the 
+				stick count may exceed the molecular weight of the analyte. Some sticks may correspond to multiply charged 
+				signals in the spectrum, and some may correspond to low-level noise. Setting the Minimum Stick Count threshold 
+				higher than a few tens of sticks is not expected to have practical value in most applications.</p></li>
+			</ul>
+			
+			</li>
+			
+			<li class="content_text"><strong>GCxGC</strong>: Toggles the data processing method to handle 1D or  GCxGC samples.</li>
+			
+			<li class="content_text"><strong>Quantitation signal</strong>: Will be used to set the Peak Table's area, height 
+			and tailing factor.</li>
+			
+			<li class="content_text"><strong>Quantitation mass tolerance</strong>: The quantitation mass tolerance which can be 
+			set in units of Da or ppm.</li>
+			
+		</ul>
+		
+		<img class="content_media" src="DataProcessing_Media/PeakFinding/GCxGC_SubPeakCombining_CT.5.31.16.png"/>
+		<i>GCxGC Subpeak Combining Parameters</i>
+		<p></p>
+		
+		<ul>
+			<li class="content_text"><strong>GCxGC Subpeak Combining</strong>: If GCxGC has been selected on the Peak Finding 
+			page, a GCxGC Subpeak Combining page will be added to the DP method. This page has a section to specify prominent, 
+			common fragments resulting from the use of a derivatizing reagent and a box to specify a mass spectral threshold 
+			requirement for combining subpeaks of the same analyte.</li>
+				<ul>
+				<li class="content_text"><strong>Spectral Match Required to combine</strong>: A match score quantifies how similar 
+				the deconvoluted mass spectrum of subpeak to another.  The more similar the two spectra are the higher their match 
+				value, the range of possible is between 0 and 999.  This parameter sets the threshold of how spectrally similar 
+				two subpeaks have to be to be combined.  When subpeaks are combined there are assigned to the same analyte and 
+				their areas are summed when determining the total area of that analyte.</li>
+				
+				<li class="content_text"><strong>Derivatized Fragments Table</strong>: A derivative or derivative product is 
+				the reaction product of an analyte and a derivatizing reagent. In gas chromatography, derivatization is used 
+				to convert low volatility analytes to more volatile products, which are more amenable to analysis by gas 
+				chromatography. The electron ionization mass spectra of these derivatives generally have common intense mass 
+				fragments that are characteristic of the derivatizing reagent used. This similarity in derivative spectra 
+				complicates the combining of modulated peaks (slices). The following description explains conceptually how the 
+				addition of the common masses of the derivative products to the data processing method improve the results.
+				
+				<p>For GCxGC samples, after deconvolution, all modulations (slices) of a particular analyte are found and 
+				grouped together based on their retention times and spectra. The NIST spectral comparison function is used 
+				to compare the spectra of the modulated peaks. In the NIST algorithm, the more intense masses will affect the 
+				match result more than the less intense masses. Because the common masses of the derivatives are shared among 
+				all the derivatized products and they are usually the most intense masses, they will cause two different 
+				derivatized products to have a very good spectral match and be grouped into one peak when they should not be 
+				grouped together. For this reason, another spectral comparison is performed with the common masses of the 
+				derivatives excluded. Both match values of these comparisons must pass a threshold in order to provide 
+				confidence that the two slices are really from the same compound.</p></li>
+			
+			</ul>
+		</ul>
+		</li>
+		
+		<li class="content_text"><strong>Processing a Sample using Peak Finding</strong>
+			<p>If sample is processed using Peak Finding exclusively, all peaks found in the sample that satisfy the 
+			filtering criteria will be listed in the peak table with their areas, heights, and other peak metrics.  In 
+			the case of GCxGC samples the subpeaks will be combined.  However, since a means for peak identification has 
+			not been included in the data processing method, the peaks found are given a generic peak name. </p>
+			
+			<p>It is often useful to utilize the <a target="_blank" href="DataProcessing_MonitorQueue.html">data processing 
+			monitor & queue</a> when processing using peak finding due to the processing times.</p>
+		
+		<p><video src="DataProcessing_Media/PeakFinding/1D_ProcessSample_CT5.31.16.mp4" controls></a></p>
+		<i>Processing a 1D sample with Peak Finding Only</i>
+			
+		<p><video src="DataProcessing_Media/PeakFinding/GCxGC_ProcessSample_CT5.31.16.mp4" controls></a></p>
+		<i>Processing a GCxGC sample with Peak Finding Only</i>
+		
+		</li>
+		
+		<li class="content_text"><strong>Identifying Peaks Found in a Sample</strong>
+			<p>To identify analytes found in a sample, a data processing method must also one or more tasks that have that 
+			capability.  Below are all the data processing features that include peak identifying capabilities:</p>
+			<ul>
+				<li><a target="_blank" href="QuantitationMethods.html">Quantitations</a></li>
+				<li><a target="_blank" href="ReferenceMethods.html">References</a></li>
+				<li>Semi-Quantitations</li>
+				<li>Library Search Options</li>
+				<ul>
+					<li><a target="_blank" href="LibrarySearchOptions_SpectralSimilarity.html">Spectral Similarity</a></li>
+					<li>Formula</li>
+					<li>Reverse Target</li>
+				</ul>
+			</ul>
+		</li>
+			
+	</ol>
 	
 
 </body> 
