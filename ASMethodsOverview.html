@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Auto Sampler Methods</h1>
+	<h3>Manual Start</h3>
+	<p class="content_text">Manual Start allows the user to prepare the system (for example, 
+	infusions) and then determine when the collection should be started. When the system is 
+	ready to start the acquisition, the Manual Start dialog box appears. Select Start to begin 
+	the acquisition.</p>
+	
+	<img id="content_media" src="MethodBuilding_Media/AS/ManualStart_CT5.31.16.png">
+	
+	<p class="content_text">For Contact Closure, the system will start collection once a signal is received on the 
+	remote interface connection on the back of the instrument.</p>
+
+	<h3>Agilent 7693 and 7650</h3>
+	<p class="content_text">When you select the 7693 and 7650 AS Parameters box on the left 
+	(highlighted in yellow in the following screenshot) the following parameters appear and 
+	are selectable. Edit the following parameters as necessary. Select “Enable Overlapped 
+	Operation” and the autosampler will begin preparing the sample before the GC is ready. 
+	Select “Configure Advanced Parameters” to edit advanced parameters.</p>
+	
+	<img id="content_media" src="MethodBuilding_Media/AS/Agilent7693and7650_CT5.31.16.png">
+	
+	<ol class="content_text">
+		<li class="content_text">Enter the syringe size; this may update some other volume and speed parameters 
+		accordingly.
+		<ul>
+			<li class="content_text">It is recommended to review all parameters after a syringe size is changed 
+			to ensure desired behavior.</li>
+			<li class="content_text">If the Configure Advanced Parameters box is checked, a button will be available 
+			to Use Default Speeds.</li>
+		</ul>
+		</li>
+		
+		<li class="content_text">Set the desired <strong>Pre-Injection Wash</strong> parameters for Solvent A, 
+		Solvent B, and the Sample.
+		<ol type="A">
+			<li class="content_text">For <strong>Repetitions</strong>, set the number of times the sample is 
+			drawn into the syringe and expelled into the assigned waste bottle.</li>
+			<li class="content_text">For <strong>Volume</strong>, select the desired volume from the drop-down 
+			box. Can be set at 10%, 20%, 30%, 40%, and 80%.</li>
+		</ol>
+		<p>The following parameters are available only if the Configure Advanced Parameters box is checked.</p>
+		<ul style="list-style-type:none">
+			<li class="content_text"><strong>Draw Speed</strong>—Enter the desired speed of the syringe plunger during 
+			sample injection. The Draw Speed will automatically be set to a default speed based on the 
+			selected Syringe Size being used.</li>
+			<li class="content_text"><strong>Dispense Speed</strong>—Enter the desired plunger speed for the 
+			solvent ejection if desired. The Dispense Speed will automatically be set to a default 
+			speed based on the selected Syringe Size being used.</li>
+			<li class="content_text"><strong>Viscosity Delay</strong>—Enter the length of pause for viscous samples to 
+			be drawn into the syringe. Can be set between 0 and 7.</li>
+			<li class="content_text"><strong>Depth Offset</strong>—Applicable only for the Sample Parameter. Can be set between 
+			-2 and 30. This value sets the depth of the syringe in mm from the bottom of the sample vial; a 
+			value of 0 is 2 mm from the bottom. This feature is especially helpful for samples with multiple 
+			layers where the sample of interest is not at the normal 2 mm from the bottom of the autosampler 
+			vial.</li>
+		</ul>
+		</li>
+		
+		<li class="content_text">Set the desired Sample Pumps <strong>Injection</strong> parameters.
+		<ul style="list-style-type:none">
+			<li class="content_text"><strong>Repetitions</strong>—Set the number of times the solvent is drawn into the 
+			syringe and expelled into the assigned waste bottle.</li>
+		</ul>
+		<p>The following parameters are available only if the Configure Advanced Parameters box is checked.</p>
+		<ul style="list-style-type:none">
+			<li class="content_text"><strong>Draw Speed</strong>—Enter the desired speed of the syringe plunger during 
+			sample injection. The Draw Speed will automatically be set to a default speed based on the 
+			selected Syringe Size being used.</li>
+			<li class="content_text"><strong>Dispense Speed</strong>—Enter the desired plunger speed for the 
+			solvent ejection if desired. The Dispense Speed will automatically be set to a default 
+			speed based on the selected Syringe Size being used.</li>
+			<li class="content_text"><strong>Viscosity Delay</strong>—Enter the length of pause for viscous samples to 
+			be drawn into the syringe. Can be set between 0 and 7.</li>
+			<li class="content_text"><strong>Depth Offset</strong>—Applicable only for the Sample Parameter. Can be set between 
+			-2 and 30. This value sets the depth of the syringe in mm from the bottom of the sample vial; a 
+			value of 0 is 2 mm from the bottom. This feature is especially helpful for samples with multiple 
+			layers where the sample of interest is not at the normal 2 mm from the bottom of the autosampler 
+			vial.</li>
+		</ul>
+		</li>
+		
+		<li class="content_text">Set the desired Sample <strong>Injection</strong> parameters.
+		<ol class="content_text" type="A">
+			<li class="content_text">For the <strong>Volume</strong>, enter the sample volume amount.</li>
+			<li class="content_text">Set the desired <strong>Air Gap</strong> volume. This is the amount of air separating the 
+			sample from the end of the needle.</li>
+			<li class="content_text">For <strong>Viscosity Delay</strong>, enter the length of pause for viscous samples to be drawn into the 
+			syringe. Can be set between 0 and 7.</li>
+			<li class="content_text">Set the <strong>Pre Dwell</strong> between 0 and 1 minutes. This time is how long the syringe needle remains 
+			in the inlet prior to injection of the sample. This is commonly used when a hot needle injection 
+			is desired in order to reduce discrimination of high boiling compounds and promote volatilization 
+			of the liquid sample in the needle.</li>
+			<li class="content_text">Set the <strong>Post Dwell</strong> between 0 and 1 minutes. This is how long the needle remains in the inlet after the injection.</li>
+			<li class="content_text">Set the <strong>Depth Offset</strong> between -2 and 30. This determines the sampling depth.</li>
+			<li class="content_text">For the <strong>Plunger Speed</strong>, select Fast or Slow.</li>
+		</ol>
+		<p>The following parameters are available only if the Configure Advanced Parameters box is checked.</p>
+		<ul style="list-style-type:none">
+			<li class="content_text"><strong>Draw Speed</strong>—Enter the desired speed of the syringe plunger during 
+			sample injection. The Draw Speed will automatically be set to a default speed based on the 
+			selected Syringe Size being used.</li>
+			<li class="content_text"><strong>Dispense Speed</strong>—Enter the desired plunger speed for the 
+			solvent ejection if desired. The Dispense Speed will automatically be set to a default 
+			speed based on the selected Syringe Size being used.</li>
+		</ul>
+		</li>
+		
+		<li class="content_text">Set the desired <strong>Post-Injection Wash</strong> parameters for Solvent 
+		A and Solvent B.
+		<ol class="content_text" type="A">
+			<li class="content_text">For <strong>Repetitions</strong>, set the number of times the sample is 
+			drawn into the syringe and expelled into the assigned waste bottle.</li>
+			<li class="content_text">For <strong>Volume</strong>, select the desired volume from the drop-down 
+			box. Can be set at 10%, 20%, 30%, 40%, and 80%.</li>
+		</ol>
+		<p>The following parameters are available only if the Configure Advanced Parameters box is checked.</p>
+		<ul style="list-style-type:none">
+			<li class="content_text"><strong>Draw Speed</strong>—Enter the desired speed of the syringe plunger during 
+			sample injection. The Draw Speed will automatically be set to a default speed based on the 
+			selected Syringe Size being used.</li>
+			<li class="content_text"><strong>Dispense Speed</strong>—Enter the desired plunger speed for the 
+			solvent ejection if desired. The Dispense Speed will automatically be set to a default 
+			speed based on the selected Syringe Size being used.</li>
+			<li class="content_text"><strong>Viscosity Delay</strong>—Enter the length of pause for viscous samples to 
+			be drawn into the syringe. Can be set between 0 and 7.</li>
+		</ul>
+		</li>
+		
+	</ol>
+	
+	<h3>L-PAL3</h3>
+	<p class="content_text">L-PAL3 is available only when the corresponding CPK option exists. When the LECO L-PAL3 
+	autosampler is selected, the L-PAL3 box is selectable (highlighted in yellow). Refer to the following screenshot. 
+	Choose and customize the desired injection procedure by completing the following instructions:</p>
+	
+	<img id="content_media" src="MethodBuilding_Media/AS/L_Pal3_CT5.31.16.png">
+	
+	<ol class="content_text">
+		<li class="content_text">Click the “Select the injection procedure” drop-down list, and then select a procedure 
+		from the menu. The procedure parameters are then loaded into a grid.
+		<ul style="list-style-type:none">
+			<li class="content_text">L-PAL3 Injection Procedure templates are provided for Headspace, Liquid, and SPME. 
+			Procedure names denoted with “in tray” will extract the sample from the tray, while those denoted with “using 
+			Agitator” move the vial to the agitator for heating and conditioning prior to extraction.</li>
+		</ul>
+		</li>
+		
+		<li class="content_text">Edit the Value column of the grid to customize the procedure, if desired.</li>
+		
+		<li class="content_text">Select the Prep Ahead checkbox to enable overlapping when feasible. The L-PAL3 
+		will prepare the next sample while the prior sample is being collected.</li>
+		
+		<li class="content_text">If the method is going to be used to collect additional data, select the Update 
+		Configuration button to update the method's internal copy of the L-PAL3 configuration to match the latest 
+		synched configuration. The Update Configuration button will be disabled if the method is already using the 
+		latest synched configuration.</li>
+	</ol>
+	
+	<h3>Rail</h3>
+	<p class="content_text">When Rail is selected, there are three options that are selectable: Liquid, Head Space, 
+	and SPME.</p>
+	
+	<img id="content_media" src="MethodBuilding_Media/AS/Rail_CT5.31.16.png">
+	
+	<h4>Rail: Liquid</h4>
+	<p class="content_text">If Liquid is selected, the following Liquid Cycle Parameters appear when the Liquid 
+	Cycle Parameters box on the left is selected.</p>
+	
+	<img id="content_media" src="MethodBuilding_Media/AS/Rail_Liquid_CT5.31.16.png">
+	
+	<ol class="content_text">
+		<li class="content_text">For <strong>Syringe</strong>, select the drop-down arrow and then select a 
+		syringe from the list. A blank cell means the autosampler is not On or is not connected.</li>
+		<li class="content_text">For <strong>Sample Volume</strong>, enter the sample volume amount in microliters (μL).</li>
+		<li class="content_text">For <strong>Air Volume</strong>, enter the volume of air to aspirate after the syringe needle 
+		is moved out of the sample liquid.</li>
+		<li class="content_text">For <strong>Solvent A Pre-Wash</strong>, enter the number of times solvent A is drawn into 
+		the syringe and expelled into the assigned waste bottle.</li>
+		<li class="content_text">For <strong>Solvent B Pre-Wash</strong>, enter the number of times solvent B is drawn 
+		into the syringe and expelled into the assigned waste bottle.</li>
+		<li class="content_text">For <strong>Sample Pre-Wash</strong>, enter the number of times a sample solution is drawn 
+		into the syringe and expelled into the assigned waste bottle.</li>
+		<li class="content_text">For <strong>Viscosity Delay</strong>, enter the length of pause for viscous samples to be drawn 
+		into the syringe.</li>
+		<li class="content_text">For <strong>Injection Rate</strong>, enter the speed the sample is expelled into the injector.</li>
+		<li class="content_text">For <strong>Pre-Injection Delay</strong>, enter how long the needle is to heat before injection.</li>
+		<li class="content_text">For <strong>Post-Injection Delay</strong>, enter how long the syringe remains in the injector after the plunger has been depressed.</li>
+		<li class="content_text">For <strong>Solvent A Post–Wash</strong>, enter the number of times to rinse the syringe 
+		after sample injection. (Minimizes cross contamination with the next sample.)</li>
+		<li class="content_text">For <strong>Solvent B Post-Wash</strong>, enter the number of times to rinse the sample out of the syringe. 
+		(Minimizes cross contamination with the next sample.)</li>
+		<li class="content_text">For <strong>Fill Volume</strong>, enter a value to control the filling of the syringe. Air bubbles 
+		can remain below the plunger after the first pull up. If the plunger is moved up and down several times, the air bubbles are 
+		worked out; therefore, the syringe can be completely filled even when using very small sample volumes.</li>
+		<li class="content_text">For <strong>Fill Speed</strong>, enter a value to specify the speed of plunger movement (used in all syringe filling operations).</li>
+		<li class="content_text">For <strong>Fill Strokes</strong>, enter the number of fill strokes. All fill strokes, except 
+		the last one, use the selected fill volume. If the selected sample volume is higher than the fill volume, the sample volume is 
+		used for all fill strokes. If zero is selected, the plunger is pulled up only once using the sample volume value.</li>
+	</ol>
+	
+	<h4>Rail: Head Space</h4>
+	<p class="content_text">If Head Space is selected, the following Head Space Cycle Parameters appears when the Head Space 
+	Cycle Parameters box on the left is selected. Also, the Agitator parameters box appears.</p>
+	
+	<img id="content_media" src="MethodBuilding_Media/AS/Rail_HeadSpace_CT5.31.16.png">
+	
+	<ol class="content_text">
+		<li class="content_text">For <strong>Syringe</strong>, select the arrow and select a syringe from the list. A blank 
+		cell means the autosampler is not on or is not connected.</li>
+		<li class="content_text">For <strong>Syringe Temperature</strong>, enter the temperature of the syringe in ºC.</li>
+		<li class="content_text">For <strong>Syringe Flush Time</strong>, enter the syringe flush time in minutes.</li>
+		<li class="content_text">For <strong>Sample Volume</strong>, enter the sample volume amount in milliliters.</li>
+		<li class="content_text">For <strong>Pullup Delay</strong>, enter a delay time in seconds between sample pullup 
+		and ejection while filling the syringe.</li>
+		<li class="content_text">For <strong>Pre-Injection Delay</strong>, enter the time duration in seconds that allows 
+		the needle to heat prior to injection.</li>
+		<li class="content_text">For <strong>Fill Speed</strong>, enter the speed (μL/sec) of the plunger movement used 
+		in all syringe-filling operations.</li>
+		<li class="content_text">For <strong>Injection Speed</strong>, enter the speed (μL/sec) of plunger movement for 
+		sample injection.</li>
+		<li class="content_text">For <strong>Post-Injection Delay</strong>, enter the time duration in seconds that the 
+		syringe is to remain in the injector after the plunger has been depressed.</li>
+		<li class="content_text">For <strong>Agitator</strong>, select the Agitator Box on the left. Select the Use 
+		Agitator checkbox when a sample will be extracted in the incubator. When the checkbox is checked, the following 
+		parameters are available.
+		
+		<img id="content_media" src="MethodBuilding_Media/AS/Rail_Agitator_CT5.31.16.png">
+		<ol class="content_text" type="A">
+			<li class="content_text">For <strong>Incubate Temperature</strong>, enter a value from 30 °C to 200 °C or zero. 
+			Enter zero for sample in tray at ambient temperature without agitation.</li>
+			<li class="content_text">For <strong>Incubate Time</strong>, enter a value from 00:00:00 to 23:59:59. Incubate 
+			time allows the sample to be preheated prior to sampling. The default is 5 minutes.</li>
+			<li class="content_text">For <strong>Agitator Speed</strong>, enter a value in rpm from 100 to 750 rpm to set 
+			the agitator speed during incubation time.</li>
+			<li class="content_text">For <strong>Agitator Speed when Extracting (rpm)</strong>, enter a value in rpm from 
+			100 to 750 rpm to set the agitator speed during extraction of the sample.</li>
+			<li class="content_text">For <strong>Agitator On Time</strong>, enter a value from 0 to 99 seconds. Set to zero 
+			to turn Off agitation during pre-incubation and extraction. The default is 5 seconds.</li>
+			<li class="content_text">For <strong>Agitator Off Time</strong>, enter a value from 0 to 99 seconds.</li>
+		</ol>
+		</li>
+	</ol>
+	
+	<h4>Rail: SPME</h4>
+	<p class="content_text">If SPME is selected, the following SPME Cycle Parameters appears when the SPME Cycle Parameters 
+	box on the left is selected. Also, the Agitator parameters box appears.</p>
+	
+	<img id="content_media" src="MethodBuilding_Media/AS/Rail_SPME_CT5.31.16.png">
+	
+	<ol class="content_text">
+		<li class="content_text">For <strong>Syringe</strong>, select the arrow to select the desired syringe. The entries 
+		that display are user defined names entered on the CTC autosampler. A blank cell means the autosampler is not on 
+		or is not connected.</li>
+		<li class="content_text">For <strong>Action On Injector Wait Exceeded</strong>, select either Abort or Continue to 
+		define the course of action when the SPME needle has waited for the GC to become ready for a longer period of time 
+		than was specified for the maximum injector wait.</li>
+		<li class="content_text">For <strong>Sample Source</strong>, select the drop-down arrow to select the source for 
+		the sample.</li>
+		<li class="content_text">For <strong>Action On Over Incubation</strong>, select the drop-down arrow and select 
+		either Abort or Continue to define the course of action when the sample has incubated longer than the maximum 
+		allowed time.</li>
+		<li class="content_text">For <strong>Derivatizing Agent Extract Time</strong>, enter the time for the Derivation 
+		Agent extract. If a Derivation Agent will not be used, enter zero.</li>
+		<li class="content_text">For <strong>Derivatization Agent Vial Penetration</strong>, enter the total distance the 
+		fiber will extend into the derivatization agent vial. This is the sum of the needle penetration distance and the 
+		fiber extension distance.</li>
+		<li class="content_text">For <strong>Derivatization Agent Vial Penetration-Needle</strong>, enter the distance the 
+		needle will be injected. This is the amount of the total penetration that the needle extends; the rest is fiber 
+		extension. This value must be greater than 10 mm and less than the value entered for the Derivatization Agent Vial 
+		Penetration.</li>
+		<li class="content_text">For <strong>Internal Standard Vial Penetration</strong>, enter the total distance the 
+		fiber will extend into the internal standard vial. This is the sum of the needle penetration distance and the 
+		fiber extension distance.</li>
+		<li class="content_text">For <strong>Internal Standard Vial Penetration-Needle</strong>, enter the distance the needle will be 
+		injected. This is the amount of the total penetration that the needle extends; the rest is fiber extension. 
+		This value must be greater than 10 mm and less than the value entered for the Internal Standard Vial Penetration.</li>
+		<li class="content_text">For <strong>Sample Extract Time</strong>, enter a value from 00:00:10 to 23:59:59 minutes. 
+		This is the amount of time desired for the SPME fiber to be exposed to the sample.</li>
+		<li class="content_text">For <strong>Sample Vial Penetration</strong>, enter the total distance the fiber will extend into 
+		the sample vial. This is the sum of the needle penetration distance and the fiber extension distance.</li>
+		<li class="content_text">For <strong>Sample Vial Penetration – Needle</strong>, enter the distance the needle will be 
+		injected. This is the amount of the total penetration that the needle extends; the rest is fiber extension. This value 
+		must be greater than 10 mm and less than the value entered for the Sample Vial Penetration.</li>
+		<li class="content_text">For <strong>Injector Penetration</strong>, enter the total distance the fiber will extend 
+		into the injector (the distance from the top of the injector nut to the end of the fiber). The injector penetration 
+		is the sum of the needle penetration distance and the fiber extension distance.</li>
+		<li class="content_text">For <strong>Injector Penetration-Needle</strong>, enter the distance the needle will be injected. 
+		This is the amount of the total penetration that the needle extends; the rest is fiber extension. This value must be greater 
+		than 10 mm and less than the value entered for the Injector Penetration.</li>
+		<li class="content_text">For <strong>Desorb Time</strong>, enter a value from 00:00:10 to 23:59:59 minutes. Desorb 
+		Time indicates the time in injector.</li>
+		<li class="content_text">For <strong>Fiber Bakeout Time</strong>, enter a value from 00:00:00 to 23:59:59 minutes. 
+		Fiber Bakeout Time indicates the time for baking out the fiber after desorption in the optional bakeout station.</li>
+		<li class="content_text">For <strong>Fiber Bakeout Penetration</strong>, enter the total distance the fiber will 
+		extend for the fiber bakeout. This is the sum of the needle penetration distance and the fiber extension distance.</li>
+		<li class="content_text">For <strong>Fiber Bakeout Penetration-Needle</strong>, enter the distance the needle will 
+		be injected. This is the amount of the total penetration that the needle extends; the rest is fiber extension. 
+		This value must be greater than zero mm and less than the value entered for the Fiber Bakeout Penetration.</li>
+		<li class="content_text">For <strong>Maximum Injector Wait</strong>, enter the maximum length of time for the 
+		SPME needle to wait for the GC to be ready. The default is 30 seconds.</li>
+		<li class="content_text">For <strong>Maximum Over Incubation</strong>, enter a value to define the maximum 
+		length of time for a sample to incubate in the agitator. The default is 10 seconds.</li>
+		<li class="content_text">For <strong>Agitator</strong>, select the Agitator Box on the left. Select the Use 
+		Agitator checkbox when a sample will be extracted in the incubator. When the checkbox is checked, the following 
+		parameters are available.
+		
+		<img id="content_media" src="MethodBuilding_Media/AS/Rail_Agitator_CT5.31.16.png">
+		<ol class="content_text" type="A">
+			<li class="content_text">For <strong>Incubate Temperature</strong>, enter a value from 30 °C to 200 °C or zero. 
+			Enter zero for sample in tray at ambient temperature without agitation.</li>
+			<li class="content_text">For <strong>Incubate Time</strong>, enter a value from 00:00:00 to 23:59:59. Incubate 
+			time allows the sample to be preheated prior to sampling. The default is 5 minutes.</li>
+			<li class="content_text">For <strong>Agitator Speed</strong>, enter a value in rpm from 100 to 750 rpm to set 
+			the agitator speed during incubation time.</li>
+			<li class="content_text">For <strong>Agitator Speed when Extracting (rpm)</strong>, enter a value in rpm from 
+			100 to 750 rpm to set the agitator speed during extraction of the sample.</li>
+			<li class="content_text">For <strong>Agitator On Time</strong>, enter a value from 0 to 99 seconds. Set to zero 
+			to turn Off agitation during pre-incubation and extraction. The default is 5 seconds.</li>
+			<li class="content_text">For <strong>Agitator Off Time</strong>, enter a value from 0 to 99 seconds.</li>
+		</ol>
+		</li>
+	</ol>
+	
+	
+	
+</body> 
+</html>
