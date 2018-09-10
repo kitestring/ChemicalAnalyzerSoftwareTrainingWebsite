@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Quality Control Methods</h1>
+	<h3>Introduction</h3>
+	<p class="content_text">The Quality Control (QC) method controls the 
+	setup for automatically scheduling instrument optimization, detector drift, 
+	instrument checks, and sample runs.</p>
+	
+	<h3>Method Description</h3>
+	<img id="content_media" src="MethodBuilding_Media/QC/Events_CT5.31.16.png">
+	<ul class="content_text">
+		<li class="content_text">The Events tab for the QC Method lists events and what actions they will 
+		automatically trigger if the QC Method is specified in the Acquisition Queue.</li>
+		
+		<li class="content_text">For each section on the Event page, the user can select the desired course of 
+		action by either selecting from the drop-down list or setting the checkbox(es) to 
+		selected (will run) or cleared (will not run). Even though the settings can be 
+		changed, using the default Events settings is highly recommended.</li>
+		
+		<li class="content_text">On the other pages of the method, the user can specify when the tune should be 
+		scheduled (based on hours and/or the number samples run) and what Acquisition Queue 
+		settings should be used when the tune actually runs.</li>
+		
+		<li class="content_text">For the Selected Parameters tabs, select the checkbox for hours and/or samples.
+		<ul>
+			<li class="content_text">Select hours to specify the maximum amount of time that has passed since the last 
+			check was performed. If more than the specified time has elapsed, the check is automatically 
+			scheduled prior to running the next sample.</li>
+			
+			<li class="content_text">Select samples to specify the maximum number of samples that have been collected since 
+			the last check was performed. Once the maximum number of samples has been reached, the 
+			check is automatically scheduled prior to running the next sample.</li>
+			
+			<li class="content_text">Complete the Acquire table by selecting the desired folder and name, and optionally 
+			specify methods to use when the tune runs. These values will be used in the Acquisition 
+			Queue.</li>
+		</ul>
+		</li>
+		
+		<li class="content_text">Leak Check has the following additional test parameters:
+		<ul>
+			<li class="content_text">Select the checkbox next to Open Tune Compound Valve to allow the tune compound to 
+			enter the system during the leak check.</li>
+			<li class="content_text">Fill out the Criteria table with the criteria that must be satisfied in order for 
+			the leak check to pass. The leak check is for the vacuum chamber of the mass spectrometer.</li>
+		</ul>
+		</li>
+		
+		<li class="content_text">Both the carrier gas used and the state of the tune compound valve checkbox (On or Off) 
+		should be taken into account when setting up criteria for the leak check.</li>
+	</ul>
+
+</body> 
+</html>
