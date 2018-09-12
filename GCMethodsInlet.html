@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Gas Chromatograph Methods: Inlet</h1>
+	
+	<img class="content_media" src="MethodBuilding_Media/GC/Inlet_CT5.31.16.png"/>
+	
+	<h3>Inlet Configuration</h3>
+	
+	<ol>
+		<li class="content_text">Select the Front Inlet Type and/or Back Inlet type depending on the capillary 
+		configuration by selecting the drop-down arrow and making a selection from the list.
+		<p>Inlet Types:</p>
+		<ul>
+			<li class="content_text">Select Split/Splitless, PTV, or On-Column depending on requirements. Refer 
+			to the Agilent User Information CD for further information about these inlets.</li>
+			<li class="content_text">Select Gerstel when the Gerstel CIS4 inlet is installed. When this inlet is 
+			selected, the inlet temperature parameters are not downloaded to the GC. The Gerstel external controller 
+			controls the inlet temperature.</li>
+			<li class="content_text">Select None when a non-supported inlet or no inlet is installed.</li>
+		</ul>
+		</li>
+		
+		<li class="content_text">Select the Front Inlet Mode and/or Back Inlet Mode depending on the capillary 
+		configuration by choosing a selection from the list. Inlet Mode is not active if either On-Column or None 
+		is selected for Inlet Type.
+		<p>Inlet Types:</p>
+		<ul>
+			<li class="content_text">Select Splitless for trace concentrations. Splitless operates with the split 
+			vent closed.</li>
+			<li class="content_text">Select Split when only part of the sample goes onto the column. Split operates 
+			with the split vent open.</li>
+			<li class="content_text">Select Pulsed Splitless to increase pressure in the inlet during a splitless 
+			injection.</li>
+			<li class="content_text">Select Pulsed Split to increase pressure in the inlet during a split injection.</li>
+			<li class="content_text">Select Solvent Vent for a splitless injection with the split vent open to flush 
+			solvent from the inlet. Solvent Vent is available with a PTV inlet.</li>
+		</ul>
+		</li>
+		
+		<li class="content_text">If both columns are defined, select the Active Inlet Location. If only one column is 
+		defined, the software automatically selects it, and this option is not displayed.</li>
+		<ul style="list-style-type:none">
+			<li class="content_text">If both columns are defined, there will be separate Front and Back tabs for the Inlet 
+			page, where information for the respective inlet can be entered. Temperature affects all plumbed inlets and 
+			requires flow in order to avoid damage. If both inlets are plumbed, remember to configure the inactive inlet as 
+			well as the active inlet.</li>
+		</ul style="list-style-type:none">
+		
+	</ol>
+	
+	<h3>Flow Mode</h3>
+	<p class="content_text">If the following parameter values are not entered correctly, then the column and split flows 
+	calculated will be inaccurate.  When the pressure/flow configuration is valid, a green icon appears with a message that 
+	displays “No problems detected with the pressure/flow.” When the pressure/flow configuration is not valid, a red icon 
+	appears with an error message that displays the cause of the problem.</p>
+	
+	<h3>Corrected Constant Flow Via Pressure Ramps Checkbox</h3>
+	<p class="content_text">Select Corrected Constant Flow when using one very short column or when using a multi-capillary 
+	configuration. When the checkbox is selected, enter the desired column flow. The software automatically adjusts all 
+	settings. Verify the column configuration is entered correctly.  Clear the checkbox to select one of the column modes, 
+	which are explained as follows.</p>
+	
+	<h3>Column Modes</h3>
+	
+	<ul>
+		<li class="content_text">Select <strong>Constant Pressure</strong> and then complete the front inlet and/or back 
+		inlet pressure table, depending on whether or not column flow path 2 is selected. In the table, enter the pressure 
+		for the chromatographic run to maintain the column pressure at the head of the column throughout the run. As the 
+		gas viscosity changes, mass flow rate changes, but the gauge pressure does not change.</li>
+		<li class="content_text">Select <strong>Constant Flow</strong> and then complete the front inlet flow and/or back 
+		inlet flow, depending on whether or not column flow path 2 is selected. In the table, enter the flow rate for the 
+		carrier gas through the column to maintain a constant flow rate of the carrier gas in the column throughout the 
+		run. As the gas viscosity changes due to a temperature program, the column head pressure is adjusted to keep the 
+		flow constant. The flow will only be accurate for a single column >5m and one temperature zone. With the Constant 
+		Flow mode, the gas flow through the column is supposed to be constant, but the GC may not correctly calculate a 
+		constant flow due to a number of enhanced column configurations supported by ChromaTOF®. Corrected constant flow 
+		takes these configurations into account.</li>
+		<li class="content_text">Select <strong>Ramped Flow</strong> to vary the flow rate in the column during the run 
+		according to the defined flow program. Complete the Flow Rate Program Table to set the parameters that control the 
+		flow rate and timing of flow rate in column. For the Initial Flow, enter the beginning flow rate for the carrier 
+		gas through the column; for Time at Initial Flow, enter the length of time flow rate stays at initial flow before 
+		beginning the programmed flow rate changes.</li>
+		<li class="content_text">Select <strong>Add</strong> to insert a ramping step to the table.</li>
+		<li class="content_text">Select <strong>Remove</strong> to delete a ramping step from the table.</li>
+		<li class="content_text">Select <strong>Ramped Pressure</strong> to vary column head gauge pressure during the 
+		run according to the defined program. Complete the Pressure Program Table to set the parameters that control the 
+		pressure and timing of pressure in column. The pressure program is limited to three steps.</li>
+		<li class="content_text">Select <strong>Add</strong> to insert a ramping step to the table.</li>
+		<li class="content_text">Select <strong>Remove</strong> to delete a ramping step from the table.</li>
+	</ul>
+	
+	<h3>Constant Flow Correction</h3>
+	
+	<p class="content_text">The following section provides additional information about the flow modes when a column 
+	configuration other than the standard GC column configuration is used.</p>
+	
+	<p class="content_text">The four flow modes of Constant Flow, Ramped Flow, Constant Pressure, and Ramped Pressure 
+	are based on the flow control capabilities of the Agilent GC. The control of flow by the Agilent GC is based on the 
+	dimensions (length and inner diameter) of a single capillary, GC oven temperature, and inlet and outlet pressures. 
+	However, depending on the capillary dimensions and the effect of the transfer line on flow, the flow calculated by 
+	the GC can have significant error. This error is in accuracy and not precision of flow control. Even with the accuracy 
+	error, the flow control of the Agilent GC will still be very good.</p>
+	
+	<p class="content_text">For conventional GC, the error in flow is quite small and not significant, which means the 
+	Agilent GC flow modes are appropriate in typical single-column situations. In order for the GC to control flow accurately 
+	throughout the chromatographic run, all of the following must be true:</p>
+	
+	<ul>
+		<li class="content_text">In the capillary configuration, all capillaries are located in the GC oven.</li>
+		<li class="content_text">The total length of the capillaries exceeds 5 meters.</li>
+		<li class="content_text">The GCxGC option is not selected.</li>
+		<li class="content_text">A flow combiner is not in use.</li>
+		<li class="content_text">All capillaries are the same ID.</li>
+	</ul>
+	
+	<p class="content_text">In the case where any of the previous requirements are not met, the GC will only accurately set 
+	the flow at the start of a run. In this case it is more appropriate to use Corrected Constant Flow Via Pressure Ramps.</p>
+	
+	<p class="content_text">The location of each capillary must be explicitly specified in the capillary configuration.</p>
+	
+	<h3>Single Column Configuration</h3>
+	
+	<ul style="list-style-type:none">
+		<li><strong>Constant Flow Mode</strong></li>
+		<li class="content_text">The Agilent GC flow modes are appropriate for single column configurations >5m (for example, 
+		only a single column is specified in the capillary configuration table and no transfer line is specified). The ChromaTOF 
+		software downloads column dimensions entered, and the GC calculates column flow and split flow based on the column 
+		dimensions, oven temperature, and split ratio specified.</li>
+		
+		<li><strong>Corrected Constant Flow Via Pressure Ramps Mode</strong></li>
+		<li class="content_text">This mode approximates constant flow by linear pressure ramps based on the capillary configuration 
+		table. This mode is recommended in general whenever the multiple capillaries are of different ID and/or in different temperature 
+		zones. An equivalent column length is downloaded to the GC so that the GC calculates accurate column and split flows at initial 
+		conditions. The pressure program then approximates constant flow throughout the temperature program.</li>
+		<li class="content_text">This mode is not necessary for single column configurations unless a very short column is used 
+		(i.e., 5 meters or less). When a very short column is used, the short portion of column in the transfer line becomes a 
+		significant part of the restriction at the high transfer line temperature when the oven temperature is low. Using the constant 
+		column flow mode of the Agilent GC can result in an initial flow error of >10% when the oven is at 40 °C and the column is 2 m. 
+		This error decreases to zero as the oven temperature goes to the temperature of the transfer line. This error also increases as 
+		the column becomes shorter. This error is in flow accuracy and not precision. Even with the flow error, precision is very good 
+		and will provide good retention time reproducibility.</li>
+		<li class="content_text">There are conditions under which this mode may be disabled. These conditions include the following 
+		though other situations are possible:</li>
+		<ul>
+			<li class="content_text">More than three pressure ramps are required. A maximum of three pressure ramps is possible. To 
+			reduce the number of pressure ramps, reduce the number of temperature ramps and/or temperature holds of different lengths 
+			for the multiple temperature zones.</li>
+			<li class="content_text">An incorrect column configuration that will not allow the software to calculate pressures to 
+			approximate a flow.</li>
+			<li class="content_text">When a real, physically meaningful result cannot be calculated. Examples of situations where 
+			real, physically meaningful results cannot be calculated would be cases involving the optional flow combiner where certain 
+			flows or pressures cannot be achieved because of the other pressures or flows specified. A specific example, though other 
+			examples exist, would be when a subambient pressure in one of the inlets would be required.</li>
+		</ul>
+	</ul>
+	
+	
+	<h3>Multi-Capillary Configurations</h3>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text">Configurations with multiple capillaries may use the GC flow modes if all capillaries located in 
+		the GC oven are the same internal diameter. However, when more than one capillary is used in a column configuration, the 
+		Corrected Constant Flow Mode is typically recommended.</li>
+		<li class="content_text">The capillary configuration is specified in the <a target="_blank" href="System_ColumnSetup.html">
+		Column Configuration Table</a> available from Instrument on the System ribbon bar.</li>
+		<li class="content_text">If the GCxGC option is selected, the definition in the capillary configuration table must agree 
+		with whether the secondary oven checkbox is selected or cleared in the GC Method</li>
+		<li class="content_text">For all multi-capillary configurations, an equivalent column length is calculated for all flow 
+		modes (this is different from a single column) so that the split flow is accurately calculated from an accurate column 
+		flow and the entered split ratio. The user will see this equivalent length for the column dimensions displayed on the GC. 
+		The equivalent length is based on all of the capillaries entered in the Column Configuration Table and their temperatures.</li>
+	</ul>
+	
+	
+	<h3>Actual Flow in Different Modes</h3>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text">Constant Flow Mode Flow is accurate at the beginning because of the equivalent length column 
+		downloaded. This is different from single column constant flow mode.  As the temperature increases, the actual flow 
+		increases relative to the target flow. The magnitude of the error in flow will depend on the lengths, inner diameters (ID), 
+		temperatures of the columns, and capillary transfer lines.</li>
+		<li class="content_text">If the multiple capillaries are the same ID, total length > 5 m, and their temperatures are 
+		the same, the error will be very small. If one of the columns is short with a smaller ID (typical GCxGC) and/or the 
+		temperature zones are very different, the error will be large.</li>
+		<li class="content_text">Ramped Flow Mode offers the same behavior as constant flow mode, but flow is programmed.</li>
+		<li class="content_text">Flow with Constant Pressure Mode depends on overall restriction of combined columns and transfer 
+		line. An equivalent column is calculated for the initial conditions. This allows the GC to calculate accurate column 
+		and split flows at the initial conditions.</li>
+		<li class="content_text">With Ramped Pressure Mode, an equivalent column is calculated for the initial conditions the 
+		same as for the constant pressure mode so that the initial column and split flows are accurate.</li>
+	</ul>
+	
+	
+	
+	<h3>Split/Purge</h3>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text">The following section explains the different areas of Split/Purge that are active depending on the 
+		conditions entered for the Inlet Mode located in Inlet Configuration.</li>
+		
+		<li class="content_text">If <strong>Splitless</strong> is selected for the Inlet Mode, enter parameters for column 1 and/or 2 and the front 
+		and/or back inlet, depending on the capillary configuration.
+		<ol>
+			<li class="content_text">For the Inlet Purge Time, enter the time after the beginning of the run when the purge valve 
+			opens.</li>
+			<li class="content_text">For the Inlet Purge Flow, enter the rate of flow from the purge vent.</li>
+			<li class="content_text">For the Inlet Total Flow, enter the actual flow rate to the inlet during a Pre-Run and a run 
+			before the purge time.</li>
+			<li class="content_text">For the Gas Saver, select Yes or No for Column 1 Front Inlet Gas Saver and/or Column 2 Back 
+			Inlet Gas Saver. Select No, and the flow of carrier gas will not be reduced; select Yes to reduce the flow of carrier 
+			gas into the inlet and out of the split vent after the completion of the injection. This does not alter the carrier 
+			gas flow through the column. When Yes is selected, Gas Saver Flow and Gas Saver Time are available.
+			<ol type="A">
+				<li class="content_text">For Gas Saver Flow, enter the amount of carrier gas used in the inlet.</li>
+				<li class="content_text">For Gas Saver Time, enter the time after injection when the carrier gas flow drops to the 
+				gas saver flow amount.</li>
+			</ol>
+			</li>
+		</ol>
+		</li>
+		
+		<li class="content_text">If <strong>Split</strong> is selected for the Inlet Mode, enter parameters for column 1 and/or column 2 and the 
+		front and/or back inlet, depending on the capillary configuration.
+		<ol>
+			<li class="content_text">For the Split Ratio, enter the ratio of split flow to column flow.</li>
+			<li class="content_text">For Split Flow, enter the rate of flow from the split/purge vent.</li>
+			<li class="content_text">For Total Flow, enter the total flow rate into the inlet. Total flow rate into the inlet. 
+			Total Flow is the sum of the split flow, column flow, and septum purge flow. When the total flow is changed, the 
+			split ratio and split flow change while the column flow and pressure remain the same.</li>
+			<li class="content_text">For the Gas Saver, select Yes or No for Column 1 Front Inlet Gas Saver and/or Column 2 Back 
+			Inlet Gas Saver. Select No, and the flow of carrier gas will not be reduced; select Yes to reduce the flow of carrier 
+			gas into the inlet and out of the split vent after the completion of the injection. This does not alter the carrier 
+			gas flow through the column. When Yes is selected, Gas Saver Flow and Gas Saver Time are available.
+			<ol type="A">
+				<li class="content_text">For Gas Saver Flow, enter the amount of carrier gas used in the inlet.</li>
+				<li class="content_text">For Gas Saver Time, enter the time after injection when the carrier gas flow drops to the 
+				gas saver flow amount.</li>
+			</ol>
+			</li>
+		</ol>
+		</li>
+		
+		<li class="content_text">If <strong>Pulsed Splitless</strong> is selected for the Inlet Mode, enter parameters for column 1 and/or column 2 
+		and the front and/or back inlet, depending on the capillary configuration.</li>
+		
+		<li class="content_text">For Purge Time, enter the time after the beginning of the run when the purge valve opens.
+		<ol>
+			<li class="content_text">For Purge Flow, enter the rate of flow from the purge vent.</li>
+			<li class="content_text">For Total Flow, enter the actual flow rate to the inlet during a Pre-Run and a run before 
+			purge time.</li>
+			<li class="content_text">For Pulse Pressure, enter the inlet pressure during pulse duration.</li>
+			<li class="content_text">For Pulse Duration, enter the time from run start to when pulse pressure ends.</li>
+			<li class="content_text">For the Gas Saver, select Yes or No for Column 1 Front Inlet Gas Saver and/or Column 2 Back 
+			Inlet Gas Saver. Select No, and the flow of carrier gas will not be reduced; select Yes to reduce the flow of carrier 
+			gas into the inlet and out of the split vent after the completion of the injection. This does not alter the carrier 
+			gas flow through the column. When Yes is selected, Gas Saver Flow and Gas Saver Time are available.
+			<ol type="A">
+				<li class="content_text">For Gas Saver Flow, enter the amount of carrier gas used in the inlet.</li>
+				<li class="content_text">For Gas Saver Time, enter the time after injection when the carrier gas 
+				flow drops to the gas saver flow amount.</li>
+			</ol>
+			</li>
+		</ol>
+		</li>
+		
+		<li class="content_text">If <strong>Pulsed Split</strong>, is selected for the inlet mode, enter parameters for column 1 and/or column 
+		2 and the front and/or back inlet, depending on the capillary configuration.
+		<ol>
+			<li class="content_text">For Split Ratio, enter the ratio of split flow to column flow.</li>
+			<li class="content_text">For Split Flow, enter the rate of flow from the split/purge vent.</li>
+			<li class="content_text">For Total Flow, enter the total flow rate into the inlet. Total flow is the sum of the 
+			split flow, column flow, and septum purge flow. When the total flow is changed the split ratio and split flow 
+			change while the column flow and pressure remain the same.</li>
+			<li class="content_text">For Pulse Pressure, enter the inlet pressure during pulse duration.</li>
+			<li class="content_text">For Pulse Duration, enter the time from run start to when pulse pressure ends.</li>
+			<li class="content_text">For the Gas Saver, select Yes or No for Column 1 Front Inlet Gas Saver and/or Column 2 Back Inlet 
+			Gas Saver. Select No, and the flow of carrier gas will not be reduced; select Yes to reduce the flow of carrier 
+			gas into the inlet and out of the split vent after the completion of the injection. This does not alter the 
+			carrier gas flow through the column. When Yes is selected, Gas Saver Flow and Gas Saver Time are available.
+			<ol type="A">
+				<li class="content_text">For Gas Saver Flow, enter the amount of carrier gas used in the inlet.</li>
+				<li class="content_text">For Gas Saver Time, enter the time after injection when the carrier gas flow drops 
+				to the gas saver flow amount.</li>
+			</ol>
+			</li>
+		</ol>
+		</li>
+		
+		<li class="content_text">If <strong>Solvent Vent</strong> is selected for the Inlet Mode, enter parameters for column 1 and/or column 2 
+		and the front and/or back inlet, depending on the capillary configuration.
+		<ol>
+			<li class="content_text">For Solvent Vent Time, enter the time after sample injection when the split vent is open 
+			to vent solvent.</li>
+			<li class="content_text">For Solvent Vent Flow, enter the Flow rate out of the split vent during Solvent Vent Time.</li>
+			<li class="content_text">For Solvent Vent Pressure, enter the inlet pressure during Solvent Vent Time.</li>
+			<li class="content_text">For the Gas Saver, select Yes or No for Column 1 Front Inlet Gas Saver and/or Column 2 
+			Back Inlet Gas Saver. Select No, and the flow of carrier gas will not be reduced; select Yes to reduce the flow 
+			of carrier gas into the inlet and out of the split vent after the completion of the injection. This does not alter 
+			the carrier gas flow through the column. When Yes is selected, Gas Saver Flow and Gas Saver Time are available.
+			<ol type="A">
+				<li class="content_text">For Gas Saver Flow, enter the amount of carrier gas used in the inlet.</li>
+				<li class="content_text">For Gas Saver Time, enter the time after injection when the carrier gas flow drops 
+				to the gas saver flow amount.</li>
+			</ol>
+			</li>
+		</ol>
+		</li>
+	</ul>
+	
+	
+	<h3>Agilent 7890 Switch Mode</h3>
+	<p class="content_text">When using the Agilent 7890 GC, if the Inlet Mode is available and not currently set to Split or Pulsed 
+	Split, there is an option to set the septum purge mode to Standard or Switched mode. Switched mode shuts off the septum purge 
+	flow, increasing the amount on column.</p>
+	
+</body> 
+</html>

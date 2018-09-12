@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Gas Chromatograph Methods: Columns</h1>
+	
+	<img class="content_media" src="MethodBuilding_Media/GC/Columns_CT5.31.16.png"/>
+	
+	<h3>Capillary Configuration</h3>
+	<p class="content_text">When a new GC Method is created the Capillary Configuration will be imported from
+	the <a target="_blank" href="System_ColumnSetup.html">System Column Configuration</a> which is also referred to
+	as the global column configuration.  Use the Capillary Configuration Table to enter a capillary configuration 
+	that corresponds with a method; however, ChromaTOF will not allow GC methods to be used that do not match the
+	global column configuration.  When the capillary configuration is valid, a green icon displays with a message 
+	that displays “No problems detected with column configuration.” When the column configuration is not valid, a 
+	red icon will display with an error message that states the cause of the problem.</p>
+	
+	<ul>
+		<li class="content_text">The chromatograph’s front inlet should use Column/Path 1, and the back inlet should 
+		use Column/Path 2. Do not override these settings using the front panel.</li>
+		<li class="content_text">If pressure issues occur, verify that Column/Path 1 is set to the front inlet, and 
+		Column/Path 2 is set to the back inlet.</li>
+		<li class="content_text">To enable a second column path, select the Enable Flow Path 2 checkbox and then edit 
+		the Column Configuration table for Flow Path 2.</li>
+	</ul>
+	
+	<h3>Collection Mode</h3>
+	<p class="content_text">If the system has GCxGC hardware installed you have the option to acquire data in GCxGC 
+	or in 1D mode.  Make the desired selection to configure the GC method.</p>
+	
+	<h3>Carrier Gas</h3>
+	<p class="content_text">For the carrier gas, select the type of carrier gas by selecting the drop-down arrow 
+	and then selecting a type of gas from the list.</p>
+
+</body> 
+</html>
