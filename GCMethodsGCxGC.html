@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Gas Chromatograph Methods: GCxGC</h1>
+	
+	<img class="content_media" src="MethodBuilding_Media/GC/GCxGC_LN2_CT5.31.16.png"/>
+	
+	<h3>GCxGC Timing Parameters</h1>
+	
+	<ol>
+		<li class="content_text">In the GCxGC page, for the pre-cool and purge cold jet time, enter a time 
+		of 0 to 10 seconds during which the cold jet valves are opened at the time of injection to cool the 
+		cold jets. A time of zero seconds should be sufficient for long column dead times. For short column 
+		dead times, volatile components may elute before the modulator can establish good cold flow, then a 
+		time of 10 seconds should be sufficient to establish low cold jet temperatures.</li>
+		<li class="content_text">Enter parameters for the Second Dimension Time (Modulation Period) and the 
+		hot pulse time, explained as follows. The Second Dimension Time and the Hot Pulse Time can be varied 
+		with the 709-802-355 CF Modulator Oven Assembly and with the 709-802-353 LN2 Modulator Oven Assembly. 
+		These parameters can be varied throughout a run. A table is provided for these parameters. In each 
+		line of the table enter the end time for the specified modulation period and hot pulse time. Refer 
+		to the following example for an example table. The parameters for your specific application may not 
+		be the same as those shown in the example.</li>
+		<ol type="A">
+			<li class="content_text">The factors relating to the Second Dimension Time are column length, 2nd 
+			column stationary phase, and 2nd column temperature. Enter the Second Dimension Time in seconds 
+			in the table.</li>
+			<li class="content_text">Enter the length of time in seconds for the hot pulse.  It is recommended 
+			to adjust the hot pulse time according to desired results.  The default hot pulse time is good for 
+			general use; however, when modulation periods are long and compounds are of low volatility, 
+			increasing the hot pulse time until the value for the cooltime between stages is between 0.4 and 1 
+			sec is recommended. Keep in mind that high boiling point compounds require less cooling so the 
+			cooltime between stages can be less as compared to high volatility compounds. For short 2nd 
+			dimension periods, shorter hot pulse times are more appropriate; for longer 2nd dimension periods, 
+			longer hot pulse times are more appropriate. For samples containing analytes covering a wide range 
+			of volatility, the hot pulse must be long enough to reinject the least volatile compounds, but 
+			short enough that the cooling is sufficient to trap the most volatile compounds. Another useful 
+			rule for selecting a hot pulse time is that the hot pulse time should be 30% of the modulation 
+			period (second dimension separation time). If the hot pulse time is too short, material may not 
+			be completely volatilized in the modulator during the hot pulse and material will remain in the 
+			modulator to be released in subsequent cycles, resulting in apparent peak tailing in the first 
+			chromatographic dimension. The hot pulse time must be less than 50% of the modulation period in 
+			order to have a positive cold pulse time. Shorter hot pulses may be used to improve trapping of 
+			highly volatile compounds, while longer hot pulses may be appropriate for high boiling point 
+			compounds that may tend to be retained in the modulator. Problems with retained compounds may 
+			also be addressed by a higher modulator temperature if allowed by the column maximum temperature.</li>
+			<li class="content_text">The Cooling Time Between Stages displays the length of time (in 
+			seconds) the cryocooling will be on for one stage before the start of the hot pulse on the 
+			other stage. This is the time one stage is cooled before the sample is released from the other 
+			stage. Typically, a cool time of 0.5 sec is sufficient, but for short 2nd dimension periods, 
+			it can be smaller. For very volatile components longer cooling times may be required. This is 
+			a calculated field based on the value entered for the hot pulse time; therefore, you cannot 
+			enter a value in this field. Avoid entering a value so high for the hot pulse time that a 
+			negative number appears for the Cooling Time Between Stages.</li>
+		</ol>
+		<li class="content_text">Pre-cool and Purge Cold Jet is the time both cold jets are open before 
+		modulation starts. This is generally not needed; however, for fast separations with early eluting 
+		peaks, this time can cool the cold jets more quickly at the start.</li>
+	</ol>
+	
+	<h3>Consumable-Free Modulator</h1>
+	
+	<img class="content_media" src="MethodBuilding_Media/GC/GCxGC_Chiller_CT5.31.16.png"/>
+	
+	<ol>
+		<li class="content_text">For the consumable-free modulator option, select the Chiller Enabled 
+		checkbox to allow for software control of the FTS Immersion Cooler.</li>
+		<li class="content_text">For the consumable-free modulator option, for Chiller Temperature, 
+		enter a parameter depending on the volatility of compound. The maximum is typically -80 °C.</li>
+	</ol>
+	
+</body> 
+</html>

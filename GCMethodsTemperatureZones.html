@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Gas Chromatograph Methods: Temperature Zones</h1>
+	
+	<img class="content_media" src="MethodBuilding_Media/GC/TemperatureZones_CT5.31.16.png"/>
+	
+	<h3>Inlet Temperature</h3>
+	<ul style="list-style-type:none">
+		<li class="content_text">Different areas of Inlet Temperature are active and visible depending on the type selected for the 
+	front and/or back inlet in the <a target="_blank" href="GCMethodsInlet.html">Inlet Configuration</a>. When None is selected 
+	as the Inlet Type, the Inlet Temperature section will not display.</li>
+	</ul>
+	
+	
+	<h3>Oven Tracking</h3>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text">When On-Column is selected, the Oven Tracking checkbox is available. Select the track Oven Temperature 
+	checkbox and the inlet temperature automatically stays 3 °C higher than the oven temperature throughout the run. Select the Do 
+	Not Track Oven Temperature checkbox, and the inlet temperature is controlled by the parameters entered in the temperature program 
+	table.</li>
+	</ul>
+	
+	
+	<h3>Inlet Temperature Table</h3>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text">When Split/Splitless, PTV, On-Column-Do Not Track Oven Temperature, or Gerstel are selected for 
+		Inlet Type, the Inlet Temperature Table is available.</li>
+		<li class="content_text">For Initial Inlet Temperature, enter the beginning temperature for the inlet.</li>
+		<li class="content_text">For Time at Initial Inlet Temperature, enter the length of time the inlet stays at initial inlet 
+		temperature before beginning the programmed temperature changes. If the entire analysis consists of one temperature, enter 
+		the desired temperature in the Target Temp column and the length of the analysis in the Duration column. If the column 
+		temperature should ramp:
+		<ol>
+			<li class="content_text">Select Add to add rows for the desired number of temperature changes (levels), or select 
+			Remove to remove the desired number of rows.</li>
+			<li class="content_text">In the Rate column, enter the rate of temperature change for each temperature level.</li>
+			<li class="content_text">In the Target Temp column, enter the final temperature for each temperature level.</li>
+			<li class="content_text">In the Duration column, enter the length of time for each temperature level.</li>
+		</ol>
+		</li>
+	</ul>
+	
+	<h3>Cryogenic Cooling</h3>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text">When PTV or On-Column are selected as Inlet Types, the Cryogenic Cooling checkboxes will be 
+		available.</li>
+		<li class="content_text">For Inlet Cryo, select On to activate cryogenic cooling to cool the inlet. Select Off, and 
+		cryogenic cooling will not be activated.</li>
+		<li class="content_text">For Cryo Timeout, select On to activate cryogenic timeout; select Off, and Cryogenic Timeout 
+		will not be activated. When a run does not start within the specified time, Cryo Timeout begins and inlet temperature 
+		shuts down.</li>
+		<li class="content_text">For Cryo Fault, select On to activate cryogenic fault; select Off, and Cryogenic Fault will 
+		not be activated. Cryo Fault shuts down the inlet temperature if it does not reach set point in 16 minutes of continuous 
+		Cryo operation.</li>
+	</ul>
+	
+	
+	<h3>Oven Temperature</h3>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text">When the oven temperature is valid, a green icon will display with a message that displays “No 
+		problems detected with oven temperature.” When the oven temperature is not valid, a red icon will display with an error 
+		message that states the cause of the problem.</li>
+		<li class="content_text">Different areas of Oven Temperature are available depending on the conditions entered.
+		<ol>
+			<li class="content_text">Enter the <strong>oven equilibration time</strong>. This value specifies the time allowed 
+			for the oven temperature to equilibrate after the temperature is modified. Equilibration time begins when the actual 
+			oven temperature comes within 1 °C of the oven temperature setting.</li>
+			<li class="content_text">Complete the <strong>Oven Temperature Ramp table</strong>.
+			<ul style="list-style-type:none">
+				<li class="content_text">Select Add to add rows for the desired number of temperature changes (levels).</li>
+				<li class="content_text">In the Rate column, enter the rate of temperature change for each temperature level.</li>
+				<li class="content_text">In the Target Temp column, enter the final temperature for each temperature level.</li>
+				<li class="content_text">In the Duration column, enter the length of time for each temperature level.</li>
+				<li class="content_text"><strong>Or</strong></li>
+				<li class="content_text">To remove rows, select the row and then select Remove.</li>
+			</ul>
+			</li>
+			<li class="content_text">For <strong>Coolant to Column Oven</strong>, select either On or Off. When On is selected, 
+			coolant will be used to cool the oven, and the box for the Coolant Timeout is available. Enter maximum time for the 
+			oven to reach set point. If the set time is exceeded the coolant will be shut off.</li>
+			<li class="content_text">Enter the <strong>transfer line temperature equilibration time</strong>. This specifies the 
+			length of the wait to ensure the transfer line is at temperature. Time set to zero is the standard mode of operation.</li>
+			<li class="content_text">Enter the <strong>transfer line temperature</strong> in °C. Generally choose a temperature 
+			value of 10 °C above the maximum oven temperature for the Gas Chromatograph, as long as this temperature value is 
+			compatible with the column stationary phase. If the temperature displays as –1 because the method was created using 
+			a previous version of the software, update the temperature.</li>
+		</ol>
+		</li>
+	</ul>
+	
+	
+	<h3>GCxGC Specific Parameters</h3>
+	
+	<h4>Programming Secondary Oven</h4>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text">Add a capillary column and change the location to Secondary Oven on the Columns page to make 
+		the <strong>Secondary Oven Temperature Offset</strong> available. Define the temperature profile for the secondary oven 
+		over the length of the run, which will be relative to the GC oven temperature.</li>
+		<li class="content_text"><strong>Or</strong></li>
+		<li class="content_text">Select the checkbox for Use Advanced Secondary Temperature Programming to manually program the 
+		temperature settings if custom temperature programming is desired.</li>
+		<li class="content_text">For a temperature program:
+		<ol>
+			<li class="content_text">Select Add to add a step at a particular heating rate. The starting temperature must be at 
+			least 5 degrees above the starting temperature of the GC oven because the secondary oven cannot cool as low as the 
+			primary oven due to heat from the transfer line and modulator. Or, to remove a row, select the row and select Remove.</li>
+			<li class="content_text">In the Rate column, enter the rate of temperature change for that step.</li>
+			<li class="content_text">In the Target Temp column, enter the final temperature for that step.</li>
+			<li class="content_text">In the Duration column, enter the length of time for that step. The initial Duration has to be at 
+			least 0.2 minutes. This is necessary for temperature control due the thermal lag of the secondary oven.</li>
+		</ol>
+		</li>
+	</ul>
+	
+	<h4>Modulator Temperature Programming</h4>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text">Add a capillary column and change the location to Modulator on the Columns page to make the 
+		<strong>Modulator Temperature Offset</strong> available. Define the temperature profile for the modulator over the length 
+		of the run, which will be relative to the secondary oven temperature. If a secondary oven is not being used, the modulator 
+		temperature offset is relative to the GC oven. The recommended offset is +15 °C relative to the temperature of the secondary 
+		oven. A smaller difference may increase the widths of the first dimension peaks. The modulator will heat at the same rate as 
+		the primary oven up to the maximum temperature defined for the modulator on the Columns page.</li>
+		<li class="content_text"><strong>Or</strong></li>
+		<li class="content_text">Select the checkbox for Use Advanced Modulator Temperature Programming to manually program the 
+		temperature settings if custom temperature programming is desired. Follow the same instructions above for the programming
+		of the secondary oven.</li>
+	</ul>
+	
+</body> 
+</html>
