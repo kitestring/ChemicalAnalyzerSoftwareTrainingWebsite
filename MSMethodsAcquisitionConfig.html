@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Mass Spectrometer Methods: Acquisition Configuration</h1>
+	
+	<img class="content_media" src="MethodBuilding_Media/MS/AcquisitionConfiguration_CT5.31.16.png"/>
+	
+	<h3>Acquisition Control</h1>
+	
+	<ul>
+		<li class="content_text"><strong>Synchronize Total Run Time To Chromatographic Method</strong>: 
+		If selected the MS Method run time will be determined by the GC Method run time.</li>
+		
+		<li class="content_text"><strong>Total Time</strong>: The length of time it take the last compound 
+		of interest to reach the detector. If the Synchronize Total Run Time To Chromatographic Method 
+		checkbox is selected, this parameter will not be selectable.</li>
+		
+		<li class="content_text"><strong>Acquisition Delay</strong>: the length of time from injection 
+		until the data system will start sorting data from the mass spectrometer.</li>
+		
+		<li class="content_text"><strong>Acquisition Rate (<sup>Spectra</sup>/<sub>Second</sub>)</strong>: The Recommended 
+		Acquisition Rate is based on providing 12 spectra across the FWHH of the chromatographic peak.  
+		In a 1D sample, a typical FWHH is roughly 1.2 seconds, in that case an optimal Acquisition Rate 
+		is 10 <sup>Spectra</sup>/<sub>Second</sub>.  Alternatively, in a GCxGC sample where peak FWHH are 
+		much sharper one can expect a value of 0.06 seconds.  Therefore, an appropriate Acquisition Rate 
+		in a GCxGC sample is 200 <sup>Spectra</sup>/<sub>Second</sub>.  To calculate the optimal 
+		Acquisition Rate determine the FWHH of the sharpest peaks in the sample, then apply it to the 
+		formula below:
+		<img class="equation_image" src="MethodBuilding_Media/MS/FormulaAcquisitionRate.png"/></li>
+		
+		<li class="content_text"><strong>Mass Range</strong>: This is the range between the lowest and 
+		highest mass-to-charge ratios that the mass spectrometer will measure.  The most recent mass 
+		calibration tune results will determine the maximum mass based on the specified extraction 
+		frequency.  The allowed range is from 10 - 1500 <sup>m</sup>/<sub>z</sub>.</li>
+		
+		<li class="content_text"><strong>Extraction Frequency (kHz)</strong>: Repetition frequency of 
+		extraction pulses in the orthogonal accelerator.  More simply put, the rate that ions from the 
+		injected sample are forced out of the source and into the mass analyzer.</li>
+		
+		<li class="content_text"><strong>Optimized Detector Voltage</strong>: used by default and is highly 
+		recommended, however the voltage can be manually tweaked by setting the Relative Detector Voltage. 
+		This will define an offset used to adjust the voltage up or down from the most recent tuned detector 
+		voltage whenever samples are run with this method.
+		
+		<p class="content_text"><strong>CAUTION</strong></p>
+		<ul style="list-style-type:none">
+			<li class="content_text">The relative detector voltage should be used only by experienced 
+			users. Increasing the voltage will shorten detector life proportionally without necessarily 
+			improving detection limits to the same degree. Avoid extreme values in either direction—
+			lowering the value may result in signals not being detected and raising the value may result 
+			in saturation in addition to accelerating detector aging.</li>
+			<li class="content_text">The tuned detector voltage is shared by all methods. If gain 
+			optimization is run on any of the methods and changes the tuned detector voltage they all 
+			share, a detector measurement should be run on all the methods that have a non-zero relative 
+			detector voltage to verify the existing relative detector voltage is still appropriate with 
+			the new tuned detector voltage.</li>
+		</ul>
+		</li>
+		
+		<li class="content_text"><strong>Sync Filament Schedule with Acquisition Delay</strong>:
+		<ul style="list-style-type:none">
+			<li class="content_text">If selected the Filament Schedule will be set based upon the 
+			defined Acquisition Delay</li>
+			<li class="content_text">If not selected the user can elect to turn the filaments on and 
+			off as desired throughout out the sample acquisition using the <strong>Filament Schedule
+			</strong>.  By turning the filaments when the solvent or highly concentrated analytes not 
+			analytically significant elute to the analysis the life time of consumable hardware 
+			components such as filaments and the detector can be extended.  
+			
+			<p>To use this table:</p>
+			<ol type="A">
+				<li class="content_text">Enter the start and end for the Filament Schedule.</li>
+				<li class="content_text">Select On or Off for the filament in the filament row.</li>
+				<li class="content_text">Add or remove rows from the Filament Schedule.</li>
+			</ol>
+			</li>
+		</ul>
+		</li>
+		
+	</ul>
+	
+</body> 
+</html>

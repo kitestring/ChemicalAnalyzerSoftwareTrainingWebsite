@@ -7,9 +7,43 @@
 <body>
 	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Global Column Configuration</h1>
-	<h3>Introduction</h3>
-	<p class="content_text">Under Construction</p>
 	
+	<h3>Introduction</h3>
+	<p class="content_text">Column configuration is the specification of capillary dimensions, inlet and 
+	outlet connections of the capillaries, and the temperature zones of the capillaries. This information 
+	is required by the software to calculate certain control parameters of the GC, such as pressure programs 
+	for corrected constant flow mode.  Specifying the column configuration also allows control of situations 
+	such as where both a front and a back inlet are installed on the GC and a column from each inlet is 
+	installed in the mass spectrometer the user can control both inlets through the Chromatograph method.  
+	One inlet will be specified as active, and one inlet will be specified as inactive. A flow mode can be 
+	selected and applied to both inlets, but different parameters can be specified for each inlet such as 
+	different flows in the corrected constant flow mode. A low flow is recommended on the idle column to 
+	minimize its impact on the mass spectrometer. The following section explains how to enter the column 
+	configuration using the Column Configuration table.</p>
+	
+	<p class="content_text">To define the column configuration use the Column Configuration Table located on 
+	the System ribbon bar.  This column configuration from the Column Configuration table on the Instrument 
+	menu will be applied each time a new Chromatograph method is created. Previously created Chromatograph 
+	methods will retain their configurations, but they must be updated to correspond with the column 
+	configuration that has been defined in the Column Configuration table. The column configuration defined 
+	in the Column Configuration Table is considered to be the system wide column configuration.  
+	Chromatograph methods with column configurations that differ from the system wide column configuration 
+	cannot be used. When this situation is the case, an error message will display in the Acquisition Queue. 
+	The error message will disappear once the Chromatograph method is updated to the system column 
+	configuration.</p>
+	
+	<h3>Accessing the Column Configuration</h3>
+	<video class="content_media" src="SystemTab_Media/GlobalColumnConfiguration/AccessingGCC_1DSystem_CT5.31.16.mp4" controls></video>
+	<i>Accessing the Column Configuration on a 1D System</i>
+	
+	<video class="content_media" src="SystemTab_Media/GlobalColumnConfiguration/AccessingGCC_GCxGCSystem_CT5.31.16.mp4" controls></video>
+	<i>Accessing the Column Configuration on a GCxGC System</i>
+	
+	<h3>Load the Column Configuration from a GC Method</h3>
+	<video class="content_media" src="SystemTab_Media/GlobalColumnConfiguration/UpdateGCCFromMethod_CT5.31.16.mp4" controls></video>
+	
+	<h3>Updating the Column Configuration of an Existing GC Method</h3>
+	<video class="content_media" src="SystemTab_Media/GlobalColumnConfiguration/UpdateExistingGCMethod_CT5.31.16.mp4" controls></video>
 
 </body> 
 </html>
