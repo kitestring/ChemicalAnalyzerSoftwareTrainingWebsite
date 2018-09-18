@@ -17,6 +17,11 @@ li.content_text {
 	padding-bottom: 15px;
 }
 
+i.caption_text {
+	display: block;
+	padding-bottom: 20px;
+}
+
 .content_media{
 	display: block;
 	padding-top: 7.5px;
