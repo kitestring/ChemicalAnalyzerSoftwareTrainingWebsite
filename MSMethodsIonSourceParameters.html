@@ -13,11 +13,29 @@
 	<h3>Ion Source Parameters</h1>
 	
 	<ul>
-		<li class="content_text"><strong>Emission current</strong>: The electrical current produced by electron emissions from the filament</li>
-		<li class="content_text"><strong>Ion source temperature</strong>: The temperature of the ion source</li>
-		<li class="content_text"><strong>Electron energy</strong>: The energy electrons have as they enter the ionization chamber</li>
-		<li class="content_text"><strong>Wait to Confirm</strong>: Data acquisition will wait for the values specified in the grid to be achieved before continuing.</li>
-		<li class="content_text"><strong>Load</strong>: Select Load to choose an MS method and use its applicable settings.</li>
+		<li class="content_text"><strong>Emission current</strong>: The electrical current produced by 
+		electron emissions from the filament, this value can be set for 0.5 – 5.0 mA (default setting 1mA).
+		<p>As emission current increases the signal and linear range also increase, but the resolution will 
+		suffer.</p>
+		<p>When emission current is decreased, the signal intensity will also decrease.  Running at a lower 
+		emission current could help for applications with higher concentration samples.  The 5 order linear 
+		dynamic range can shift up roughly half an order of concentration running at lower emission current; 
+		saturating at higher concentrations at the cost of higher detection limit.</p></li>
+		
+		<li class="content_text"><strong>Ion source temperature</strong>: The temperature of the ion source.  
+		The value can be set between 100˚C - 300˚C</li>
+		
+		<li class="content_text"><strong>Electron energy</strong>: The energy electrons have as they enter the 
+		ionization chamber.  The electron energy can be set from 40eV to 200eV, the default setting is 70eV.
+		It is recommended to use the default setting because nearly all commercially available spectral libraries 
+		are acquired at 70ev.</li>
+		
+		<li class="content_text"><strong>Wait to Confirm</strong>: Data acquisition will wait for the values 
+		specified in the grid to be achieved before continuing.</li>
+		
+		<li class="content_text"><strong>Load</strong>: Select Load to choose an MS method and use its 
+		applicable settings.</li>
+		
 		<li class="content_text"><strong>Reset</strong>: Select Reset to revert to default values.</li>
 	</ul>
 	
