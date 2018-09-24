@@ -9,11 +9,45 @@
 	<h1>Tuning Overview</h1>
 	
 	<h3>Introduction</h3>
-	<p class="content_text">Under Construction</p>
 	
-	<video class="content_media" poster="Tuning/SAF_CT5.31.16.png" controls>
-		<source src="Tuning/SAF_CT5.31.16.mp4" type="video/mp4">
+	<p class="content_text">Regular instrument tuning and the associated system checks is critical 
+	for consistent and optimal instrument performance.  It is also necessary to monitor for problems 
+	such as leaks and tune failures.  It is recommended to run a daily instrument check using a Tune 
+	Validation.  <a href="QCMethodsOverview.html">Quality control</a> methods offer the user a tool 
+	for automating tuning tasks at specified triggers.  Below is the list of each of the tuning tasks 
+	and system checks.</p>
+	
+	<ul>
+		<li class="content_text"><a href="Tuning_AutoTune.html">Auto-Tune</a></li>
+		<li class="content_text"><a href="Tuning_SAF.html">Source and Analyzer Focus</a></li>
+		<li class="content_text"><a href="Tuning_MC.html">Mass Calibration</a></li>
+		<li class="content_text"><a href="Tuning_GO.html">Gain Optimization</a></li>
+		<li class="content_text"><a href="Tuning_DM.html">Detector Measurement</a></li>
+		<li class="content_text"><a href="Tuning_LC.html">Leak Check</a></li>
+		<li class="content_text"><a href="Tuning_TV.html">Tune Validation</a></li>
+	</ul>
+	
+	<p class="content_text">All of the tuning steps shown above are executed using the <a href="
+	AcquisitionQueueOverview.html">Acquisition Queue</a>.  It is highly recommended to include the 
+	<a href="MSMethodsOverview.html">Mass Spectrometer</a> and <a href="GCMethodsOverview.html">Gas 
+	Chromatographic</a> methods that will be used to acquire data.  Many of the 
+	parameters within these methods have an impact on the fragmentation behavior and these 
+	conditions should be kept constant from tuning to data acquisition.  Below is a list of some of 
+	the method parameters that will have an effect ion fragmentation:</p>
+	
+	<ul>
+		<li class="content_text">Carrier Gas Type</li>
+		<li class="content_text">Flow Rate</li>
+		<li class="content_text">Ion Source Temperature</li>
+		<li class="content_text">Emission Current</li>
+		<li class="content_text">Electron Energy</li>
+	</ul>
+	
+	
+	<video class="content_media" poster="Tuning_Media/GO_CT5.31.16.png" controls>
+		<source src="Tuning_MediaGO_CT5.31.16.mp4" type="video/mp4">
 	</video>
+	<i class="caption_text">An example of a Gain Optimization</i>
 	
 </body> 
 </html>

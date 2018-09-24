@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Auto-Tune</h1>
+	
+	<p class="content_text">Auto-tune automatically runs the recommended set of tunes for 
+	the Pegasus BT.  This feature streamlines the process of tuning so that the user does 
+	not have to manually add each of the tuning tasks.  Despite the fact there is a single 
+	line in the <a href="AcquisitionQueueOverview.html">Acquisition Queue</a> each of the 
+	recommended tuning tasks are carried out and a corresponding file for each is created 
+	into the defined Acquired Sample directory.  For all versions of ChromaTOF up to 5.31.16 
+	this includes the following:</p>
+	
+	<ul>
+		<li class="content_text"><a href="Tuning_SAF.html">Source and Analyzer Focus</a></li>
+		<li class="content_text"><a href="Tuning_MC.html">Mass Calibration</a></li>
+		<li class="content_text"><a href="Tuning_GO.html">Gain Optimization</a></li>
+		<li class="content_text"><a href="Tuning_TV.html">Tune Validation</a></li>
+	</ul>
+	
+	<p class="content_text">The video below demonstrates how to implement an Auto-Tune using 
+	the acquisition queue.  Notice that <a href="GCMethodsOverview.html">Gas Chromatographic</a> 
+	and <a href="MSMethodsOverview.html">Mass Spectrometer</a> methods are included.  This is 
+	done to ensure source conditions are constant from tuning and sample acquisition.</p>
+	
+	<video class="content_media" src="Tuning_Media/AutoTuneAcquisitionQueue_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Adding an Auto-Tune to the Acquisition Queue</i>
+
+</body> 
+</html>
