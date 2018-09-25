@@ -13,8 +13,8 @@
 		serve as a means of determining a relative concentration through the use of a single 
 		point calibration. This document outlines the procedures of creating and utilizing 
 		reference methods. Furthermore, it is written under the assumption the user already has 
-		a basic understanding of <a target="_blank" href="DataProcessingIntro.html">data processing</a> and 
-		<a target="_blank" href="DataReview.html">data review</a>.</p>
+		a basic understanding of <a href="DPOverview.html">data processing</a> and 
+		<a href="DataReview.html">data review</a>.</p>
 	<h3>Procedure</h3>
 	<ol>
 		<li class="content_text"><strong>Select Reference Standard</strong>
@@ -29,7 +29,7 @@
 			
 		<li class="content_text"><strong>Process Reference Standard</strong>
 			<p>Create a data processing method to process the reference standard; 
-			both <a target="_blank" href="PeakFinding.html">Peak Finding</a> or <a target="_blank" href="TAF.html">Target 
+			both <a href="PeakFinding.html">Peak Finding</a> or <a href="TAF.html">Target 
 			Analtye Finding</a> data processing methods can be used. This data processing method will be 
 			propageted to unknown samples which are processed using the reference method. 
 			Next, process the reference standard. In this example a peak finding data 
@@ -38,9 +38,9 @@
 		</li>
 			
 		<li class="content_text"><strong>Review Reference Standard</strong>
-			<p><a target="_blank" href="DataReview.html">Evaluate</a> the results of the data 
+			<p><a href="DataReview.html">Evaluate</a> the results of the data 
 			processed sample. Confirm the quality of the desired peaks and verify that they have 
-			been named properly. Within the peak table of the reference standard be sure the <a target="_blank"
+			been named properly. Within the peak table of the reference standard be sure the <a
 			href="PeakFiltering_Group.html">group column</a> is visible and add the Group field. 
 			For each target analyte add a label in 
 			the group column. The group labels will be propigated to samples that are processed using
@@ -86,7 +86,7 @@
 		</li>
 		
 		<li class="content_text"><strong>Define Reference Table Parameters</strong>
-			<p>Define each of the necessary <a target="_blank" href="QuantAndRefTableParameters.html">Reference Table parameters</a>
+			<p>Define each of the necessary <a href="QuantAndRefTableParameters.html">Reference Table parameters</a>
 			for your application. Below is an example of reference table with populated Reference Table parameters.
 			<img id="content_media" src="ReferenceMethods_Media/Reference_Table_GreenText_CT5.01.04.png"/>
 			The retention time window, S/N threshold, and match threshold are the three peak qualifiers used during 
@@ -133,7 +133,7 @@
 				<img class="equation_image" src="ReferenceMethods_Media/RefMethods_ConcentrationEquation_YesIS.png"/>
 				The reference table directly below shows an example of the use of an internal standard and when exact concentrations are known. 
 				<img id="content_media" src="ReferenceMethods_Media/Reference_Table_GreenText_Conc_Yes_IS_CT5.01.04.png"/>
-				For a more detailed description of the concentration equations review the <a target="_blank" href="QuantAndRefTableParameters.html">Reference Table parameters</a>.
+				For a more detailed description of the concentration equations review the <a href="QuantAndRefTableParameters.html">Reference Table parameters</a>.
 			</p>
 		</li>
 		
@@ -164,12 +164,12 @@
 			</p>
 			
 			<p>After imbeding the refernece method into the data processing method, the data processing technique used to locate peaks in the reference sample 
-			(<a target="_blank" href="PeakFinding.html">Peak Finding</a> or <a target="_blank" href="TAF.html">Target Analtye Finding</a>) will
+			(<a href="PeakFinding.html">Peak Finding</a> or <a href="TAF.html">Target Analtye Finding</a>) will
 			automatically be populated into the corresponding data processing method. This ensures that peaks in the unknown
 			sample are found using the same technique as the reference sample.
 			</p>
 			
-			<p>If the reference standard was initially processed using a <a target="_blank" href="PeakFinding.html">Peak Finding</a> DP method, it is likely
+			<p>If the reference standard was initially processed using a <a href="PeakFinding.html">Peak Finding</a> DP method, it is likely
 			that peaks will be found in your unknown sample that are not in your Reference method. Since your Reference method has no instructions on 
 			how to identify these peaks they will be named as "Peak n" in the peak table, an example of this is shown in the video and image below. If you would like these 
 			peaks to be identified you must enable library searching within your data processing method. All found peaks that are not identified using the Reference 
@@ -186,7 +186,7 @@
 		
 		<li class="content_text"><strong>Data Review</strong>
 			<p>When reviewing an unknown sample that has been processed using a reference method be sure both the concentration and type 
-			<a target="_blank" href="DataReview.html">columns are displayed</a> in the resulting peak table. The concentration column will 
+			<a href="DataReview.html">columns are displayed</a> in the resulting peak table. The concentration column will 
 			report the calculated relative concentration. The type column provides the user with information relevant to the qualification 
 			of each analyte. Below is an example of a peak table from unknown sample after being processed with a Reference method. The following 
 			provides a list of some of the type fields and their definition.
@@ -209,7 +209,7 @@
 		</li>
 		
 		<li class="content_text"><strong>Peak Table Filtration</strong>
-			<p>To assist in managing large quantities of information, ChromaTOF allows the user to <a target="_blank" href="PeakTableFiltration.html">filter</a> 
+			<p>To assist in managing large quantities of information, ChromaTOF allows the user to <a href="PeakTableFiltration.html">filter</a> 
 			the peaks in the peak table. Reference methods automates catigorizing peaks thorough both the type field as well as the assignment of 
 			group labels.  Filtering by the type field streamlines the process of identifing the similarities and differences between the reference sample and 
 			unknown samples. Finding targeted analytes is more efficent by filtering using group labels.

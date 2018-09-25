@@ -22,11 +22,11 @@
 		replacing the existing mass calibration constants.
 		</li>
 		
-		<li class="sub-list_test"><a target="_blank" href="PeakFinding.html">Peak Finding</a>: 
+		<li class="sub-list_test"><a href="PeakFinding.html">Peak Finding</a>: 
 		Finds all peaks in a sample that satisfy the user defined parameters.  This is used primarily for discovery analytics.
 		</li>
 		
-		<li class="sub-list_test"><a target="_blank" href="TAF.html">Target Analtye Finding</a>: 
+		<li class="sub-list_test"><a href="TAF.html">Target Analtye Finding</a>: 
 		Finds specific peaks in a sample defined by the user.  This mode of peak discovery is used for routine or targeted analysis.
 		</li>
 		
@@ -38,12 +38,12 @@
 		
 		<li class="sub-list_test">Quantitate / Reference
 		<ol>
-			<li><a target="_blank" href="QuantitationMethods.html">Quantitations</a>: 
+			<li><a href="QuantitationMethods.html">Quantitations</a>: 
 			A tool for determining the concentration of analytes utilizing a calibration 
 			equation generated from a set of standard samples.
 			</li>
 			
-			<li><a target="_blank" href="ReferenceMethods.html">References</a>: A method 
+			<li><a href="ReferenceMethods.html">References</a>: A method 
 			for automating sample to sample comparisons.  In doing so, it ensure that 
 			common analytes across multiple samples are assigned the same name, group label, 
 			and integrated with identical quant mass(es).  Lastly, this tool can be used to 
@@ -57,7 +57,7 @@
 		
 		<li class="sub-list_test">Library Search Options
 		<ol>
-			<li><a target="_blank" href="LibrarySearchOptions_SpectralSimilarity.html">Spectral Similarity</a>: Identifies unknown analytes through spectral comparison of their deconvoluted mass spectrum and a given library mass specrum.
+			<li><a href="LibrarySearchOptions_SpectralSimilarity.html">Spectral Similarity</a>: Identifies unknown analytes through spectral comparison of their deconvoluted mass spectrum and a given library mass specrum.
 			</li>
 			
 			<li>Formula
@@ -81,6 +81,7 @@
 	Quantitate/Reference (an embedded Quantitation Method) and Library Searching tasks enabled.</p>
 	
 	<img id="content_media" src="DataProcessing_Media/Overview/ExampleDPMethod_ProcessFlow_CT5.31.16.png">
+	<i class="caption_text">Example of a Data Processing Method</i>
 	
 	<p class="content_text">When processing samples ChromaTOF will always execute data processing tasks 
 	from the top down in the sequence listed in the Data Processing method tab on the left side of the 
@@ -93,14 +94,15 @@
 	
 	<p class="content_text">As the list above indicates, there are two modes of peak discovery either 
 	Peak Finding or Target Analyte Finding.  Each is intended for a specific purpose and has 
-	<a target="_blank" href="PF_vs_TAF.html">advantages as well as disadvantages</a>.</p>
+	<a href="PF_vs_TAF.html">advantages as well as disadvantages</a>.</p>
 	
 	<h3>Sample Processing: Acquisition Queue</h3>
 	<p class="content_text">The user can elect to include a data processing job to a given sample 
 	immediately after acquisition.  This is done by including the desired data processing method within 
-	the corresponding line of the <a target="_blank" href="AcquisitionQueueUtilization.html">Acquisition Queue</a>.</p>
+	the corresponding line of the <a href="AcquisitionQueueOverview.html">Acquisition Queue</a>.</p>
 	
 	<video class="content_media" src="DataProcessing_Media/Overview/ProcessSingleSampleViaAcquisitionQueue_CT5.31.16.mp4" controls></video>
+	<i class="caption_text">Processing a single sample via the Acquisition Queue</i>
 	
 	<p class="content_text">To save time multiple sample acquisitions can be assigned to a single DP method 
 	using a single operation.  This is done through the use of the Fill command.  Highlight and right click 
@@ -108,6 +110,7 @@
 	desired data processing method.</p>
 	
 	<video class="content_media" src="DataProcessing_Media/Overview/ProcessMultiSamplesViaAcquisitionQueue_CT5.31.16.mp4" controls></video>
+	<i class="caption_text">Processing multiple samples using a common Data Processing method via the Acquisition Queue</i>
 	
 	<h3>Sample Processing: Acquired Samples</h3>
 	<p class="content_text">Additionally, samples can be processed from Acquired Samples 
@@ -119,10 +122,11 @@
 	will have a gear overlaid on its icon and it cannot be reviewed until processing is completed.</p>
 	
 	<video class="content_media" src="DataProcessing_Media/Overview/ProcessFromAcquiredSamples_CT5.31.16.mp4" controls></video>
+	<i class="caption_text">Processing data from Acquired Samples</i>
 	
 	<h3>Monitoring Data Processing Jobs</h3>
 	<p class="content_text">The status of a series of data processing jobs can be monitored and edited 
-	by means of the <a target="_blank" href="DataProcessing_MonitorQueue.html">Data Processing Queue & Monitor</a> windows.  
+	by means of the <a href="DataProcessing_MonitorQueue.html">Data Processing Queue & Monitor</a> windows.  
 	The Data Processing Queue and Monitor windows can be access by the top ribbon under the “Views” tab.</p>
 	
 	<h3>View a Samples Processing History</h3>
@@ -137,12 +141,14 @@
 	a group label, or altering the Quant mass.</p>
 	
 	<video class="content_media" src="DataProcessing_Media/Overview/SelectDPResult_DPIteration_CT5.31.16.mp4" controls></video>
+	<i class="caption_text">Viewing and reverting to historical data processing iterations</i>
 	
 	<p class="content_text">To save a historical copy of a data processing method, right click within the desired 
 	DP method and select “Save As”.  You will then be prompted to define the name and location of the selected 
 	DP method.</p>
 		
 	<video class="content_media" src="DataProcessing_Media/Overview/SelectDPResult_SaveMethod_CT5.31.16.mp4" controls></video>
+	<i class="caption_text">Saving historical copies of data processing methods</i>
 	
 </body> 
 </html>

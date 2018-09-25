@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Gain Optimization</h1>
+	
+	<p class="content_text">Adjusts the detector voltage to optimize its response to a predefined 
+	area per ion. The area per ion value is not a user editable parameter, however it can be monitored 
+	in the log when a Gain Optimization (GO) is being acquired.  A GO needs to be re-run from time to 
+	time as the detector ages.  You can configure the automatic triggers for a GO in the 
+	<a href="QCMethodsOverview.html">QC Method</a>.  A detector needs to be replaced once it is being 
+	tuned to 3000 volts.  After the detector is replaced, the software will automatically run a GO 
+	before the next sample is collected.</p>
+	
+	<p class="content_text">A GO can be added to the Acquisition Queue either as part of an <a href="Tuning_AutoTune.html">Auto-Tune</a> 
+	or individually as a single line.  There are two videos below, the first demonstrates how to add a 
+	GO to the Acquisition Queue individually, and the second shows what a GO looks like as it is being 
+	collected.</p>
+	
+	<video class="content_media" src="Tuning_Media/GOAcquisitionQueue_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Adding a Gain Optimization to the Acquisition Queue.</i>
+	
+	<video class="content_media" poster="Tuning_Media/GO_CT5.31.16.png" controls>
+		<source src="Tuning_Media/GO_CT5.31.16.mp4" type="video/mp4">
+	</video>
+	<i class="caption_text">An example of a Gain Optimization (for the sake of time this video has been speed up).</i>
+
+</body> 
+</html>
