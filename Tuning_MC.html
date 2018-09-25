@@ -7,9 +7,70 @@
 <body>
 	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Mass Calibration</h1>
-	<h3>Introduction</h3>
-	<p class="content_text">Under Construction</p>
 	
+	<h3>Introduction</h3>
+	<p class="content_text">A mass calibration tune derives an equation for converting between TOF and 
+	<sup>m</sup>/<sub>z</sub>.  Using a second order fit <sup>m</sup>/<sub>z</sub> values from known ions 
+	are correlated to their measured TOF (ns) to determine the coefficients C<sub>2</sub>, C<sub>1</sub>, 
+	and C<sub>0</sub>.  The known ions are derived from the calibration gas, Perfluorotributylamine (PFTBA), 
+	and reproducible background ions.   See the plot below for a representative example of a Mass 
+	Calibration plot.</p>
+	
+	<img class="content_media" src="Tuning_Media/MassCalPlot_Example.png" width="650"/>
+	
+	<h3>Acquiring a Mass Calibration</h3>
+	<p class="content_text">Mass calibration can be executed during system optimization or after sample 
+	acquisition using a <a href="DPOverview.html">Data Processing</a> method.  To mass calibrate during 
+	system optimization select Mass Calibration in the Type field of the Acquisition Queue, and define a 
+	<a href="MSMethodsOverview.html">Mass Spectrometer</a> and <a href="GCMethodsOverview.html">Gas 
+	Chromatograph</a> method to be used.  An example of this is shown in the video below; Mass Calibration 
+	is also part of the <a href="Tuning_AutoTune.html">Auto-Tune</a>.  Additionally, it can be configured 
+	to run at regular intervals using the <a href="QCMethodsOverview.html">QC Method</a>.</p>
+	
+	<video class="content_media" src="Tuning_Media/MCAcquisitionQueue_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Adding a Mass Calibration to the Acquisition Queue</i>
+	
+	<h3>Reviewing the Mass Calibration</h3>
+	<p class="content_text">There are two options available to review the Mass Calibration results.</p>
+	<ol>
+		<li class="content_text">The <a href="Tuning_TV.html">Tune Validation</a> report will show the mass 
+		accuracy root mean square (RMS).</li>
+		<li class="content_text">The Mass Calibration Table will list each of the ions used to generate 
+		the Mass Calibration curve as well the associated metrics.  Additionally, the three Mass Calibration 
+		coefficients for the second order polynomial fit for the calibration curve as well as the RMS can be 
+		viewed via the Mass Calibration Table right click menu.  The video below shows a demonstration of this 
+		process.</li>
+	</ol>
+	
+	<video class="content_media" src="Tuning_Media/MCTable_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Reviewing the Mass Calibration results via the Mass Calibration table.</i>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text"><strong>Mass Calibration Table Fields</strong>
+		<ul>
+			<li class="content_text"><strong>Name: </strong>This is a text field intended for easy 
+			identification of a particular ion. The name itself has no impact on the mass calibration 
+			calculations.</li>
+			<li class="content_text"><strong>Priority: </strong>Typically the mass calibration curve is not 
+			calculated in one step. Setting different priority levels allows ChromaTOF to create a rough curve 
+			based on the most prevalent masses. Then, using this temporary curve ChromaTOF will seek out and 
+			find the smaller, secondary masses. These steps will be repeated for as many priority levels as are 
+			included in the mass calibration table with priority 1 masses going first, followed by priority 2 
+			and continuing through all priorities that have been defined.</li>
+			<li class="content_text"><strong>Mass Window: </strong>The mass range around the expected m/z in 
+			which ChromaTOF will look for a spectral peak. If more than one peak exists in this window then 
+			ChromaTOF will choose the largest one to use for mass calibration. For priority 1 fragments the 
+			windows are typically set relatively wide to ensure the ions are within the expected windows. 
+			After a preliminary mass calibration equation is generated from the priority 1 ions, further 
+			priorities mass windows can be located with better accuracy. Therefore tighter mass windows can 
+			be used with subsequent priorities.</li>
+			<li class="content_text"><strong>Start/End Time: </strong>The 1st dimension time range to gather 
+			the spectral data for the mass calibration.</li>
+			<li class="content_text"><strong>TOF: </strong>The time of flight measured in nano-seconds a 
+			particulr ion required to leave the source and reach the detector.</li>
+		</ul>
+		</li>
+	</ul>
 
 </body> 
 </html>
