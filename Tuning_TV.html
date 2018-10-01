@@ -8,7 +8,135 @@
 	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Tune Validation</h1>
 	<h3>Introduction</h3>
-	<p class="content_text">Under Construction</p>
+	<p class="content_text">To ensure the quality of the acquired data perform a Tune Validation 
+	(Daily Instrument Check) daily.  A tune validation is typically acquired as the last step of a 
+	full system tune, and the data generated is used to generate a performance report.  Performance 
+	reports are designed to provide qualitative information regarding the current state of the 
+	instrument. Currently, there is one type of performance report, the Tune Validation Performance 
+	Report.</p>
+	
+	<p class="content_text">Performance reports are based on the immediate data collection capabilities 
+	of the data acquisition system. Post-collection data processing, such as mass calibration, should not 
+	be performed on the raw samples collected as this will produce ambiguity between what the user sees 
+	while viewing the performance report vs. viewing the sample directly. Information obtained during the 
+	collection is set aside and stored separately, and as such, the collected sample can be freely removed 
+	from the database afterwards.</p>
+	
+	<h3>Running a Tune Validation</h3>
+	<p class="content_text">A Tune Validation can be run individually or as part of an 
+	<a href="Tuning_AutoTune.html">Auto-Tune</a>.  The video below demonstrates how to set the Acquisition 
+	Queue to run a tune validation by itself.  Additionally, it can be configured to run at prespecified 
+	intervals using the <a href="QCMethodsOverview.html">Quality Control</a> Method.</p>
+	
+	<video class="content_media" src="Tuning_Media/TVAcquisitionQueue_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Adding a Tune Validation to the Acquisition Queue</i>
+	
+	<h3>Viewing a Performance Report</h3>
+	<p class="content_text">Once a performance report has been created, access it with the Performance Report 
+	Viewer. The viewer can be found via the Performance Reports button on the System tab of the ribbon bar.  
+	The video below provides a depiction of this procedure.</p>
+	
+	<video class="content_media" src="Tuning_Media/TVViewingReport_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Viewing a Performance Report, the Performance report may differ depending on the 
+	versions of ChromaTOF.</i>
+	
+	<h3>Understanding the Tune Validation Performance Report</h3>
+	<p class="content_text">The Tune Validation Performance Report gives a quick snapshot of the instrument’s 
+	current performance in regards to tune quality. A 90 second raw acquisition is initiated and spectral 
+	analysis is performed upon the data. In the following sections, each area of the report will be explained 
+	in more detail.  The results on the Tune Validation Report are scaled to 10 spectra per second collected 
+	at 1 KHz to allow meaningful comparison of reports whose data was collected using different settings.</p>
+	
+	<p class="content_text">Tune Validation Performance reports are based on the expectation that PFTBA is 
+	used as the tune compound within the system. As such, during data analysis, mass 69 is used as the 
+	reference mass. The criteria assume the tune mass in the MS method is mass 219; should another tune 
+	mass be used, the criteria may incorrectly report pass/fail because they are based on 219.</p>
+	
+	<ul style="list-style-type:none">
+		<li class="content_text"><strong>Information</strong>
+		<ul style="list-style-type:none">
+			<li class="content_text">The information section of the Tune Validation Performance Report 
+			provides the basic information regarding when the report was generated and which methods were 
+			used in the collection. Status information regarding the last time the instrument was tuned 
+			with actions such as <a href="Tuning_LC.html">Leak Check</a>, <a href="Tuning_MC.html">Mass 
+			Calibration</a>, <a href="Tuning_GO.html">Gain Optimization</a>, and <a href="Tuning_SAF.html">
+			Source and Analyzer Focus</a> are displayed within the information section. This area also 
+			displays the pass/fail status of the test.</li>
+		</ul>
+		</li>
+		<li class="content_text"><strong>Instrument Parameters</strong>
+		<ul style="list-style-type:none">
+			<li class="content_text">The instrument parameters table shows the hardware conditions that 
+			existed when the report was generated. It includes various temperatures, flows, pressures, 
+			voltages, filament, and other information.</li>
+		</ul>
+		</li>
+		<li class="content_text"><strong>Summary</strong>
+		<ul style="list-style-type:none">
+			<li class="content_text">The summary is comprised of four components:</li>
+			<li class="content_text">
+			<ol>
+				<li class="content_text">Recommended Action</li>
+				<li class="content_text">Table of Tune Mass Results
+				<ul style="list-style-type:none">
+					<li class="content_text">Mass Accuracy is for the tune mass, while Mass Accuracy 
+					RMS is the root mean square of all the masses in the mass calibration table.</li>
+				</ul>
+				</li>
+				<li class="content_text">Leak Check Results & Pass Fail Criteria Table
+				<ul style="list-style-type:none">
+					<li class="content_text">Note, the default pass fail criteria can be edited using 
+					the <a href="QCMethodsOverview.html">Quality Control</a> method.  For more information 
+					refer to the <a href="Tuning_LC.html">Leak Check</a> tuning section.</li>
+				</ul>
+				</li>
+				<li class="content_text">Spectra plot of the focus tune mass
+				<ul style="list-style-type:none">
+					<li class="content_text">This allows a quick, qualitative look at the peak shape to 
+					check for tailing.</li>
+				</ul>
+				</li>
+			</ol>
+			</li>
+		</ul>
+		</li>
+		<li class="content_text"><strong>Details</strong>
+		<ul style="list-style-type:none">
+			<li class="content_text">The observed masses, and mass accuracies of all masses present in 
+			the mass calibration table will be displayed in the Details section.</li>
+			<li class="content_text">Information is presented not only for the selected report object, 
+			but also for the most recent report. This addition gives the added dimension of how time is 
+			affecting the instrument’s performance.</li>
+			<li class="content_text"> The report contains the isotopic pattern table. This table is also 
+			based on the mass calibration table entries described previously. Should those entries contain 
+			formula information, the M and M+1 masses will be searched for in the raw data collection. The 
+			information present in this table is as follows:
+			<ul>
+				<li class="content_text">Formula</li>
+				<li class="content_text">M and M+1 values</li>
+				<li class="content_text">Observed isotopic mass for each M and M+1</li>
+				<li class="content_text">Intensity for both isotopes</li>
+				<li class="content_text">Ratio of intensities from the M and M+1 isotopes</li>
+				<li class="content_text">Expected ratio of those intensities</li>
+				<li class="content_text">Numeric difference and percent error of observed ratio to 
+				expected ratio</li>
+			</ul>
+			</li>
+			<li class="content_text">The details section also contains a table describing the resolution, 
+			intensity, and intensity ratio (with respect to m/z 69) of all masses from the mass calibration 
+			table. This table, like the isotopic pattern table, will display information from the most 
+			recent report.</li>
+		</ul>
+		</li>
+		<li class="content_text"><strong>Spectrum</strong>
+		<ul style="list-style-type:none">
+			<li class="content_text">The Spectrum section presents a mass-range limited spectra plot based 
+			on the actual acquired data. This gives the report additional qualitative feedback supporting 
+			the information presented in previous report sections.</li>
+		</ul>
+		</li>
+	</ul>
+	
 	
 
 </body> 
