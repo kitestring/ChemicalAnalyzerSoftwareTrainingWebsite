@@ -11,5 +11,111 @@
 	<h3>Introduction</h3>
 	<p class="content_text">Under Construction</p>
 	
+	<h3>Columns</h3>
+	<p class="content_text">Under Construction</p>
+	
+	<table class="tg">
+	  <tr>
+		<th class="tg-1wig">Column</th>
+		<th class="tg-1wig">Description</th>
+	  </tr>
+	  <tr>
+		<td class="tg-buh4">AS Method</td>
+		<td class="tg-buh4">Select the Autosampler Method for the acquisition if using an autosampler; leave the cell empty if an autosampler 
+		will not be used.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-0lax">DP Method</td>
+		<td class="tg-0lax">Select a Data Processing Method if a Data Processing Method is being used. When a DP Method is entered into 
+		the Acquisition Queue, the data will be processed automatically after acquisition. Leave the cell empty if a Data Processing Method 
+		is not being used.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-buh4">Folder</td>
+		<td class="tg-buh4">The name of the folder where the sample file will be stored should display in the Folder column. If the name 
+		of the sample folder does not display, select the sample folder from the list.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-0lax">GC Method</td>
+		<td class="tg-0lax">Select the desired Chromatographic Method if using a chromatograph; leave the cell empty if a chromatograph 
+		will not be used.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-buh4">MS Method</td>
+		<td class="tg-buh4">Select the desired Mass Spectrometer Method. An MS Method is the only method required for analysis.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-0lax">Name</td>
+		<td class="tg-0lax">Select in the cell and enter the desired name for the sample file that will be created.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-buh4">QC Method</td>
+		<td class="tg-buh4">Select the QC method if one will be used for the sample. It is recommended to create a blank QC Method to use 
+		for acquisition when QC tunes will not be automatically scheduled.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-0lax">Repetitions</td>
+		<td class="tg-0lax">Enter the number of times the sample should be acquired.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-buh4">Resume Time</td>
+		<td class="tg-buh4">If a delay is being utilized to schedule an acquisition.  This column lists the data and time the scheduled 
+		start will begin.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-0lax">Status</td>
+		<td class="tg-0lax">As a read only cell, it displays the instrument's condition.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-buh4">Tray</td>
+		<td class="tg-buh4">Enter the tray where the sample is located.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-0lax">Type</td>
+		<td class="tg-0lax">Select the type of analysis from the list.  The list below this table provides a description of each of the 
+		analysis types.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-buh4">Vial<br>(Autosampler)</td>
+		<td class="tg-buh4">If using an autosampler, enter the number for the vial location in the Autosampler Tray.</td>
+	  </tr>
+	  <tr>
+		<td class="tg-0lax">Vial<br>(L-PAL3)</td>
+		<td class="tg-0lax">For the L-PAL3, the current Vial cell will show dots at the right side of the Vial cell. Select the dots to display 
+		a dialog showing a graphic of the current tray configuration. The desired vial can be selected from this graphic.</td>
+	  </tr>
+	</table>
+	
+	<p class="content_text">Below is a list of each analysis types which is defined using the type column in the acquisition queue.</p>
+	<ul>
+		<li class="content_text"><strong>Sample</strong>: Analyzes a sample.</li>
+		<li class="content_text"><a href="Tuning_AutoTune.html">Auto-Tune</a>: Automatically runs the recommended set of tunes for Pegasus BT.</li>
+		<li class="content_text"><a href="Tuning_SAF.html">Source and Analyzer Focus</a>: Adjusts the flight tube voltages in order to optimize the 
+		intensity, resolution, and symmetry of the spectral peaks produced by the instrument.</li>
+		<li class="content_text"><a href="Tuning_MC.html">Mass Calibration</a>: Derives an equation for converting between TOF and <sup>m</sup>/<sub>z</sub>.</li>
+		<li class="content_text"><a href="Tuning_GO.html">Gain Optimization</a>: Adjusts the detector voltage to optimize its response to ion strikes.</li>
+		<li class="content_text"><a href="Tuning_DM.html">Detector Measurement</a>: Measures the detector voltage without adjusting it.</li>
+		<li class="content_text"><a href="Tuning_LC.html">Leak Check</a>: Examines the data coming off the instrument for indications that there is a leak somewhere in the system.</li>
+		<li class="content_text"><a href="Tuning_TV.html">Tune Validation</a>: Provides qualitative information regarding the current tune quality.</li>
+		<li class="content_text"><strong>Pause</strong>: Stops acquisition when the Acquisition Queue reaches that row until restarted by the user.</li>
+		<li class="content_text"><strong>Delay</strong>: Holds the queue until a specified time.</li>
+		<li class="content_text"><strong>Defrost</strong>: Used to melt the ice and evaporate the water that may have condensed in the cold jet tubing within the dewar/heat exchanger before a complete plug forms..</li>
+	</ul>
+	
+	
+	<h3>Procedures</h3>
+	<p class="content_text">Under Construction</p>
+	
+	<ul>
+		<li class="content_text"><a href="AcquisitionQueue_AddRemoveRows.html">Adding & Removing</a> rows from the acquisition queue.</li>
+		<li class="content_text"><a href="AcquisitionQueue_StartPauseStop.html">Start, Pause, or Stop</a> the acquisition queue.</li>
+		<li class="content_text"><a href="AcquisitionQueue_InsertReorder.html">Inserting & Reordering</a> the rows in the acquisition queue.</li>
+		<li class="content_text"><a href="AcquisitionQueue_DelayPause.html">Scheduled Start or Pause</a> within the acquisition queue.</li>
+		<li class="content_text"><a href="AcquisitionQueue_EditActiveQueue.html">Editing the acquisition queue</a> while actively acquiring data.</li>
+		<li class="content_text"><a href="AcquisitionQueue_CopyPasteFill.html">Copy Paste & Fill</a> to streamline building large sequences.</li>
+		<li class="content_text"><a href="AcquisitionQueue_SaveSequence.html">Save an Acquisition Sequence</a> for repeated use.</li>
+		<li class="content_text"><a href="AcquisitionQueue_Defrost.html">Defrost</a> the LN<sub>2</sub> systems.</li>
+	</ul>
+	
 </body> 
 </html>

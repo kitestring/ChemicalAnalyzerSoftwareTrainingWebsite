@@ -46,7 +46,7 @@
 			the group column. The group labels will be propigated to samples that are processed using
 			the reference method created from this reference standard. This will streamline searching, 
 			sorting, and filtering the analytes of interest in future steps.  
-			<video class="content_media" src="ReferenceMethods_Media/PeakTable_AddingGroupLabels_CT5.01.04.mp4" controls></video>
+			<video class="content_media" src="DataProcessing_Media/ReferenceMethods_Media/PeakTable_AddingGroupLabels_CT5.01.04.mp4" controls></video>
 			</p>
 		</li>
 			
@@ -63,7 +63,7 @@
 			the user to browse through Acquired Samples to select the reference standard. When the sample 
 			is found, click “Select”. All analytes within the selected sample will appear in the Reference 
 			Table.
-			<video class="content_media" src="ReferenceMethods_Media/NewMethod_AddStd_CT5.01.04.mp4" controls></video>
+			<video class="content_media" src="DataProcessing_Media/ReferenceMethods_Media/NewMethod_AddStd_CT5.01.04.mp4" controls></video>
 			</p>
 		</li>
 			
@@ -81,14 +81,14 @@
 			relevant to the analysis. Highlight all the peaks that were not assigned labels in the group 
 			column, right click, and select “Delete Selected Analytes”.  This will delete all of the selected 
 			peaks from the reference table, leaving only the target peaks.
-			<video class="content_media" src="ReferenceMethods_Media/DeleteAnalytesFromRefTable_CT5.01.04.mp4" controls></video>
+			<video class="content_media" src="DataProcessing_Media/ReferenceMethods_Media/DeleteAnalytesFromRefTable_CT5.01.04.mp4" controls></video>
 			</p>
 		</li>
 		
 		<li class="content_text"><strong>Define Reference Table Parameters</strong>
 			<p>Define each of the necessary <a href="QuantAndRefTableParameters.html">Reference Table parameters</a>
 			for your application. Below is an example of reference table with populated Reference Table parameters.
-			<img id="content_media" src="ReferenceMethods_Media/Reference_Table_GreenText_CT5.01.04.png"/>
+			<img id="content_media" src="DataProcessing_Media/ReferenceMethods_Media/Reference_Table_GreenText_CT5.01.04.png"/>
 			The retention time window, S/N threshold, and match threshold are the three peak qualifiers used during 
 			the peak finding portion of data processing.  The reference table above provides an example of populated
 			reference table with peak qualifying parameters. The analyte names & group labels defined in the reference method table above 
@@ -120,19 +120,19 @@
 				Without the use of an internal standard, the areas from Hexadecane<span class="sub-script">Ref</span>, Hexadecane<span class="sub-script">Unk</span> 
 				and the concentration of Hexadecane<span class="sub-script">Ref</span> are parsed into the equation below to determine the concentration of 
 				Hexadecane<span class="sub-script">Unk</span>.
-				<img class="equation_image" src="ReferenceMethods_Media/RefMethods_ConcentrationEquation_NoIS.png"/>
+				<img class="equation_image" src="DataProcessing_Media/ReferenceMethods_Media/RefMethods_ConcentrationEquation_NoIS.png"/>
 				The reference table below shows a data set where an internal standard was not used.  In this example, the concentration of 
 				Hexadecane<span class="sub-script">Ref</span> was not known and therefore the default concentration value of 100 was used. The 
 				resulting concentration calculated for <span class="sub-script">Unk</span> will be expressed as a percentage relative to the area of 
 				Hexadecane<span class="sub-script">Ref</span>. For example, assume the area of Hexadecane<span class="sub-script">Unk</span>
 				is 85% as area as the area of Hexadecane<span class="sub-script">Ref</span>, then, the resulting concentration of <span class="sub-script">Unk</span> would be 85.
-				<img id="content_media" src="ReferenceMethods_Media/Reference_Table_GreenText_Conc_No_IS_CT5.01.04.png"/>
+				<img id="content_media" src="DataProcessing_Media/ReferenceMethods_Media/Reference_Table_GreenText_Conc_No_IS_CT5.01.04.png"/>
 				Alternatively, if internal standards are spiked into both the reference standard and the unknown sample more 
 				accurae relative concentrations can be determined. In this case the equation below is used to calculate the concentration
 				of unknown analytes.
-				<img class="equation_image" src="ReferenceMethods_Media/RefMethods_ConcentrationEquation_YesIS.png"/>
+				<img class="equation_image" src="DataProcessing_Media/ReferenceMethods_Media/RefMethods_ConcentrationEquation_YesIS.png"/>
 				The reference table directly below shows an example of the use of an internal standard and when exact concentrations are known. 
-				<img id="content_media" src="ReferenceMethods_Media/Reference_Table_GreenText_Conc_Yes_IS_CT5.01.04.png"/>
+				<img id="content_media" src="DataProcessing_Media/ReferenceMethods_Media/Reference_Table_GreenText_Conc_Yes_IS_CT5.01.04.png"/>
 				For a more detailed description of the concentration equations review the <a href="QuantAndRefTableParameters.html">Reference Table parameters</a>.
 			</p>
 		</li>
@@ -143,7 +143,7 @@
 			text in the reference table will be <span class="green_txt">green</span>. While the standards are being calculated, the reference table information will be 
 			<span class="red_txt">red</span> which indicates that the operation is in progress. Once it has completed, the text will become black. This will require
 			a similar amount of time as the reference standard took to initially data process.
-			<video class="content_media" src="ReferenceMethods_Media/CalculateStandard_CT5.01.04.mp4" controls></video>
+			<video class="content_media" src="DataProcessing_Media/ReferenceMethods_Media/CalculateStandard_CT5.01.04.mp4" controls></video>
 			</p>
 		</li>
 		
@@ -152,7 +152,7 @@
 			back to <span class="green_txt">green</span>. As a result, that analyte will require recalculation. You can save processing time by using "Calculate Analytes(s)" which will
 			only recalculate the selected analyte(s) rather then the entire standard when “Calculate Standard” is used. To highlight specific analyte rows,
 			right click on the corresponding row number while holding the Control key on your keyboard.
-			<video class="content_media" src="ReferenceMethods_Media/Edit_CalculateAnalyte_CT5.01.04.mp4" controls></video>
+			<video class="content_media" src="DataProcessing_Media/ReferenceMethods_Media/Edit_CalculateAnalyte_CT5.01.04.mp4" controls></video>
 			</p>
 		</li>
 		
@@ -160,7 +160,7 @@
 			<p>Now that the reference method has been successfully created, the next step involves incorporating 
 			it into a data processing method. Begin by creating and renaming a new data processing method. Next, 
 			select the “Quantitate Reference” tab, then enable and add the desired reference method.
-			<video class="content_media" src="ReferenceMethods_Media/CreateApplyReferenceDPMethod_CT5.01.04.mp4" controls></video>
+			<video class="content_media" src="DataProcessing_Media/ReferenceMethods_Media/CreateApplyReferenceDPMethod_CT5.01.04.mp4" controls></video>
 			</p>
 			
 			<p>After imbeding the refernece method into the data processing method, the data processing technique used to locate peaks in the reference sample 
@@ -180,7 +180,7 @@
 		<li class="content_text"><strong>Apply Reference Method</strong>
 			<p>To apply the Reference Method to an unknown sample simply process the sample with the data processing
 			method that is imbedded with the desired Reference method.
-			<video class="content_media" src="ReferenceMethods_Media/ApplyReferenceMethod_CT5.01.04.mp4" controls></video>
+			<video class="content_media" src="DataProcessing_Media/ReferenceMethods_Media/ApplyReferenceMethod_CT5.01.04.mp4" controls></video>
 			</p>
 		</li>
 		
@@ -205,7 +205,7 @@
 					defined area % difference (Tolerance %).
 				</li>
 			</ul>
-			<img id="content_media" src="ReferenceMethods_Media/PeakTable_AppliedRefMethod_CT5.01.04.png"/>
+			<img id="content_media" src="DataProcessing_Media/ReferenceMethods_Media/PeakTable_AppliedRefMethod_CT5.01.04.png"/>
 		</li>
 		
 		<li class="content_text"><strong>Peak Table Filtration</strong>
