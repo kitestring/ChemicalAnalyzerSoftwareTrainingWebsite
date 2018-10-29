@@ -7,8 +7,30 @@
 <body>
 	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Detector Measurement</h1>
-	<h3>Introduction</h3>
-	<p class="content_text">Under Construction</p>
+	
+	<p class="content_text">A Detector Measurement is used to characterize the detector’s response when a 
+	relative detector voltage is defined in the <a href="MSMethodsOverview.html">Mass Spectrometer</a> (MS) 
+	method.  The screen capture below provides an example of a MS method that applies a <sup>+</sup>150 
+	relative detector voltage.  Applying a relative detector voltage will increase the sensitivity however, 
+	<strong>it will accelerate the aging of the detector</strong>.  Review the <a href="MSMethodsAcquisitionConfig.html">
+	Acquisition Configuration</a> portion of the MS method section for more detailed information relative on  
+	the utilization of a relative detector voltage.  It is required to include a Detector 
+	Measurement in the tuning procedure when a detector voltage offset is applied for the data processing 
+	to work correctly.  The video below demonstrates the use of a Detector Measurement after using the 
+	<a href="Tuning_AutoTune.html">Auto-Tune</a> feature.</p>
+	
+	<img id="content_media" src="Tuning_Media/DM_MSMethodWithOffset_CT5.31.16.png"/>
+	<i class="caption_text">A Mass Spectrometer method that utilizes a relative detector voltage</i>
+	
+	<video class="content_media" src="Tuning_Media/DMAcquisitionQueue_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Appending a Detector Measurement onto Auto-Tune procedure when a applying relative detector voltage</i>
+	
+	<p class="content_text">The Detector Measurement results can be reviewed in the system log.  They are 
+	expressed as an area per ion at the specified detector voltage.  The video below shows how to view and 
+	find these results.</p>
+	
+	<video class="content_media" src="Tuning_Media/DMViewResults_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Viewing the Detector Measurement in the system log</i>
 	
 
 </body> 
