@@ -7,10 +7,42 @@
 <body>
 	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Acquisition Queue: Start, Pause or Stop the Queue</h1>
-	<h3>Introduction</h3>
-	<p class="content_text">Under Construction</p>
 	
-	<video class="content_media" src="General_Media/LiveAcquisition_CT5.31.16.mp4" autoplay loop></video>
+	<h3>Start a Sequence</h3>
+	<p class="content_text">To start a sequence click the start button 
+	<img src="AcquisitionQueue_Media/StartButton_CT5.31.16.png" width="15"/> found in the acquisition queue tool bar.</p>
+	
+	<video class="content_media" src="AcquisitionQueue_Media/StartSequence_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Start a sequence using the start button <img src="AcquisitionQueue_Media/StartButton_CT5.31.16.png" width="15"/>.</i>
+	
+	
+	<h3>Common Start Error</h3>
+	<p class="content_text">When the start button is clicked ChromaTOF will verify that each of the acquisition methods used 
+	in the sequence are valid.  If a queued method fails this check the status in the corresponding row will prompt 
+	<span class="red_txt">“Error”</span> and the sequence will not begin.  Check the system log for a description of the error.  
+	The video below presents an example of this; one of the GC methods is not using the <a href="System_ColumnSetup.html">
+	Global GC Settings</a>.</p>
+	
+	<video class="content_media" src="AcquisitionQueue_Media/Start_Error_BadMethod_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Pre-acquisition method validation failure preventing an sequence from starting.</i>
+	
+	<h3>Pause the Acquisition</h3>
+	<p class="content_text">If the pause button <img src="AcquisitionQueue_Media/PauseButton_CT5.31.16.png" width="15"/> is clicked during an 
+	acquisition, the current acquisition will be unaffected and continue to run.  However, the following injection will not automatically 
+	begin if the acquisition queue is left in a paused state.  An example of this is shown in the video below.  To continue acquiring toggle 
+	the start button.</p>
+	
+	<video class="content_media" src="AcquisitionQueue_Media/Pause_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">A depiction of a sequence when in a paused state.</i>
+	
+	<h3>Stop Current Acquisition</h3>
+	<p class="content_text">To abort an actively acquiring sequence click the “Stop Current Acquisition” button as demonstrated in the 
+	following video.  Note, the mass spectrometer will abort however, the GC will complete the loaded method.  To stop the GC use direct 
+	GC interface.</p>
+	
+	<video class="content_media" src="AcquisitionQueue_Media/StopSequence_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Aborting a live acquisition.</i>
+	
 	
 
 </body> 
