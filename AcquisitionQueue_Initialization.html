@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="TrainingStyle.css" type="text/css" rel="stylesheet">
+  <title>LECO Pegasus BT Self Guided Training</title>
+</head>
+<body>
+	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
+	<h1>Acquisition Queue: Initialization</h1>
+	
+	<h3>Initialization</h3>
+	<p class="content_text">After clicking the start button <img src="AcquisitionQueue_Media/StartButton_CT5.31.16.png" width="15"/> 
+	to begin a sequence, ChromaTOF will load the parameters defined in the acquisition methods, most can be monitored in the acquisition 
+	queue.  The following is a list of parameters that can be monitored during initialization.  The video below shows these parameters 
+	reaching their set point prior to beginning the acquisition.</p>
+	
+	<ul>
+		<li class="content_text">GC Oven Temperature</li>
+		<li class="content_text">Modulator Oven Temperature (GCxGC only)</li>
+		<li class="content_text">Secondary Oven Temperature (GCxGC only)</li>
+		<li class="content_text">Chiller or LN2 Dewar Status (GCxGC only)</li>
+		<li class="content_text">Transfer Line Temperature</li>
+		<li class="content_text">Source Temperature</li>
+		<li class="content_text">Mass Spectrometer Status</li>
+	</ul>
+	
+	<video class="content_media" src="AcquisitionQueue_Media/Initialization_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">A demonstration of how to monitor the parameters listed above during initialization.</i>
+	
+	<p class="content_text">If all the above parameters have reached their starting value and the acquisition has not started, it 
+	is likely a parameter not directly monitored by ChromaTOF is the rate limiting factor.  An example of this is the inlet temperature.</p>
+
+</body> 
+</html>
