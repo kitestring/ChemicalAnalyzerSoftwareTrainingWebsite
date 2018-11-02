@@ -7,10 +7,41 @@
 <body>
 	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Acquisition Queue: Streamline Building Large Sequences</h1>
-	<h3>Introduction</h3>
-	<p class="content_text">Under Construction</p>
 	
-	<video class="content_media" src="General_Media/LiveAcquisition_CT5.31.16.mp4" autoplay loop></video>
+	
+	<h3>Copy Text from a Spreadsheet into the Acquisition Queue</h3>
+	<p class="content_text">Any of the columns in the acquisition queue that accept plain text as 
+	values can be copy & pasted into from a spread sheet application.  Columns that fit this criteria 
+	are Type, Name, Vial and Repetitions.  When attempting to create a large sequence with complex 
+	sample names, it can often be easier, faster, and more accurate to generate the sample names 
+	using spreadsheet formulas then paste into the acquisition queue.  The video below demonstrates 
+	this.</p>
+	
+	<video class="content_media" src="AcquisitionQueue_Media/CopyPasteNameColumn_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Copy & pasting from a spreadsheet application into the acquisition queue.</i>
+	
+	
+	
+	<h3>Filling a Method to all Selected Rows</h3>
+	<p class="content_text">Columns that only accept linked objects such as methods or folders 
+	cannot be copy & pasted.  To propagate a method or folder name across many selected cells 
+	use the fill command.  This function is accessed via the acquisition queue right click menu.  
+	The following video shows how to fill a method across all selected cells.</p>
+	
+	<video class="content_media" src="AcquisitionQueue_Media/FillMethods_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Propagating a method across multiple selected cells.</i>
+	
+	
+	
+	<h3>Filling the Vial Numbering & Repetitions</h3>
+	<p class="content_text">When filling into the repetitions column you are prompted to input an 
+	integer to fill across all selected cells.  The value from the 1st selected column will the 
+	starting value from this prompt, however this value is editable.  The Vial Numbering fill feature 
+	prompts for the starting vial number as well as the increment value. The video below provides 
+	a demonstration of both these filling features.</p>
+	
+	<video class="content_media" src="AcquisitionQueue_Media/FillVialRepetitions_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Filling the vial numbering and number of repetitions across many cells.</i>
 	
 
 </body> 
