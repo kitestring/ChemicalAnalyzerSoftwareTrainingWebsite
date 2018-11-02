@@ -7,10 +7,31 @@
 <body>
 	<img id="banner_image" src="General_Media/LECO Banner.PNG"/>
 	<h1>Acquisition Queue: Scheduled Start or Pause</h1>
-	<h3>Introduction</h3>
-	<p class="content_text">Under Construction</p>
 	
-	<video class="content_media" src="General_Media/LiveAcquisition_CT5.31.16.mp4" autoplay loop></video>
+	
+	<h3>Scheduled Sequence Pause</h3>
+	<p class="content_text">A row in the acquisition queue can be defined to pause the sequence 
+	until restarted by the user.  This is done by setting the row’s type value to “Pause”.  This 
+	functionality has many applications, one example is after a tune and before the subsequent 
+	sample injections.  It is recommend to review the <a href="Tuning_TV.html.html">tune results</a> 
+	prior to acquiring data.</p>
+	
+	<video class="content_media" src="AcquisitionQueue_Media/Type_Pause_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Automated sequence pause.</i>
+	
+	
+	
+	<h3>Hold Sequence Until...</h3>
+	<p class="content_text">By setting a row’s type value to “Delay” the sequence will wait to 
+	begin until a specified time.  This tool can decrease instrument down time.  By setting a 
+	delay to 1 hour prior to the time you arrive in the lab then queuing an Auto-Tune, the 
+	instrument will be tuned and ready to run samples when you get to the lab in the morning.  
+	After setting a row’s type value to “Delay” ChromaTOF will prompt for when the following row 
+	in the queue should begin acquiring.  The specified time will be displayed in the “Resume 
+	Time” column of the acquisition queue.</p>
+	
+	<video class="content_media" src="AcquisitionQueue_Media/Type_Delay_CT5.31.16.mp4" type="video/mp4" controls></video>
+	<i class="caption_text">Using the delay feature to hold a sequence until a specified day & time.</i>
 	
 
 </body> 
